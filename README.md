@@ -1,13 +1,11 @@
 # LazyWell
 Projet Jave EE A3 RIL
 
-h1. Fonctionnalités:
+# Fonctionnalités:
 
-|*Nom*|*Priorité*|*Implémentée*|
-||||
+* **Nom** **Priorité** **Implémentée**
 
 
-h1. Web Services
+# Web Services
 
-|*Nom*|*Implémentée*|
-||||
+* **Nom** **Implémentée**
