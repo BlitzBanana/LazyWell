@@ -1,5 +1,6 @@
 # LazyWell
-Projet Jave EE ASi 3 RIL
+Exia.Cesi A3 RIL
+Projet Jave EE / Android
 
 # Fonctionnalités:
 
