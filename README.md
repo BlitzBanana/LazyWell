@@ -1,5 +1,5 @@
 # LazyWell
-Projet Jave EE ASi on a le temps RIL
+Projet Jave EE ASi 3 RIL
 
 # Fonctionnalités:
 
