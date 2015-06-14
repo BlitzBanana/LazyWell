@@ -7,7 +7,7 @@ Projet Jave EE ASi 3 RIL
 	* Prioritaire
 	* Non implémenté
 <br/>
-* Créer son propre programme
+* Créer son propre planning
 	* Prioritaire
 	* Non implémenté
 <br/>
