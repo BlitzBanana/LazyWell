@@ -1,2 +1,2 @@
-# LazyWeel
+# LazyWell
 JavaEE Project
