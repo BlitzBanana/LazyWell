@@ -20,6 +20,10 @@
             android:name=".activities.ShowPlanningActivity"
             android:label="@string/title_activity_show_planning" >
         </activity>
+        <activity
+            android:name=".activities.PlanningCreatorActivity"
+            android:label="@string/title_activity_planning_creator" >
+        </activity>
     </application>
 
 </manifest>

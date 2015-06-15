@@ -11,4 +11,6 @@
     <string name="action_week_view">Une semaine</string>
     <string name="hello_world">Hello world !</string>
     <string name="title_activity_show_planning">Les spectacles</string>
+    <string name="planning_creator_recommended">Planning recommendé</string>
+    <string name="title_activity_planning_creator">Planning personnalisé</string>
 </resources>

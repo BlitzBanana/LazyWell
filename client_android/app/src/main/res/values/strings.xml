@@ -12,4 +12,6 @@
     <string name="action_day_view">One day</string>
     <string name="action_three_day_view">Three days</string>
     <string name="action_week_view">Week</string>
+    <string name="title_activity_planning_creator">Custom plan</string>
+    <string name="planning_creator_recommended">Best planning</string>
 </resources>
