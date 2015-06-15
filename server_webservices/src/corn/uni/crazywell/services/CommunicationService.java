@@ -20,12 +20,11 @@ public class CommunicationService implements CommunicationServiceLocal{
     private Queue wellQueue;
 
     @Override
-    public Message sendMessage(Message oMsg)
+    public void sendMessage()
     {
-        ObjectMessage msg = context.createObjectMessage(oMsg);
+        ObjectMessage msg = context.createObjectMessage("Tagada");
 
         context.createProducer().send(wellQueue, msg);
-        return null;
     }
 
     @Override

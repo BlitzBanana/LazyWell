@@ -7,6 +7,6 @@ import javax.ejb.Local;
  */
 @Local
 public interface CommunicationServiceLocal {
-    Message sendMessage(Message oMsg);
+    void sendMessage();
     Message sendMessageWithResponse(Message oMsg);
 }

@@ -5,7 +5,6 @@ import corn.uni.crazywell.services.CommunicationServiceLocal;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.jws.WebService;
 
 /**
@@ -19,13 +18,10 @@ public class ScheduleService {
     private CommunicationServiceLocal communicationService;
 
     @WebMethod(operationName = "paymentOperation")
-    public boolean testService(@WebParam(name = "cardNumber")String
-                                          ccNumber, @WebParam(name = "amountPaid") Long amount) {
-        if (ccNumber.length() == 10) {
+    public boolean testService() {
 
-            return true;
-        } else {
-            return false;
-        }
+        communicationService.sendMessage();
+
+        return true;
     }
 }
