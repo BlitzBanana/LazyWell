@@ -29,6 +29,7 @@ public class CommunicationService implements CommunicationServiceLocal{
     }
 
     @Override
+    //http://javaee.support/sample/jms-temp-destination/
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public Message sendMessageWithResponse(Message oMsg) {
 
@@ -40,12 +41,12 @@ public class CommunicationService implements CommunicationServiceLocal{
 
         try (JMSConsumer consumer = context.createConsumer(responseQueue)) {
 
-            String response = consumer.receiveBody(String.class, 2000);
+            Message response = consumer.receiveBody(Message.class, 2000);
 
             if (response == null) {
                 throw new IllegalStateException("Message processing timed out");
             } else {
-                return null;
+                return response;
             }
         }
     }
