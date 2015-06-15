@@ -2,8 +2,8 @@ package corn.uni.crazywell.webservices;
 
 import corn.uni.crazywell.services.CommunicationServiceLocal;
 
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.jws.WebService;
 
 /**
@@ -13,6 +13,6 @@ import javax.jws.WebService;
 @Stateless
 public class ScheduleService {
 
-    @EJB(beanName = "CommunicationService")
+    @Inject
     private CommunicationServiceLocal communicationService;
 }
