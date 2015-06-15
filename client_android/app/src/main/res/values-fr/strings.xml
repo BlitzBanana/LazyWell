@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PuyDuFou</string>
+    <string name="button_discover">Découvrir</string>
+    <string name="button_entertainment">Divertir</string>
+    <string name="button_plan">Planifier</string>
+    <string name="action_day_view">Un jour</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="action_three_day_view">Trois jours</string>
+    <string name="action_today">Aujourd\'hui</string>
+    <string name="action_week_view">Une semaine</string>
+    <string name="hello_world">Hello world !</string>
+    <string name="title_activity_show_planning">Les spectacles</string>
+</resources>
