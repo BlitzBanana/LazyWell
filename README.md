@@ -42,3 +42,10 @@ Projet Jave EE / Android
 <br/>
 
 # Web Services
+
+* getShows() : Show[]
+* getBestPlaning() : Schedule
+* getRestaurants() : Restaurant[]
+* getShops() : Shop[]
+* evaluate(IScorable object, int score) : void
+* getAnecdotes() : Anecdotes[]
