@@ -7,6 +7,6 @@ import javax.ejb.Local;
  */
 @Local
 public interface CommunicationServiceLocal {
-    void sendMessage();
-    Message sendMessageWithResponse(Message oMsg);
+    void sendMessage(Bubble bubble);
+    Bubble sendMessageWithResponse(Bubble bubble);
 }

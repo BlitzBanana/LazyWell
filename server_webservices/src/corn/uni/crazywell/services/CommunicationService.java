@@ -20,9 +20,9 @@ public class CommunicationService implements CommunicationServiceLocal{
     private Queue wellQueue;
 
     @Override
-    public void sendMessage()
+    public void sendMessage(Bubble bubble)
     {
-        ObjectMessage msg = context.createObjectMessage("Tagada");
+        ObjectMessage msg = context.createObjectMessage(bubble);
 
         context.createProducer().send(wellQueue, msg);
     }
@@ -30,9 +30,9 @@ public class CommunicationService implements CommunicationServiceLocal{
     @Override
     //http://javaee.support/sample/jms-temp-destination/
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    public Message sendMessageWithResponse(Message oMsg) {
+    public Bubble sendMessageWithResponse(Bubble bubble) {
 
-        ObjectMessage msg = context.createObjectMessage(oMsg);
+        ObjectMessage msg = context.createObjectMessage(bubble);
         TemporaryQueue responseQueue = context.createTemporaryQueue();
         context.createProducer()
                 .setJMSReplyTo(responseQueue)
@@ -40,7 +40,9 @@ public class CommunicationService implements CommunicationServiceLocal{
 
         try (JMSConsumer consumer = context.createConsumer(responseQueue)) {
 
-            Message response = consumer.receiveBody(Message.class, 2000);
+            Bubble response = consumer.receiveBody(Bubble.class, 2000);
+
+            System.out.println(response.getBody());
 
             if (response == null) {
                 throw new IllegalStateException("Message processing timed out");

@@ -1,5 +1,6 @@
 package corn.uni.crazywell.webservices;
 
+import corn.uni.crazywell.services.Bubble;
 import corn.uni.crazywell.services.CommunicationServiceLocal;
 
 import javax.ejb.EJB;
@@ -17,11 +18,31 @@ public class ScheduleService {
     @EJB
     private CommunicationServiceLocal communicationService;
 
-    @WebMethod(operationName = "paymentOperation")
-    public boolean testService() {
+    @WebMethod(operationName = "testWithoutResponse")
+    public boolean testWithoutResponse() {
 
-        communicationService.sendMessage();
-
+        try {
+            Bubble bubble = new Bubble();
+            bubble.setBody("TagadaWithoutResponse");
+            communicationService.sendMessage(bubble);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return true;
+    }
+
+    @WebMethod(operationName = "testWithResponse")
+    public Bubble testWithResponse() {
+        try {
+            Bubble bubble = new Bubble();
+            bubble.setBody("TagadaWithResponse");
+
+            return communicationService.sendMessageWithResponse(bubble);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
