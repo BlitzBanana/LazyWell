@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.lazywell.android.puydufou.R;
 
-public class PlanningCreatorActivity extends AppCompatActivity {
+public class PlanningCreatorActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +32,19 @@ public class PlanningCreatorActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.planning_creator_recommended) {
+            Toast.makeText(this, "Loading recommended planning...", Toast.LENGTH_SHORT).show();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            default:
+                break;
+        }
     }
 }
