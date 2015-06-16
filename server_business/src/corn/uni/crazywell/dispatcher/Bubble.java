@@ -15,4 +15,20 @@ public class Bubble implements Serializable {
     }
 
     private String body;
+
+    public Process getProcess() {
+        return process;
+    }
+
+    public void setProcess(Process process) {
+        this.process = process;
+    }
+
+    private Process process;
+
+    public enum Process {
+        process1,
+        process2,
+        process3
+    }
 }

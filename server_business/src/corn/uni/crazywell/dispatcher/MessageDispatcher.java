@@ -28,7 +28,6 @@ public class MessageDispatcher implements MessageListener {
                 System.out.println(bubble.getBody());
 
 
-
                 Destination replyTo = message.getJMSReplyTo();
                 Bubble respBubble = new Bubble();
                 respBubble.setBody("TagadaResp");
