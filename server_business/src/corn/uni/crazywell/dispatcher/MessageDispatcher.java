@@ -1,5 +1,7 @@
 package corn.uni.crazywell.dispatcher;
 
+import corn.uni.crazywell.common.Bubble;
+
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
 import javax.inject.Inject;

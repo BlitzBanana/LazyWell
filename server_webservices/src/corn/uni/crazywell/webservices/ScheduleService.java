@@ -1,6 +1,6 @@
 package corn.uni.crazywell.webservices;
 
-import corn.uni.crazywell.services.Bubble;
+import corn.uni.crazywell.common.Bubble;
 import corn.uni.crazywell.services.CommunicationServiceLocal;
 
 import javax.ejb.EJB;

@@ -1,4 +1,4 @@
-package corn.uni.crazywell.services;
+package corn.uni.crazywell.common;
 
 import java.io.Serializable;
 

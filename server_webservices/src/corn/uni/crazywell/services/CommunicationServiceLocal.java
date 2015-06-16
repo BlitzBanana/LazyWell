@@ -1,5 +1,7 @@
 package corn.uni.crazywell.services;
 
+import corn.uni.crazywell.common.Bubble;
+
 import javax.ejb.Local;
 
 /**
