@@ -11,5 +11,4 @@ import java.util.List;
 public class AbstractCustomScheduleEntity {
     protected int id;
     protected String name;
-    protected List<AbstractShowEntity> shows;
 }
