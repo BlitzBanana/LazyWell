@@ -15,8 +15,9 @@ public class SessionEntity  extends SugarRecord<SessionEntity> {
     public SessionEntity(){
     }
 
-    public SessionEntity(Date time){
+    public SessionEntity(Date time, ShowEntity show){
         this.time = time;
+        this.show = show;
     }
 
     public Date getTime() {

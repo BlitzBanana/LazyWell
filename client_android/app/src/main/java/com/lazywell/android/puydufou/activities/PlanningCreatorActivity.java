@@ -3,6 +3,7 @@ package com.lazywell.android.puydufou.activities;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 import com.lazywell.android.puydufou.R;
+import com.lazywell.android.puydufou.adapters.DialogSessionAdapter;
 import com.lazywell.android.puydufou.adapters.DialogShowAdapter;
 import com.lazywell.android.puydufou.entities.persistent.ScheduleEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
@@ -22,7 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class PlanningCreatorActivity extends AppCompatActivity implements WeekView.MonthChangeListener, WeekView.EventClickListener, WeekView.EventLongPressListener {
+public class PlanningCreatorActivity extends AppCompatActivity implements View.OnClickListener, WeekView.MonthChangeListener, WeekView.EventClickListener, WeekView.EventLongPressListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements WeekVi
         mWeekView.setOnEventClickListener(this);
         mWeekView.setEventLongPressListener(this);
         mWeekView.setMonthChangeListener(this);
+        findViewById(R.id.button_add).setOnClickListener(this);
     }
 
     @Override
@@ -52,24 +55,21 @@ public class PlanningCreatorActivity extends AppCompatActivity implements WeekVi
     }
 
     @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button_add:
+                showShowsPopup();
+                break;
+        }
+    }
+
+    @Override
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
         return loadEvents();
     }
 
     @Override
     public void onEventClick(WeekViewEvent weekViewEvent, RectF rectF) {
-        List<ShowEntity> showEntities = ShowEntity.listAll(ShowEntity.class);
-
-        new MaterialDialog.Builder(this)
-                .title(R.string.add_event_title)
-                .adapter(new DialogShowAdapter(this, showEntities),
-                        new MaterialDialog.ListCallback() {
-                            @Override
-                            public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
-                                Toast.makeText(PlanningCreatorActivity.this, "Clicked item " + which, Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                .show();
     }
 
     @Override
@@ -89,6 +89,8 @@ public class PlanningCreatorActivity extends AppCompatActivity implements WeekVi
         }
 
         for (SessionEntity sessionEntity : schedule.getSessionEntities()){
+            Log.i("DB session", sessionEntity.getTime().toString());
+            Log.i("DB session", sessionEntity.getShow().getName());
             weekViewEvents.add(sessionToEvent(sessionEntity));
         }
 
@@ -108,5 +110,37 @@ public class PlanningCreatorActivity extends AppCompatActivity implements WeekVi
         WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShow().getName(), startTime, endTime);
         event.setColor(getResources().getColor(R.color.material_blue_grey_800));
         return event;
+    }
+
+    public void showShowsPopup(){
+        List<ShowEntity> showEntities = ShowEntity.listAll(ShowEntity.class);
+
+        new MaterialDialog.Builder(this)
+            .title(R.string.add_event_title)
+            .adapter(new DialogShowAdapter(this, showEntities),
+                    new MaterialDialog.ListCallback() {
+                        @Override
+                        public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
+                            Toast.makeText(PlanningCreatorActivity.this, "Clicked item " + which, Toast.LENGTH_SHORT).show();
+                            showSessionsPopup(itemView.getId());
+                        }
+                    })
+            .show();
+    }
+
+    public void showSessionsPopup(long showId){
+        ShowEntity show = ShowEntity.findById(ShowEntity.class, showId);
+        List<SessionEntity> sessions = show.getSessionEntities();
+
+        new MaterialDialog.Builder(this)
+                .title(R.string.add_event_title)
+                .adapter(new DialogSessionAdapter(this, sessions),
+                        new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
+                                Toast.makeText(PlanningCreatorActivity.this, "Clicked item " + which, Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                .show();
     }
 }
