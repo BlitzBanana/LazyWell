@@ -6,7 +6,7 @@ Projet Jave EE / Android
 
 * Afficher le planning des spectacles futurs (temps réel)
 	* Prioritaire
-	* Non implémenté
+	* Implémenté, non testé
 <br/>
 * Créer son propre planning
 	* Prioritaire
