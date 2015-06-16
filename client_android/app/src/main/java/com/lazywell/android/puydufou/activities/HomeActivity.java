@@ -29,6 +29,7 @@ public class HomeActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.button_plan:
                 Toast.makeText(this, "Plan !", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, PlanningCreatorActivity.class));
                 break;
             case R.id.button_entertainment:
                 Toast.makeText(this, "Entertainment !", Toast.LENGTH_SHORT).show();
