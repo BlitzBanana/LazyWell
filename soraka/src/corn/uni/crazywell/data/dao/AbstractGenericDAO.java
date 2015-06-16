@@ -1,5 +1,7 @@
 package corn.uni.crazywell.data.dao;
 
+import corn.uni.crazywell.common.exception.DAOException;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -13,7 +15,7 @@ public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public AbstractGenericDAO(Class<T> clazz){
+    public AbstractGenericDAO(final Class<T> clazz){
         this.clazz = clazz;
     }
 
@@ -21,32 +23,32 @@ public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
     }
 
     @Override
-    public T find(Object id) throws Exception{
+    public T find(final Object id) throws DAOException{
         T result = getEntityManager().find(clazz, id);
         if(result != null) {
             return result;
         } else {
-            throw new Exception();
+            throw new DAOException("CUSTOM - Object cannot be found");
         }
     }
 
     @Override
-    public boolean persist(T instance) {
+    public boolean persist(final T instance) throws DAOException {
         try{
             getEntityManager().persist(instance);
             return true;
         } catch (Exception ex) {
-            return false;
+            throw new DAOException("CUSTOM - Failed to persist instance from DAO");
         }
     }
 
     @Override
-    public boolean delete(T instance) {
+    public boolean delete(final T instance) throws DAOException {
         try{
             getEntityManager().remove(instance);
             return true;
         } catch (Exception ex) {
-            return false;
+            throw new DAOException("CUSTOM - Failed to persist instance from DAO");
         }
     }
 
