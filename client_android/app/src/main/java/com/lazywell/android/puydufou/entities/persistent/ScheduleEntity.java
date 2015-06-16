@@ -11,15 +11,11 @@ import java.util.List;
 public class ScheduleEntity extends SugarRecord<ScheduleEntity> {
 
     protected String name;
-    protected List<SessionEntity> sessionEntities;
 
-    public ScheduleEntity(){
-        this.sessionEntities = new ArrayList<>();
-    }
+    public ScheduleEntity(){}
 
     public ScheduleEntity(String name, List<SessionEntity> sessionEntities){
         this.name = name;
-        this.sessionEntities = sessionEntities;
     }
 
     public String getName() {
@@ -31,10 +27,13 @@ public class ScheduleEntity extends SugarRecord<ScheduleEntity> {
     }
 
     public List<SessionEntity> getSessionEntities() {
-        return sessionEntities;
-    }
+        List<SessionEntity> sessionEntities = new ArrayList<>();
+        List<ScheduleSessionEntity> scheduleSessionEntities = ScheduleSessionEntity.getScheduleSessionEntities(this);
 
-    public void setSessionEntities(List<SessionEntity> sessionEntities) {
-        this.sessionEntities = sessionEntities;
+        for(ScheduleSessionEntity scheduleSessionEntity : scheduleSessionEntities){
+            sessionEntities.add(scheduleSessionEntity.getSessionEntity());
+        }
+
+        return sessionEntities;
     }
 }

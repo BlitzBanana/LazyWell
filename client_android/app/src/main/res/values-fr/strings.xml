@@ -13,4 +13,5 @@
     <string name="title_activity_show_planning">Les spectacles</string>
     <string name="planning_creator_recommended">Planning recommendé</string>
     <string name="title_activity_planning_creator">Planning personnalisé</string>
+    <string name="add_event_title">Ajouter un spectacle</string>
 </resources>

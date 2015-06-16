@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 import com.lazywell.android.puydufou.R;
+import com.lazywell.android.puydufou.adapters.DialogShowAdapter;
 import com.lazywell.android.puydufou.entities.persistent.ScheduleEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
+import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -28,6 +32,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements WeekVi
         WeekView mWeekView = (WeekView) findViewById(R.id.weekView);
         mWeekView.setOnEventClickListener(this);
         mWeekView.setEventLongPressListener(this);
+        mWeekView.setMonthChangeListener(this);
     }
 
     @Override
@@ -53,7 +58,18 @@ public class PlanningCreatorActivity extends AppCompatActivity implements WeekVi
 
     @Override
     public void onEventClick(WeekViewEvent weekViewEvent, RectF rectF) {
+        List<ShowEntity> showEntities = ShowEntity.listAll(ShowEntity.class);
 
+        new MaterialDialog.Builder(this)
+                .title(R.string.add_event_title)
+                .adapter(new DialogShowAdapter(this, showEntities),
+                        new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
+                                Toast.makeText(PlanningCreatorActivity.this, "Clicked item " + which, Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                .show();
     }
 
     @Override
@@ -65,6 +81,12 @@ public class PlanningCreatorActivity extends AppCompatActivity implements WeekVi
         List<WeekViewEvent> weekViewEvents = new ArrayList<>();
 
         ScheduleEntity schedule = ScheduleEntity.findById(ScheduleEntity.class, 1l);
+
+        if(schedule == null) {
+            schedule = new ScheduleEntity();
+            schedule.setName("Local");
+            schedule.save();
+        }
 
         for (SessionEntity sessionEntity : schedule.getSessionEntities()){
             weekViewEvents.add(sessionToEvent(sessionEntity));

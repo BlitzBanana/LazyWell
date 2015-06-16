@@ -1,6 +1,9 @@
 package com.lazywell.android.puydufou.entities.persistent;
 
+import android.graphics.Bitmap;
+
 import com.lazywell.android.puydufou.entities.ISchedulable;
+import com.lazywell.android.puydufou.tools.BitmapUtils;
 import com.orm.SugarRecord;
 
 import java.util.ArrayList;
@@ -20,11 +23,8 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
     protected int actorNumber;
     protected double score;
     protected CoordinatesEntity coordinates;
-    protected List<SessionEntity> sessionEntities;
 
-    public ShowEntity(){
-        this.sessionEntities = new ArrayList<>();
-    }
+    public ShowEntity(){}
 
     public ShowEntity(
             String name,
@@ -34,8 +34,7 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
             byte[] image,
             int actorNumber,
             double score,
-            CoordinatesEntity coordinates,
-            List<SessionEntity> sessionEntities){
+            CoordinatesEntity coordinates){
         this.name = name;
         this.description = description;
         this.priority = priority;
@@ -44,7 +43,6 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
         this.actorNumber = actorNumber;
         this.score = score;
         this.coordinates = coordinates;
-        this.sessionEntities = sessionEntities;
     }
 
     public String getName() {
@@ -112,10 +110,6 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
     }
 
     public List<SessionEntity> getSessionEntities() {
-        return sessionEntities;
-    }
-
-    public void setSessionEntities(List<SessionEntity> sessionEntities) {
-        this.sessionEntities = sessionEntities;
+        return SessionEntity.find(SessionEntity.class, "showEntity = ?", this.getId().toString());
     }
 }
