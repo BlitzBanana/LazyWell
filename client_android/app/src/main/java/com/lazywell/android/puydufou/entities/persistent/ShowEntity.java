@@ -1,12 +1,8 @@
 package com.lazywell.android.puydufou.entities.persistent;
 
-import android.graphics.Bitmap;
-
 import com.lazywell.android.puydufou.entities.ISchedulable;
-import com.lazywell.android.puydufou.tools.BitmapUtils;
 import com.orm.SugarRecord;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,14 +11,14 @@ import java.util.List;
  */
 public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable {
 
-    protected String name;
-    protected String description;
-    protected int priority;
-    protected Date creationDate;
-    protected byte[] image;
-    protected int actorNumber;
-    protected double score;
-    protected CoordinatesEntity coordinates;
+    private String name;
+    private String description;
+    private int priority;
+    private Date creationDate;
+    private byte[] image;
+    private int actorNumber;
+    private double score;
+    private CoordinatesEntity coordinates;
 
     public ShowEntity(){}
 
@@ -110,6 +106,6 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
     }
 
     public List<SessionEntity> getSessionEntities() {
-        return SessionEntity.find(SessionEntity.class, "showEntity = ?", this.getId().toString());
+        return SessionEntity.find(SessionEntity.class, "show = ?", this.getId().toString());
     }
 }

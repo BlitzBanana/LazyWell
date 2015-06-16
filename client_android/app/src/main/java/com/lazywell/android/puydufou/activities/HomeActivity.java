@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.lazywell.android.puydufou.R;
+import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 
 public class HomeActivity extends Activity implements View.OnClickListener{
 

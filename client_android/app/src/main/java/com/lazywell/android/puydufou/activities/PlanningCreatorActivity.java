@@ -105,7 +105,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements WeekVi
         Calendar endTime = (Calendar) startTime.clone();
         endTime.add(Calendar.HOUR, 1);
         endTime.set(Calendar.MONTH, now.getMonth());
-        WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShowEntity().getName(), startTime, endTime);
+        WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShow().getName(), startTime, endTime);
         event.setColor(getResources().getColor(R.color.material_blue_grey_800));
         return event;
     }
