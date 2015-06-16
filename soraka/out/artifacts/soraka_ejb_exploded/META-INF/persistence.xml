@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+    <persistence-unit name="SorakaUnit">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>jdbc/soraka</jta-data-source>
+        <class>corn.uni.crazywell.data.entities.AnecdoteAnswerEntity</class>
+        <class>corn.uni.crazywell.data.entities.AnecdoteQuestionEntity</class>
+        <class>corn.uni.crazywell.data.entities.CoordinatesEntity</class>
+        <class>corn.uni.crazywell.data.entities.MenuItemEntity</class>
+        <class>corn.uni.crazywell.data.entities.MenuItemScoreEntity</class>
+        <class>corn.uni.crazywell.data.entities.RestaurantEntity</class>
+        <class>corn.uni.crazywell.data.entities.RestaurantScoreEntity</class>
+        <class>corn.uni.crazywell.data.entities.ScheduleEntity</class>
+        <class>corn.uni.crazywell.data.entities.ScheduleShowEntity</class>
+        <class>corn.uni.crazywell.data.entities.ShopEntity</class>
+        <class>corn.uni.crazywell.data.entities.ShopScoreEntity</class>
+        <class>corn.uni.crazywell.data.entities.ShowEntity</class>
+        <class>corn.uni.crazywell.data.entities.ShowScoreEntity</class>
+        <class>corn.uni.crazywell.data.entities.TimeTravelEntity</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://10.162.50.8:3306/lazywell"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="dev"/>
+            <property name="hibernate.connection.password" value="UnicornStudio"/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
