@@ -3,11 +3,25 @@
 
     <persistence-unit name="SorakaUnit">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>corn.uni.crazywell.data.entities.AnecdoteAnswerEntity</class>
+        <class>corn.uni.crazywell.data.entities.AnecdoteQuestionEntity</class>
+        <class>corn.uni.crazywell.data.entities.CoordinatesEntity</class>
+        <class>corn.uni.crazywell.data.entities.MenuItemEntity</class>
+        <class>corn.uni.crazywell.data.entities.MenuItemScoreEntity</class>
+        <class>corn.uni.crazywell.data.entities.RestaurantEntity</class>
+        <class>corn.uni.crazywell.data.entities.RestaurantScoreEntity</class>
+        <class>corn.uni.crazywell.data.entities.ScheduleEntity</class>
+        <class>corn.uni.crazywell.data.entities.ScheduleShowEntity</class>
+        <class>corn.uni.crazywell.data.entities.ShopEntity</class>
+        <class>corn.uni.crazywell.data.entities.ShopScoreEntity</class>
+        <class>corn.uni.crazywell.data.entities.ShowEntity</class>
+        <class>corn.uni.crazywell.data.entities.ShowScoreEntity</class>
+        <class>corn.uni.crazywell.data.entities.TimeTravelEntity</class>
         <properties>
-            <property name="hibernate.connection.url" value=""/>
-            <property name="hibernate.connection.driver_class" value=""/>
-            <property name="hibernate.connection.username" value=""/>
-            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://10.162.50.8:3306/lazywell"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username"/>
+            <property name="hibernate.connection.password"/>
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>

@@ -1,4 +1,4 @@
-package corn.uni.crazywell.dispatcher;
+package corn.uni.crazywell.business.dispatcher;
 
 import corn.uni.crazywell.common.Bubble;
 
