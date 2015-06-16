@@ -7,8 +7,9 @@ import com.orm.SugarRecord;
  */
 public class CoordinatesEntity extends SugarRecord<CoordinatesEntity> {
 
-    protected double latitude;
-    protected double longitude;
+    /* Properties */
+    private double latitude;
+    private double longitude;
 
     public CoordinatesEntity(){
     }

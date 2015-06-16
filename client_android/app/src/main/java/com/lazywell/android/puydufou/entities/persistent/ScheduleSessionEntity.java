@@ -1,6 +1,8 @@
 package com.lazywell.android.puydufou.entities.persistent;
 
 import com.orm.SugarRecord;
+import com.orm.query.Condition;
+import com.orm.query.Select;
 
 import java.util.List;
 
@@ -9,37 +11,41 @@ import java.util.List;
  */
 public class ScheduleSessionEntity extends SugarRecord<ScheduleSessionEntity> {
 
-    private ScheduleEntity scheduleEntity;
-    private SessionEntity sessionEntity;
+    private ScheduleEntity schedule;
+    private SessionEntity session;
 
     public ScheduleSessionEntity() {}
 
-    public ScheduleSessionEntity(ScheduleEntity scheduleEntity, SessionEntity sessionEntity){
-        this.scheduleEntity = scheduleEntity;
-        this.sessionEntity = sessionEntity;
+    public ScheduleSessionEntity(ScheduleEntity schedule, SessionEntity session){
+        this.schedule = schedule;
+        this.session = session;
     }
 
     public static List<ScheduleSessionEntity> getScheduleSessionEntities(ScheduleEntity scheduleEntity){
-        return ScheduleSessionEntity.find(ScheduleSessionEntity.class, "scheduleEntity = ?", scheduleEntity.getId().toString());
+        return Select.from(ScheduleSessionEntity.class)
+                .where(Condition.prop("schedule").eq(scheduleEntity.getId().toString()))
+                .list();
     }
 
     public static List<ScheduleSessionEntity> getScheduleSessionEntities(SessionEntity sessionEntity){
-        return ScheduleSessionEntity.find(ScheduleSessionEntity.class, "sessionEntity = ?", sessionEntity.getId().toString());
+        return Select.from(ScheduleSessionEntity.class)
+                .where(Condition.prop("session").eq(sessionEntity.getId().toString()))
+                .list();
     }
 
-    public ScheduleEntity getScheduleEntity() {
-        return scheduleEntity;
+    public ScheduleEntity getSchedule() {
+        return schedule;
     }
 
-    public void setScheduleEntity(ScheduleEntity scheduleEntity) {
-        this.scheduleEntity = scheduleEntity;
+    public void setSchedule(ScheduleEntity schedule) {
+        this.schedule = schedule;
     }
 
-    public SessionEntity getSessionEntity() {
-        return sessionEntity;
+    public SessionEntity getSession() {
+        return session;
     }
 
-    public void setSessionEntity(SessionEntity sessionEntity) {
-        this.sessionEntity = sessionEntity;
+    public void setSession(SessionEntity session) {
+        this.session = session;
     }
 }

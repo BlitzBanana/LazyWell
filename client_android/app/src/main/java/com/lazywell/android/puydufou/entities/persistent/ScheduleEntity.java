@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ScheduleEntity extends SugarRecord<ScheduleEntity> {
 
-    protected String name;
+    private String name;
 
     public ScheduleEntity(){}
 
@@ -31,7 +31,7 @@ public class ScheduleEntity extends SugarRecord<ScheduleEntity> {
         List<ScheduleSessionEntity> scheduleSessionEntities = ScheduleSessionEntity.getScheduleSessionEntities(this);
 
         for(ScheduleSessionEntity scheduleSessionEntity : scheduleSessionEntities){
-            sessionEntities.add(scheduleSessionEntity.getSessionEntity());
+            sessionEntities.add(scheduleSessionEntity.getSession());
         }
 
         return sessionEntities;

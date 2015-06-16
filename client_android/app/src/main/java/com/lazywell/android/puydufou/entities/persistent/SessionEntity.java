@@ -9,8 +9,8 @@ import java.util.Date;
  */
 public class SessionEntity  extends SugarRecord<SessionEntity> {
 
-    protected Date time;
-    protected ShowEntity showEntity;
+    private Date time;
+    private ShowEntity show;
 
     public SessionEntity(){
     }
@@ -27,11 +27,11 @@ public class SessionEntity  extends SugarRecord<SessionEntity> {
         this.time = time;
     }
 
-    public ShowEntity getShowEntity() {
-        return showEntity;
+    public ShowEntity getShow() {
+        return show;
     }
 
-    public void setShowEntity(ShowEntity showEntity) {
-        this.showEntity = showEntity;
+    public void setShow(ShowEntity show) {
+        this.show = show;
     }
 }

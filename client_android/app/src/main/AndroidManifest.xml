@@ -4,6 +4,7 @@
     package="com.lazywell.android.puydufou">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.write_external_storage"/>
 
     <application
         android:allowBackup="true"
@@ -30,7 +31,7 @@
             android:label="@string/title_activity_planning_creator" >
         </activity>
 
-        <meta-data android:name="DATABASE" android:value="puydufou.db" />
+        <meta-data android:name="DATABASE" android:value="test1.db" />
         <meta-data android:name="VERSION" android:value="2" />
         <meta-data android:name="QUERY_LOG" android:value="true" />
         <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.lazywell.android.puydufou.entities.persistent" />
