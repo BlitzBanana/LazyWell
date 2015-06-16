@@ -23,7 +23,7 @@ public class ScheduleService {
 
         try {
             Bubble bubble = new Bubble();
-            bubble.setBody("TagadaWithoutResponse");
+            bubble.getBody().add("TagadaWithoutResponse2");
             communicationService.sendMessage(bubble);
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,7 +35,7 @@ public class ScheduleService {
     public Bubble testWithResponse() {
         try {
             Bubble bubble = new Bubble();
-            bubble.setBody("TagadaWithResponse");
+            bubble.getBody().add("TagadaWithResponse2");
 
             return communicationService.sendMessageWithResponse(bubble);
 

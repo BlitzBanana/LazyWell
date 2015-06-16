@@ -1,30 +1,45 @@
 package corn.uni.crazywell.common;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Thanith on 16/06/2015.
  */
 public class Bubble implements Serializable {
-    public String getBody() {
+    public Bubble()
+    {
+        body = new ArrayList<>();
+    }
+
+    private Process header;
+    private List<Serializable> body;
+    private String error;
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public List<Serializable> getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(List<Serializable> body) {
         this.body = body;
     }
 
-    private String body;
-
-    public Process getProcess() {
-        return process;
+    public Process getHeader() {
+        return header;
     }
 
-    public void setProcess(Process process) {
-        this.process = process;
+    public void setHeader(Process header) {
+        this.header = header;
     }
-
-    private Process process;
 
     public enum Process {
         process1,
