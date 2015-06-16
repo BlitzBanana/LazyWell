@@ -42,7 +42,7 @@ public class CommunicationService implements CommunicationServiceLocal{
 
         try (JMSConsumer consumer = context.createConsumer(responseQueue)) {
 
-            Bubble response = consumer.receiveBody(Bubble.class, 2000);
+            Bubble response = consumer.receiveBody(Bubble.class, 5000);
 
             System.out.println(response.getBody());
 
