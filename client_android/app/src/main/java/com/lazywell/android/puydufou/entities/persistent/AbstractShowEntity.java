@@ -6,6 +6,7 @@ import com.lazywell.android.puydufou.entities.ISchedulable;
 import com.slimgears.slimrepo.core.annotations.GenerateEntity;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by victor on 16/06/2015.
@@ -16,10 +17,10 @@ public class AbstractShowEntity implements ISchedulable {
     protected String name;
     protected String description;
     protected int priority;
-    protected Date startDate;
-    protected Date endDate;
+    protected List<AbstractSessionEntity> sessions;
     protected Date creationDate;
     protected Bitmap image;
     protected int actorNumber;
+    protected double score;
     protected AbstractCoordinatesEntity coordinates;
 }
