@@ -1,13 +1,13 @@
 package com.lazywell.android.puydufou.webservices;
 
-import com.lazywell.android.puydufou.entities.persistent.Show;
+import com.lazywell.android.puydufou.entities.persistent.AbstractShowEntity;
 
 /**
  * Created by victor on 16/06/2015.
  */
 public class ShowClient {
 
-    public Show[] getShows(){
+    public AbstractShowEntity[] getShows(){
         // Use asyncTask and KSOAP
         return null;
     }
