@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 
 import com.lazywell.android.puydufou.entities.ISchedulable;
 import com.slimgears.slimrepo.core.annotations.GenerateEntity;
-import com.slimgears.slimrepo.core.annotations.Key;
 
 import java.util.Date;
 
