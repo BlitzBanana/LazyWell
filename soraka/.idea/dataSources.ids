@@ -49,6 +49,7 @@
       <column name="value" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="menu_item_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="uuid" sqlType="VARCHAR" precision="36" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="menu_item_score_menu_item" columns="menu_item_id" ref-table="menu_item" ref-schema="" ref-catalog="lazywell" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="menu_item_score_menu_item" unique="false" columns="menu_item_id"/>
@@ -67,6 +68,7 @@
       <column name="value" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="restaurant_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="uuid" sqlType="VARCHAR" precision="36" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="restaurant_score_restaurant" columns="restaurant_id" ref-table="restaurant" ref-schema="" ref-catalog="lazywell" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="restaurant_score_restaurant" unique="false" columns="restaurant_id"/>
@@ -87,6 +89,14 @@
       <index name="schedule_show_schedule" unique="false" columns="schedule_id"/>
       <index name="schedule_show_show" unique="false" columns="show_id"/>
     </table>
+    <table name="session" schema="" catalog="lazywell" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="time" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92"/>
+      <column name="show_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="session_show" columns="show_id" ref-table="show" ref-schema="" ref-catalog="lazywell" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="session_show" unique="false" columns="show_id"/>
+    </table>
     <table name="shop" schema="" catalog="lazywell" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="coordinate_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -100,6 +110,7 @@
       <column name="value" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="shop_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="uuid" sqlType="VARCHAR" precision="36" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="shop_score_shop" columns="shop_id" ref-table="shop" ref-schema="" ref-catalog="lazywell" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="shop_score_shop" unique="false" columns="shop_id"/>
@@ -109,8 +120,7 @@
       <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="description" sqlType="VARCHAR" precision="1000" scale="0" nullable="true" jdbcType="12"/>
       <column name="priority" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="start_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
-      <column name="end_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="duration" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="creation_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
       <column name="image" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4"/>
       <column name="actor_number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -119,6 +129,7 @@
       <foreign-key name="show_coordinate" columns="coordinate_id" ref-table="coordinates" ref-schema="" ref-catalog="lazywell" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="anecdote_show" table="anecdote_question" schema="" catalog="lazywell" columns="show_id"/>
       <exported-key name="schedule_show_show" table="schedule_show" schema="" catalog="lazywell" columns="show_id"/>
+      <exported-key name="session_show" table="session" schema="" catalog="lazywell" columns="show_id"/>
       <exported-key name="show_score_show" table="show_score" schema="" catalog="lazywell" columns="show_id"/>
       <exported-key name="time_travel_show2" table="time_travel" schema="" catalog="lazywell" columns="show2_id"/>
       <exported-key name="time_travel_show1" table="time_travel" schema="" catalog="lazywell" columns="show1_id"/>
@@ -129,6 +140,7 @@
       <column name="value" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="show_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="uuid" sqlType="VARCHAR" precision="36" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="show_score_show" columns="show_id" ref-table="show" ref-schema="" ref-catalog="lazywell" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="show_score_show" unique="false" columns="show_id"/>

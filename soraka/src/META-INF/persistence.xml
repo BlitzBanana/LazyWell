@@ -18,11 +18,12 @@
         <class>corn.uni.crazywell.data.entities.ShowEntity</class>
         <class>corn.uni.crazywell.data.entities.ShowScoreEntity</class>
         <class>corn.uni.crazywell.data.entities.TimeTravelEntity</class>
+        <class>corn.uni.crazywell.data.entities.SessionEntity</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://10.162.50.8:3306/lazywell"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.username" value="dev"/>
-            <property name="hibernate.connection.password" value="UnicornStudio"/>
+            <property name="hibernate.connection.username"/>
+            <property name="hibernate.connection.password"/>
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
