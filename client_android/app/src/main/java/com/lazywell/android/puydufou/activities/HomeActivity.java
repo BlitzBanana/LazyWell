@@ -26,7 +26,7 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.button_plan).setOnClickListener(this);
         findViewById(R.id.button_entertainment).setOnClickListener(this);
 
-        CoordinatesEntity coordinates = new CoordinatesEntity(10, 10);
+        /*CoordinatesEntity coordinates = new CoordinatesEntity(10, 10);
         coordinates.save();
 
         Date duration = new Date();
@@ -56,7 +56,7 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         }
 
         ScheduleSessionEntity scheduleSession = new ScheduleSessionEntity(schedule, session);
-        scheduleSession.save();
+        scheduleSession.save();*/
     }
 
     @Override

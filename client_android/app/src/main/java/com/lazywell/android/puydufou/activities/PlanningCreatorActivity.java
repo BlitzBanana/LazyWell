@@ -115,14 +115,15 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
     public void showShowsPopup(){
         List<ShowEntity> showEntities = ShowEntity.listAll(ShowEntity.class);
 
+        final DialogShowAdapter adpater = new DialogShowAdapter(this, showEntities);
         new MaterialDialog.Builder(this)
             .title(R.string.add_event_title)
-            .adapter(new DialogShowAdapter(this, showEntities),
+            .adapter(adpater,
                     new MaterialDialog.ListCallback() {
                         @Override
                         public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
                             Toast.makeText(PlanningCreatorActivity.this, "Clicked item " + which, Toast.LENGTH_SHORT).show();
-                            showSessionsPopup(itemView.getId());
+                            showSessionsPopup(adpater.getItemId(which));
                         }
                     })
             .show();
@@ -130,6 +131,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
 
     public void showSessionsPopup(long showId){
         ShowEntity show = ShowEntity.findById(ShowEntity.class, showId);
+        Log.i("POPUP", "Show ID: " + showId);
         List<SessionEntity> sessions = show.getSessionEntities();
 
         new MaterialDialog.Builder(this)
