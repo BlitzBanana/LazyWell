@@ -15,5 +15,10 @@
     <string name="title_activity_planning_creator">Custom plan</string>
     <string name="planning_creator_recommended">Best planning</string>
     <string name="add_event_title">Add show</string>
-    <string name="title_activity_show_details">ShowDetailsActivity</string>
+    <string name="title_activity_show_details">Show Detail</string>
+    <string name="planning_creator_reset">Reset</string>
+    <string name="planning_creator_reset_title">Reset</string>
+    <string name="planning_creator_reset_message">Are you sure?</string>
+    <string name="planning_creator_reset_positive">Confirm</string>
+    <string name="planning_creator_reset_negative">Cancel</string>
 </resources>
