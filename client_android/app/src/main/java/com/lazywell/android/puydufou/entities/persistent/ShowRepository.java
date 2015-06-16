@@ -1,5 +1,6 @@
 package com.lazywell.android.puydufou.entities.persistent;
 
+
 import com.slimgears.slimrepo.core.annotations.GenerateRepository;
 import com.slimgears.slimrepo.core.interfaces.Repository;
 import com.slimgears.slimrepo.core.interfaces.entities.EntitySet;
@@ -11,4 +12,7 @@ import com.slimgears.slimrepo.core.interfaces.entities.EntitySet;
 public interface ShowRepository extends Repository {
     EntitySet<ShowEntity> shows();
     EntitySet<CoordinatesEntity> coordinates();
+    EntitySet<SessionEntity> sessions();
+    EntitySet<CustomScheduleEntity> customSchedules();
+    EntitySet<ScheduleShowEntity> schedulesShows();
 }

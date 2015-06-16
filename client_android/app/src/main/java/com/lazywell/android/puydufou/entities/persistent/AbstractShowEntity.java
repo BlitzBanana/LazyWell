@@ -21,4 +21,5 @@ public class AbstractShowEntity implements ISchedulable {
     protected int actorNumber;
     protected double score;
     protected AbstractCoordinatesEntity coordinates;
+    protected AbstractSessionEntity[] abstractSessionEntities;
 }

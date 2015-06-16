@@ -8,6 +8,6 @@ import com.slimgears.slimrepo.core.annotations.GenerateEntity;
 @GenerateEntity
 public class AbstractScheduleShowEntity {
     protected int id;
-    protected ShowEntity show;
-    protected CustomScheduleEntity schedule;
+    protected AbstractShowEntity show;
+    protected AbstractCustomScheduleEntity schedule;
 }
