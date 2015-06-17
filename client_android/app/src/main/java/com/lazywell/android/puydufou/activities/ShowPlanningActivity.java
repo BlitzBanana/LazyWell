@@ -157,7 +157,7 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
 
         for (ShowEntity showEntity : showEntities){
             for (SessionEntity sessionEntity : showEntity.getSessionEntities()){
-                events.add(EventUtils.sessionToEvent(this, sessionEntity));
+                events.add(EventUtils.schedulableToEvent(this, sessionEntity));
             }
         }
 
