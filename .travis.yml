@@ -1,1 +1,7 @@
 language: java
+
+env:
+  global:
+    - REPO="BlitzBanana/LazyWell"
+    - CI_HOME=`pwd`/$REPO
+script: build.sh
