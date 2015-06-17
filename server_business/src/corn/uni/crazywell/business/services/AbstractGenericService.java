@@ -2,8 +2,6 @@ package corn.uni.crazywell.business.services;
 
 import corn.uni.crazywell.data.dao.GenericDAO;
 
-import java.util.List;
-
 /**
  * Created by blacksheep on 29/05/15.
  */
