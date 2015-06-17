@@ -1,5 +1,7 @@
 package com.lazywell.android.puydufou.webservices;
 
+import com.lazywell.android.puydufou.activities.ShowDetailsActivity;
+import com.lazywell.android.puydufou.business.Rate;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 
 import java.util.ArrayList;
@@ -22,5 +24,10 @@ public class ShowClient {
         showEntities = ShowEntity.listAll(ShowEntity.class);
 
         return showEntities;
+    }
+
+    public void RateShow (Rate rate)
+    {
+
     }
 }
