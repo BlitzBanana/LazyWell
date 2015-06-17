@@ -44,10 +44,10 @@ public class CommunicationService implements CommunicationServiceLocal{
 
             Bubble response = consumer.receiveBody(Bubble.class, 5000);
 
-            System.out.println(response.getBody());
+            //System.out.println(response.getBody());
 
             if (response == null) {
-                throw new IllegalStateException("Message processing timed out");
+                throw new IllegalStateException("CUSTOM - Message processing timed out");
             } else {
                 return response;
             }
