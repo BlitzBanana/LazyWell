@@ -30,12 +30,10 @@ public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> 
         target.setActorNumber(source.getActorNumber());
         target.setCreationDate(source.getCreationDate());
         target.setDescription(source.getDescription());
-        target.setEndDate(source.getEndDate());
         target.setId(source.getId());
         target.setImage(source.getImage());
         target.setName(source.getName());
         target.setPriority(source.getPriority());
-        target.setStartDate(source.getStartDate());
         //Binded conversion
         convertCoordinateInternal(source, target);
     }

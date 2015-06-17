@@ -11,6 +11,7 @@ import java.sql.Time;
 public class SessionEntity {
     private int id;
     private Time time;
+    private int showId;
 
     @Id
     @Column(name = "id")
@@ -50,5 +51,15 @@ public class SessionEntity {
         int result = id;
         result = 31 * result + (time != null ? time.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "show_id")
+    public int getShowId() {
+        return showId;
+    }
+
+    public void setShowId(int showId) {
+        this.showId = showId;
     }
 }

@@ -1,14 +1,10 @@
 package corn.uni.crazywell.data.dao;
 
 import corn.uni.crazywell.common.exception.DAOException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.jboss.seam.microcontainer.HibernateFactory;
 
-import javax.ejb.Local;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 /**
@@ -22,7 +18,6 @@ public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
     private EntityManager entityManager;
 
     public AbstractGenericDAO(final Class<T> clazz){
-        System.out.println("######################## DAO HAS BEEN CREATED " +clazz.getName());
         this.clazz = clazz;
     }
     public AbstractGenericDAO(){
@@ -62,11 +57,8 @@ public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
     public List<T> findAll() throws DAOException {
         List<T> result;
         try{
-            Session session = new HibernateFactory().getSessionFactory().openSession();
-            Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from " + clazz.getName());
-            result = query.list();
-            transaction.commit();
+            Query query = entityManager.createQuery("from " + clazz.getName());
+            result = query.getResultList();
             if(result == null){
                 throw new DAOException("CUSTOM failed to get any result");
             }

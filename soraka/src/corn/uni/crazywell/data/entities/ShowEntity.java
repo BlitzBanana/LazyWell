@@ -1,6 +1,7 @@
 package corn.uni.crazywell.data.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Arrays;
 
@@ -9,17 +10,20 @@ import java.util.Arrays;
  */
 @Entity
 @Table(name = "show", schema = "", catalog = "lazywell")
-public class ShowEntity {
+public class ShowEntity implements Serializable {
+    private static final long serialVersionUID = 42L;
+
     private int id;
     private String name;
     private String description;
     private int priority;
-    private Date startDate;
-    private Date endDate;
     private Date creationDate;
     private byte[] image;
     private int actorNumber;
     private int coordinateId;
+    private long duration;
+
+
 
     @Id
     @Column(name = "id")
@@ -59,26 +63,6 @@ public class ShowEntity {
 
     public void setPriority(int priority) {
         this.priority = priority;
-    }
-
-    @Basic
-    @Column(name = "start_date")
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    @Basic
-    @Column(name = "end_date")
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 
     @Basic
@@ -134,8 +118,6 @@ public class ShowEntity {
         if (coordinateId != that.coordinateId) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (startDate != null ? !startDate.equals(that.startDate) : that.startDate != null) return false;
-        if (endDate != null ? !endDate.equals(that.endDate) : that.endDate != null) return false;
         if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
         if (!Arrays.equals(image, that.image)) return false;
 
@@ -148,12 +130,20 @@ public class ShowEntity {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + priority;
-        result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
-        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         result = 31 * result + (creationDate != null ? creationDate.hashCode() : 0);
         result = 31 * result + (image != null ? Arrays.hashCode(image) : 0);
         result = 31 * result + actorNumber;
         result = 31 * result + coordinateId;
         return result;
+    }
+
+    @Basic
+    @Column(name = "duration")
+    public long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
     }
 }

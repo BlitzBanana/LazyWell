@@ -1,49 +1,31 @@
 package corn.uni.crazywell.common;
 
-import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Thanith on 16/06/2015.
  */
 public class Bubble implements Serializable {
+
+    public Bubble(){
+        body = new ArrayList<>();
+    }
+
     private Process header;
-    private Object[] body;
-    private String error;
 
-    public Bubble()
-    {
-        body = new Object[0];
-    }
-
-    public void addBodyElement( Object obj )
-    {
-        Object[] bodyTemp = new Object[body.length + 1];
-        int i = 0;
-
-        if(body.length != 0)
-        {
-            for(Object temp : body)
-            {
-                bodyTemp[i] = temp;
-                i++;
-            }
-        }
-
-        bodyTemp[i] = obj;
-
-        body = bodyTemp;
-    }
-
-
-    public Object[] getBody() {
+    public List<Object> getBody() {
         return body;
     }
 
-    public void setBody(Object[] body) {
+    public void setBody(List<Object> body) {
         this.body = body;
     }
+
+    private List<Object> body;
+
+    private String error;
 
     public String getError() {
         return error;
@@ -62,9 +44,12 @@ public class Bubble implements Serializable {
     }
 
     public enum Process {
-        process1,
-        process2,
-        process3,
-        GET_SHOWS
+        GET_SHOWS,
+        GET_BEST_SCHEDULE,
+        GET_ANECDOTES,
+        GET_RESTAURANTS,
+        GET_SHOPS,
+        CHECK_UPDATE,
+        GET_EVAL
     }
 }

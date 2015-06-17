@@ -1,5 +1,6 @@
 package corn.uni.crazywell.data.dao.impl;
 
+import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.dao.GenericDAO;
 import corn.uni.crazywell.data.entities.ShowEntity;
@@ -10,6 +11,9 @@ import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Model;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 /**

@@ -12,6 +12,7 @@ public class ShopScoreEntity {
     private int value;
     private int date;
     private int shopId;
+    private String uuid;
 
     @Id
     @Column(name = "id")
@@ -75,5 +76,15 @@ public class ShopScoreEntity {
         result = 31 * result + date;
         result = 31 * result + shopId;
         return result;
+    }
+
+    @Basic
+    @Column(name = "uuid")
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }
