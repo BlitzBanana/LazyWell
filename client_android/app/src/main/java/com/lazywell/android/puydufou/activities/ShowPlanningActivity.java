@@ -130,6 +130,9 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
         Toast.makeText(this, "Clicked " + event.getName(), Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(ShowPlanningActivity.this, ShowDetailsActivity.class);
+        SessionEntity session = SessionEntity.findById(SessionEntity.class, event.getId());
+        Long showId = session.getShow().getId();
+        intent.putExtra("showId", showId);
         startActivity(intent);
 
     }
@@ -146,9 +149,7 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
     }
 
 
-    private String getEventTitle(Calendar time) {
-        return String.format("Event of %02d:%02d %s/%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
-    }
+
 
     public List<WeekViewEvent> loadEvents(int newYear, int newMonth){
         List<WeekViewEvent> events = new ArrayList<>();
