@@ -24,7 +24,6 @@ import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 import com.lazywell.android.puydufou.tools.EventUtils;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class PlanningCreatorActivity extends AppCompatActivity implements View.OnClickListener, WeekView.MonthChangeListener, WeekView.EventClickListener, WeekView.EventLongPressListener {
@@ -78,6 +77,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onEventClick(WeekViewEvent weekViewEvent, RectF rectF) {
+        Toast.makeText(this, "Clicked " + weekViewEvent.getId(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -104,7 +104,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
         for (SessionEntity sessionEntity : schedule.getSessionEntities()){
             Log.i("DB session", sessionEntity.getTime().toString());
             Log.i("DB session", sessionEntity.getShow().getName());
-            weekViewEvents.add(EventUtils.sessionToEvent(this, sessionEntity));
+            weekViewEvents.add(EventUtils.schedulableToEvent(this, sessionEntity));
         }
 
         return weekViewEvents;

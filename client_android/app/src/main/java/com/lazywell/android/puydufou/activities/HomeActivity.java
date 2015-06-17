@@ -46,9 +46,6 @@ public class HomeActivity extends Activity implements View.OnClickListener{
             show.setDuration(duration);
             show.save();
 
-            SessionEntity session = new SessionEntity(new Date(), show);
-            session.save();
-
             Date session2Date = new Date();
             session2Date.setHours(i);
             session2Date.setMinutes(0);

@@ -5,30 +5,21 @@ import android.util.Log;
 
 import com.alamkanak.weekview.WeekViewEvent;
 import com.lazywell.android.puydufou.R;
-import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
-
-import java.util.Calendar;
+import com.lazywell.android.puydufou.entities.ISchedulable;
 
 /**
  * Created by victor on 17/06/2015.
  */
 public class EventUtils {
 
-    public static WeekViewEvent sessionToEvent(Context context, SessionEntity sessionEntity){
-        Calendar startTime = Calendar.getInstance();
-        startTime.setTime(sessionEntity.getTime());
-
-        Calendar endTime = (Calendar) startTime.clone();
-        endTime.add(Calendar.HOUR, sessionEntity.getShow().getDuration().getHours());
-
-        WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShow().getName(), startTime, endTime);
+    public static WeekViewEvent schedulableToEvent(Context context, ISchedulable schedulable){
+        WeekViewEvent event = new WeekViewEvent(schedulable.getId(), schedulable.getTitle(), schedulable.getStartDate(), schedulable.getEndDate());
         event.setColor(
                 context.getResources().getColor(
-                        getPriorityColor(
-                                sessionEntity.getShow().getPriority()
-                        )));
+                        schedulable.getColor()
+                ));
 
-        Log.d("EVENT", "(session)Start Time: " + sessionEntity.getTime().toString());
+        Log.d("EVENT", "(session)Start Time: " + schedulable.getStartDate().getTime().toString());
         Log.d("EVENT", "(event)Start Time: " + event.getStartTime().getTime().toString());
         Log.d("EVENT", "(event)End Time: " + event.getEndTime().getTime().toString());
         return event;
