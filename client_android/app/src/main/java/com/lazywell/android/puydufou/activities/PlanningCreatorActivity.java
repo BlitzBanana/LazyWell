@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.AlertDialogWrapper;
@@ -22,24 +23,31 @@ import com.lazywell.android.puydufou.entities.persistent.ScheduleSessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 import com.lazywell.android.puydufou.tools.EventUtils;
+import com.lazywell.android.puydufou.tools.SessionEventSelector;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class PlanningCreatorActivity extends AppCompatActivity implements View.OnClickListener, WeekView.MonthChangeListener, WeekView.EventClickListener, WeekView.EventLongPressListener {
+public class PlanningCreatorActivity extends AppCompatActivity implements View.OnClickListener,
+        WeekView.MonthChangeListener, WeekView.EventClickListener, WeekView.EventLongPressListener,
+        WeekView.EmptyViewClickListener {
 
     private ScheduleEntity schedule;
     private WeekView weekView;
+    private SessionEventSelector eventSelector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        schedule = ScheduleEntity.findById(ScheduleEntity.class, 1l);
+        eventSelector = new SessionEventSelector(this, schedule);
         setContentView(R.layout.activity_planning_creator);
         weekView = (WeekView) findViewById(R.id.weekView);
         weekView.setOnEventClickListener(this);
         weekView.setEventLongPressListener(this);
         weekView.setMonthChangeListener(this);
+        weekView.setEmptyViewClickListener(this);
         findViewById(R.id.button_add).setOnClickListener(this);
     }
 
@@ -57,6 +65,11 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
             return true;
         } else if (id == R.id.planning_creator_reset){
             showResetPopup();
+            return true;
+        } else if (id == R.id.planning_creator_delete) {
+            eventSelector.deleteSelected();
+            switchMenu();
+            weekView.notifyDatasetChanged();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -76,8 +89,11 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
         return loadEvents(newYear, newMonth);
     }
 
-    private String getEventTitle(Calendar time) {
-        return String.format("Event of %02d:%02d %s/%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
+    @Override
+    public void onEmptyViewClicked(Calendar calendar) {
+        eventSelector.unselectAll();
+        switchMenu();
+        weekView.invalidate();
     }
 
     @Override
@@ -87,13 +103,40 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onEventLongPress(WeekViewEvent weekViewEvent, RectF rectF) {
+        if(!eventSelector.isSelected(weekViewEvent))
+            eventSelector.select(weekViewEvent);
+        else
+            eventSelector.unselect(weekViewEvent);
+        switchMenu();
+        weekView.invalidate();
+    }
 
+    public void switchMenu(){
+        if(eventSelector.isEmpty())
+            showStandardMenu();
+        else
+            showDeleteMenu();
+        ((TextView)findViewById(R.id.planning_creator_delete))
+                .setText(getResources().getString(R.string.planning_creator_delete) + "(" + eventSelector.count() + ")");
+        invalidateOptionsMenu();
+    }
+
+    public void showDeleteMenu(){
+        findViewById(R.id.planning_creator_delete).setVisibility(View.VISIBLE);
+        findViewById(R.id.planning_creator_recommended).setVisibility(View.INVISIBLE);
+        findViewById(R.id.planning_creator_reset).setVisibility(View.INVISIBLE);
+        Log.d("MENU", "showDeleteMenu");
+    }
+
+    public void showStandardMenu(){
+        findViewById(R.id.planning_creator_delete).setVisibility(View.INVISIBLE);
+        findViewById(R.id.planning_creator_recommended).setVisibility(View.VISIBLE);
+        findViewById(R.id.planning_creator_reset).setVisibility(View.VISIBLE);
+        Log.d("MENU", "showStandardMenu");
     }
 
     public List<WeekViewEvent> loadEvents(int newYear, int newMonth){
         List<WeekViewEvent> weekViewEvents = new ArrayList<>();
-
-        schedule = ScheduleEntity.findById(ScheduleEntity.class, 1l);
 
         if(schedule == null) {
             schedule = new ScheduleEntity();
@@ -101,14 +144,14 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
             schedule.save();
         }
 
-        for (SessionEntity sessionEntity : schedule.getSessionEntities()){
+        for (SessionEntity sessionEntity : schedule.getSessionEntities()) {
             Log.i("DB session", sessionEntity.getTime().toString());
             Log.i("DB session", sessionEntity.getShow().getName());
             weekViewEvents.add(EventUtils.schedulableToEvent(this, sessionEntity, newYear, newMonth));
         }
         Log.d("EVENTS", "Number of events: " + weekViewEvents.size());
 
-        for(WeekViewEvent event1: weekViewEvents){
+        for(WeekViewEvent event1: weekViewEvents) {
             Log.d("EVENTS", "--------------------------------------------");
             Log.d("EVENTS", "Name: " + event1.getName());
             Log.d("EVENTS", "Start: " + event1.getStartTime().getTime().toString());
@@ -131,6 +174,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
                         public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
                             Toast.makeText(PlanningCreatorActivity.this, "Clicked item " + which, Toast.LENGTH_SHORT).show();
                             showSessionsPopup(adapter.getItemId(which));
+                            dialog.dismiss();
                         }
                     })
             .show();
