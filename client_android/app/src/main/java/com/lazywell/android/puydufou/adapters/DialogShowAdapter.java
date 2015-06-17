@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.lazywell.android.puydufou.R;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -53,8 +54,18 @@ public class DialogShowAdapter extends BaseAdapter {
                 .inflate(R.layout.dialog_show_item, parent, false);
 
         ShowEntity show = (ShowEntity) getItem(position);
-        TextView showName = (TextView) rootView.findViewById(R.id.show_name);
-        showName.setText(show.getId() + ":" + show.getName());
+        TextView showName = (TextView) rootView.findViewById(R.id.show_name_view);
+        TextView descriptionView = (TextView) rootView.findViewById(R.id.description_view);
+        TextView rateView = (TextView) rootView.findViewById(R.id.rate_view);
+        TextView durationView = (TextView) rootView.findViewById(R.id.duration_view);
+
+        Calendar duration = (Calendar)Calendar.getInstance().clone();
+        duration.setTime(show.getDuration());
+
+        showName.setText(show.getName());
+        descriptionView.setText(show.getDescription());
+        rateView.setText(show.getScore() + "/5");
+        durationView.setText("(" + duration.get(Calendar.HOUR) + "h" + duration.get(Calendar.MINUTE) + ")");
 
         return rootView;
     }

@@ -10,4 +10,9 @@
         android:title="@string/planning_creator_reset"
         android:orderInCategory="100"
         app:showAsAction="ifRoom" />
+    <item android:id="@+id/planning_creator_delete"
+        android:title="@string/planning_creator_delete"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:visible="true"/>
 </menu>

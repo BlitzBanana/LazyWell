@@ -20,4 +20,5 @@
     <string name="planning_creator_reset_negative">Annuler</string>
     <string name="planning_creator_reset_message">Êtes vous sûr?</string>
     <string name="title_activity_show_details">Détail du spectacle</string>
+    <string name="planning_creator_delete">Supprimer</string>
 </resources>

@@ -18,9 +18,11 @@ public class EventUtils {
         Calendar startTime = schedulable.getStartDate();
         startTime.set(Calendar.MONTH, newMonth - 1);
         startTime.set(Calendar.YEAR, newYear);
+
         Calendar endTime = schedulable.getEndDate();
         endTime.set(Calendar.MONTH, newMonth - 1);
-        startTime.set(Calendar.YEAR, newYear);
+        endTime.set(Calendar.YEAR, newYear);
+
         WeekViewEvent event = new WeekViewEvent(schedulable.getId(), schedulable.getTitle(), startTime, endTime);
         event.setColor(
                 context.getResources().getColor(

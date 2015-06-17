@@ -28,7 +28,7 @@ public class ScheduleEntity extends SugarRecord<ScheduleEntity> {
 
     public List<SessionEntity> getSessionEntities() {
         List<SessionEntity> sessionEntities = new ArrayList<>();
-        List<ScheduleSessionEntity> scheduleSessionEntities = ScheduleSessionEntity.getScheduleSessionEntities(this);
+        List<ScheduleSessionEntity> scheduleSessionEntities = ScheduleSessionEntity.getScheduleSession(this);
 
         for(ScheduleSessionEntity scheduleSessionEntity : scheduleSessionEntities){
             sessionEntities.add(scheduleSessionEntity.getSession());
