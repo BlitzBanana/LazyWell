@@ -21,5 +21,4 @@
     <string name="planning_creator_reset_message">Are you sure?</string>
     <string name="planning_creator_reset_positive">Confirm</string>
     <string name="planning_creator_reset_negative">Cancel</string>
-    <string name="planning_creator_delete">Delete</string>
-</resources>
+    <string name="dialog_rate_title">Rate show</string>    <string name="planning_creator_delete">Delete</string></resources>
