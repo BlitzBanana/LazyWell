@@ -14,4 +14,10 @@
     <string name="planning_creator_recommended">Planning recommendé</string>
     <string name="title_activity_planning_creator">Planning personnalisé</string>
     <string name="add_event_title">Ajouter un spectacle</string>
+    <string name="planning_creator_reset">Tout effacer</string>
+    <string name="planning_creator_reset_title">Tout effacer</string>
+    <string name="planning_creator_reset_positive">Confirmer</string>
+    <string name="planning_creator_reset_negative">Annuler</string>
+    <string name="planning_creator_reset_message">Êtes vous sûr?</string>
+    <string name="title_activity_show_details">Détail du spectacle</string>
 </resources>

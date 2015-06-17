@@ -1,6 +1,7 @@
 package com.lazywell.android.puydufou.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,7 @@ public class DialogShowAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
+        Log.i("SHOW", "Shown id: " + showEntities.get(position).getId() + "   position: " + position);
         return showEntities.get(position).getId();
     }
 
@@ -52,7 +54,7 @@ public class DialogShowAdapter extends BaseAdapter {
 
         ShowEntity show = (ShowEntity) getItem(position);
         TextView showName = (TextView) rootView.findViewById(R.id.show_name);
-        showName.setText(show.getName());
+        showName.setText(show.getId() + ":" + show.getName());
 
         return rootView;
     }

@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ShowClient {
 
-    public ShowEntity[] getShows(){
+    public List<ShowEntity> getShows(){
 
         // Use asyncTask and KSOAP to retrieve all ShowEntities
         List<ShowEntity> showEntities = new ArrayList<>();
@@ -19,6 +19,6 @@ public class ShowClient {
         for (ShowEntity showEntity : showEntities)
             showEntity.save();
 
-        return null;
+        return showEntities;
     }
 }

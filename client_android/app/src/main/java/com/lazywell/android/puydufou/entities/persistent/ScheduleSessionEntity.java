@@ -33,6 +33,10 @@ public class ScheduleSessionEntity extends SugarRecord<ScheduleSessionEntity> {
                 .list();
     }
 
+    public static void deleteBySchedule(ScheduleEntity schedule){
+        deleteAll(ScheduleSessionEntity.class, "schedule = ?", schedule.getId().toString());
+    }
+
     public ScheduleEntity getSchedule() {
         return schedule;
     }

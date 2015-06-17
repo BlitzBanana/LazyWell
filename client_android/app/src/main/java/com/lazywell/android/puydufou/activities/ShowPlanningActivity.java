@@ -144,7 +144,7 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
     public List<WeekViewEvent> loadEvents(){
         List<WeekViewEvent> events = new ArrayList<>();
         ShowClient showClient = new ShowClient();
-        ShowEntity[] showEntities = showClient.getShows();
+        List<ShowEntity> showEntities = showClient.getShows();
 
         for (ShowEntity showEntity : showEntities){
             for (SessionEntity sessionEntity : showEntity.getSessionEntities()){
@@ -165,9 +165,8 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
         Calendar endTime = (Calendar) startTime.clone();
         endTime.add(Calendar.HOUR, 1);
         endTime.set(Calendar.MONTH, now.getMonth());
-        WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShowEntity().getName(), startTime, endTime);
+        WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShow().getName(), startTime, endTime);
         event.setColor(getResources().getColor(R.color.material_blue_grey_800));
         return event;
     }
-
 }

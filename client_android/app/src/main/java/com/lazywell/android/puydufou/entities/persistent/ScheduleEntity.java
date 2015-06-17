@@ -14,7 +14,7 @@ public class ScheduleEntity extends SugarRecord<ScheduleEntity> {
 
     public ScheduleEntity(){}
 
-    public ScheduleEntity(String name, List<SessionEntity> sessionEntities){
+    public ScheduleEntity(String name){
         this.name = name;
     }
 

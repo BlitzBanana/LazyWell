@@ -5,5 +5,9 @@
     <item android:id="@+id/planning_creator_recommended"
         android:title="@string/planning_creator_recommended"
         android:orderInCategory="100"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/planning_creator_reset"
+        android:title="@string/planning_creator_reset"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
 </menu>

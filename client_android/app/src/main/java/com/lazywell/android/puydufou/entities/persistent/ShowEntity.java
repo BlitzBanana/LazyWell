@@ -3,6 +3,7 @@ package com.lazywell.android.puydufou.entities.persistent;
 import com.lazywell.android.puydufou.entities.ISchedulable;
 import com.orm.SugarRecord;
 
+import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
     private String description;
     private int priority;
     private Date creationDate;
+    private Date duration;
     private byte[] image;
     private int actorNumber;
     private double score;
@@ -30,7 +32,8 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
             byte[] image,
             int actorNumber,
             double score,
-            CoordinatesEntity coordinates){
+            CoordinatesEntity coordinates,
+            Date duration){
         this.name = name;
         this.description = description;
         this.priority = priority;
@@ -39,6 +42,7 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
         this.actorNumber = actorNumber;
         this.score = score;
         this.coordinates = coordinates;
+        this.duration = duration;
     }
 
     public String getName() {
@@ -103,6 +107,14 @@ public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable 
 
     public void setCoordinates(CoordinatesEntity coordinates) {
         this.coordinates = coordinates;
+    }
+
+    public Date getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Date duration) {
+        this.duration = duration;
     }
 
     public List<SessionEntity> getSessionEntities() {
