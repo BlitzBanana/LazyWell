@@ -23,7 +23,7 @@
         android:text="Lieu : "
         android:id="@+id/textView2"
         android:layout_marginStart="33dp"
-        android:layout_below="@+id/buttonNote"
+        android:layout_below="@+id/buttonScore"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Noter"
-        android:id="@+id/buttonNote"
+        android:id="@+id/buttonScore"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="29dp" />
@@ -51,7 +51,7 @@
         android:id="@+id/imageShow"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/buttonNote"
+        android:layout_above="@+id/buttonScore"
         android:layout_alignParentEnd="true" />
 
     <TextView
@@ -71,7 +71,7 @@
         android:text="Medium Text"
         android:id="@+id/moyenne"
         android:layout_alignTop="@+id/textView"
-        android:layout_toStartOf="@+id/buttonNote" />
+        android:layout_toStartOf="@+id/buttonScore" />
 
     <TextView
         android:layout_width="wrap_content"
