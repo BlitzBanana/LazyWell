@@ -1,8 +1,10 @@
 package com.lazywell.android.puydufou.activities;
 
+import android.content.Intent;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +17,7 @@ import com.lazywell.android.puydufou.R;
 import com.lazywell.android.puydufou.entities.persistent.ScheduleEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
+import com.lazywell.android.puydufou.tools.EventUtils;
 import com.lazywell.android.puydufou.webservices.ShowClient;
 
 import java.text.SimpleDateFormat;
@@ -122,8 +125,13 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
     }
 
     @Override
-    public void onEventClick(WeekViewEvent event, RectF eventRect) {
+    public void onEventClick(WeekViewEvent event, RectF eventRect)
+    {
         Toast.makeText(this, "Clicked " + event.getName(), Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(ShowPlanningActivity.this, ShowDetailsActivity.class);
+        startActivity(intent);
+
     }
 
     @Override
@@ -132,7 +140,8 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
     }
 
     @Override
-    public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
+    public List<WeekViewEvent> onMonthChange(int newYear, int newMonth)
+    {
         return loadEvents();
     }
 
@@ -148,25 +157,10 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
 
         for (ShowEntity showEntity : showEntities){
             for (SessionEntity sessionEntity : showEntity.getSessionEntities()){
-                events.add(sessionToEvent(sessionEntity));
+                events.add(EventUtils.sessionToEvent(this, sessionEntity));
             }
         }
 
         return events;
-    }
-
-    public WeekViewEvent sessionToEvent(SessionEntity sessionEntity){
-        Date now = new Date();
-        Calendar startTime = Calendar.getInstance();
-        startTime.set(Calendar.HOUR_OF_DAY, sessionEntity.getTime().getHours());
-        startTime.set(Calendar.MINUTE, sessionEntity.getTime().getMinutes());
-        startTime.set(Calendar.MONTH, now.getMonth());
-        startTime.set(Calendar.YEAR, now.getYear());
-        Calendar endTime = (Calendar) startTime.clone();
-        endTime.add(Calendar.HOUR, 1);
-        endTime.set(Calendar.MONTH, now.getMonth());
-        WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShow().getName(), startTime, endTime);
-        event.setColor(getResources().getColor(R.color.material_blue_grey_800));
-        return event;
     }
 }
