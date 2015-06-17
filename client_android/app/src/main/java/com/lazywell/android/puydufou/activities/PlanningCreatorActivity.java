@@ -1,6 +1,7 @@
 package com.lazywell.android.puydufou.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -99,6 +100,11 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
     @Override
     public void onEventClick(WeekViewEvent weekViewEvent, RectF rectF) {
         Toast.makeText(this, "Clicked " + weekViewEvent.getId(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ShowDetailsActivity.class);
+        SessionEntity session = SessionEntity.findById(SessionEntity.class, weekViewEvent.getId());
+        Long showId = session.getShow().getId();
+        intent.putExtra("showId", showId);
+        startActivity(intent);
     }
 
     @Override

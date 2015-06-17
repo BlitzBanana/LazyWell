@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">PuyDuFou</string>
 
-    <string name="button_discover">Discover</string>
-    <string name="button_plan">Plan</string>
-    <string name="button_entertainment">Entertainment</string>
+    <string name="button_discover">Show planning</string>
+    <string name="button_plan">Custom planning</string>
+    <string name="button_entertainment">Quizz &amp; Photo</string>
     <string name="title_activity_show_planning">Shows</string>
 
     <string name="hello_world">Hello world!</string>
@@ -21,4 +21,7 @@
     <string name="planning_creator_reset_message">Are you sure?</string>
     <string name="planning_creator_reset_positive">Confirm</string>
     <string name="planning_creator_reset_negative">Cancel</string>
-    <string name="dialog_rate_title">Rate show</string>    <string name="planning_creator_delete">Delete</string></resources>
+    <string name="dialog_rate_title">Rate show</string>    <string name="planning_creator_delete">Delete</string>
+    <string name="button_recommended_plan">Recommended planning</string>
+    <string name="title_activity_recommended_planning">Recommended planning</string>
+</resources>
