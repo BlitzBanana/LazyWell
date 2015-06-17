@@ -5,6 +5,6 @@ jdk:
   - openjdk7
 
 before_install:
- - chmod +x gradlew
+ - chmod +x client_android/gradlew
 
 before_script: cd client_android
