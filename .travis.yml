@@ -11,5 +11,3 @@ before_install:
  - chmod +x client_android/gradlew
 
 before_script: cd client_android
-
-script: "./gradlew build"
