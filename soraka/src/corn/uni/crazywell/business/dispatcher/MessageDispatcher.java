@@ -9,6 +9,7 @@ import corn.uni.crazywell.common.exception.TaskFailedException;
 import corn.uni.crazywell.common.exception.TaskNotFoundException;
 
 import javax.ejb.ActivationConfigProperty;
+import javax.ejb.EJB;
 import javax.ejb.MessageDriven;
 import javax.inject.Inject;
 import javax.jms.*;
@@ -24,9 +25,11 @@ import java.util.List;
                 "wellQueue")
 })
 public class MessageDispatcher implements MessageListener {
-
     @Inject
     private JMSContext context;
+    @Inject
+    private GetShowTask getShowTask;
+
 
     @Override
     public void onMessage(Message message) {
@@ -69,7 +72,7 @@ public class MessageDispatcher implements MessageListener {
     private ReturnableTask dispatch(Bubble.Process processToRelease) throws TaskNotFoundException {
         switch (processToRelease){
             case GET_SHOWS:
-                return new GetShowTask();
+                return getShowTask;
             case process2:
                 return null;
             case process3:

@@ -7,13 +7,21 @@ import com.alamkanak.weekview.WeekViewEvent;
 import com.lazywell.android.puydufou.R;
 import com.lazywell.android.puydufou.entities.ISchedulable;
 
+import java.util.Calendar;
+
 /**
  * Created by victor on 17/06/2015.
  */
 public class EventUtils {
 
-    public static WeekViewEvent schedulableToEvent(Context context, ISchedulable schedulable){
-        WeekViewEvent event = new WeekViewEvent(schedulable.getId(), schedulable.getTitle(), schedulable.getStartDate(), schedulable.getEndDate());
+    public static WeekViewEvent schedulableToEvent(Context context, ISchedulable schedulable, int newYear, int newMonth){
+        Calendar startTime = schedulable.getStartDate();
+        startTime.set(Calendar.MONTH, newMonth - 1);
+        startTime.set(Calendar.YEAR, newYear);
+        Calendar endTime = schedulable.getEndDate();
+        endTime.set(Calendar.MONTH, newMonth - 1);
+        startTime.set(Calendar.YEAR, newYear);
+        WeekViewEvent event = new WeekViewEvent(schedulable.getId(), schedulable.getTitle(), startTime, endTime);
         event.setColor(
                 context.getResources().getColor(
                         schedulable.getColor()

@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.jboss.seam.microcontainer.HibernateFactory;
 
+import javax.ejb.Local;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -21,9 +22,9 @@ public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
     private EntityManager entityManager;
 
     public AbstractGenericDAO(final Class<T> clazz){
+        System.out.println("######################## DAO HAS BEEN CREATED " +clazz.getName());
         this.clazz = clazz;
     }
-
     public AbstractGenericDAO(){
     }
 
@@ -66,6 +67,9 @@ public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
             Query query = session.createQuery("from " + clazz.getName());
             result = query.list();
             transaction.commit();
+            if(result == null){
+                throw new DAOException("CUSTOM failed to get any result");
+            }
             return result;
         } catch (Exception e) {
             e.printStackTrace();

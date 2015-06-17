@@ -5,7 +5,8 @@ import corn.uni.crazywell.common.dto.impl.CoordinateDTO;
 import corn.uni.crazywell.common.dto.impl.ShowDTO;
 import corn.uni.crazywell.common.exception.ConversionException;
 import corn.uni.crazywell.common.exception.DAOException;
-import corn.uni.crazywell.data.dao.GenericDAO;
+import corn.uni.crazywell.data.dao.AbstractGenericDAO;
+import corn.uni.crazywell.data.dao.impl.CoordinateDao;
 import corn.uni.crazywell.data.entities.CoordinatesEntity;
 import corn.uni.crazywell.data.entities.ShowEntity;
 
@@ -20,7 +21,7 @@ import javax.inject.Named;
 @Stateless
 public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> {
 
-    @Inject private GenericDAO<CoordinatesEntity> coordinateDAO;
+    @Inject private AbstractGenericDAO<CoordinatesEntity> coordinateDao;
     @Inject private DTOConverterLocal<CoordinatesEntity, CoordinateDTO> coordinateConverter;
 
     @Override
@@ -41,7 +42,7 @@ public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> 
 
     private void convertCoordinateInternal(final ShowEntity source, final ShowDTO target) throws ConversionException {
         try {
-            final CoordinatesEntity coordinatesEntity = coordinateDAO.find(source.getCoordinateId());
+            final CoordinatesEntity coordinatesEntity = coordinateDao.find(source.getCoordinateId());
             final CoordinateDTO coordinateDTO = new CoordinateDTO();
             coordinateConverter.convert(coordinatesEntity, coordinateDTO);
             target.setCoordinate(coordinateDTO);

@@ -24,6 +24,7 @@ import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 import com.lazywell.android.puydufou.tools.EventUtils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class PlanningCreatorActivity extends AppCompatActivity implements View.OnClickListener, WeekView.MonthChangeListener, WeekView.EventClickListener, WeekView.EventLongPressListener {
@@ -72,7 +73,11 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
 
     @Override
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
-        return loadEvents();
+        return loadEvents(newYear, newMonth);
+    }
+
+    private String getEventTitle(Calendar time) {
+        return String.format("Event of %02d:%02d %s/%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
     }
 
     @Override
@@ -85,12 +90,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
 
     }
 
-    public void refreshWeekView(){
-        loadEvents();
-        weekView.notifyDatasetChanged();
-    }
-
-    public List<WeekViewEvent> loadEvents(){
+    public List<WeekViewEvent> loadEvents(int newYear, int newMonth){
         List<WeekViewEvent> weekViewEvents = new ArrayList<>();
 
         schedule = ScheduleEntity.findById(ScheduleEntity.class, 1l);
@@ -104,7 +104,16 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
         for (SessionEntity sessionEntity : schedule.getSessionEntities()){
             Log.i("DB session", sessionEntity.getTime().toString());
             Log.i("DB session", sessionEntity.getShow().getName());
-            weekViewEvents.add(EventUtils.schedulableToEvent(this, sessionEntity));
+            weekViewEvents.add(EventUtils.schedulableToEvent(this, sessionEntity, newYear, newMonth));
+        }
+        Log.d("EVENTS", "Number of events: " + weekViewEvents.size());
+
+        for(WeekViewEvent event1: weekViewEvents){
+            Log.d("EVENTS", "--------------------------------------------");
+            Log.d("EVENTS", "Name: " + event1.getName());
+            Log.d("EVENTS", "Start: " + event1.getStartTime().getTime().toString());
+            Log.d("EVENTS", "End: " + event1.getEndTime().getTime().toString());
+            Log.d("EVENTS", "--------------------------------------------");
         }
 
         return weekViewEvents;
@@ -145,7 +154,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
                                 SessionEntity session = SessionEntity.findById(SessionEntity.class, sessionId);
                                 ScheduleSessionEntity scheduleSession = new ScheduleSessionEntity(schedule, session);
                                 scheduleSession.save();
-                                refreshWeekView();
+                                weekView.notifyDatasetChanged();
                                 dialog.dismiss();
                             }
                         })
@@ -160,7 +169,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ScheduleSessionEntity.deleteBySchedule(schedule);
-                        refreshWeekView();
+                        weekView.notifyDatasetChanged();
                         dialog.dismiss();
                     }
                 })

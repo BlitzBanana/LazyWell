@@ -142,7 +142,7 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
     @Override
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth)
     {
-        return loadEvents();
+        return loadEvents(newYear, newMonth);
     }
 
 
@@ -150,14 +150,14 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
         return String.format("Event of %02d:%02d %s/%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
     }
 
-    public List<WeekViewEvent> loadEvents(){
+    public List<WeekViewEvent> loadEvents(int newYear, int newMonth){
         List<WeekViewEvent> events = new ArrayList<>();
         ShowClient showClient = new ShowClient();
         List<ShowEntity> showEntities = showClient.getShows();
 
         for (ShowEntity showEntity : showEntities){
             for (SessionEntity sessionEntity : showEntity.getSessionEntities()){
-                events.add(EventUtils.schedulableToEvent(this, sessionEntity));
+                events.add(EventUtils.schedulableToEvent(this, sessionEntity, newYear, newMonth));
             }
         }
 
