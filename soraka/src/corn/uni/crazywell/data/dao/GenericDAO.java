@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface GenericDAO<T>{
     T find(Object id) throws DAOException;
-    List<T> findAll();
+    List<T> findAll() throws DAOException;
     boolean persist(T instance) throws DAOException;
     boolean delete(T instance) throws DAOException;
 }

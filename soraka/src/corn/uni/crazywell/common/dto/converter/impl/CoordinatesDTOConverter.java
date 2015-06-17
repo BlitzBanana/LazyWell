@@ -14,7 +14,7 @@ import javax.inject.Named;
 @Stateless
 public class CoordinatesDTOConverter implements DTOConverterLocal<CoordinatesEntity, CoordinateDTO> {
     @Override
-    public void convert(CoordinatesEntity source, CoordinateDTO target) {
+    public void convert(final CoordinatesEntity source, final CoordinateDTO target) {
         target.setId(source.getId());
         target.setLatitude(source.getLatitude());
         target.setLongitude(source.getLongitude());

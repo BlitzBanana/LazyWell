@@ -16,9 +16,4 @@ public class ShowDAO extends AbstractGenericDAO<ShowEntity> {
     public ShowDAO(){
         super(ShowEntity.class);
     }
-
-    @Override
-    public List<ShowEntity> findAll() {
-        return null;
-    }
 }

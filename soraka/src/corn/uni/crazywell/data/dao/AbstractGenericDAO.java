@@ -1,9 +1,14 @@
 package corn.uni.crazywell.data.dao;
 
 import corn.uni.crazywell.common.exception.DAOException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.jboss.seam.microcontainer.HibernateFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * Created by blacksheep on 29/05/15.
@@ -50,6 +55,23 @@ public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
         } catch (Exception ex) {
             throw new DAOException("CUSTOM - Failed to persist instance from DAO");
         }
+    }
+
+    @Override
+    public List<T> findAll() throws DAOException {
+        List<T> result;
+        try{
+            Session session = new HibernateFactory().getSessionFactory().openSession();
+            Transaction transaction = session.beginTransaction();
+            Query query = session.createQuery("from " + clazz.getName());
+            result = query.list();
+            transaction.commit();
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new DAOException("CUSTOM failed to get all result. See internal error.");
+        }
+
     }
 
     /*Getters and setters*/

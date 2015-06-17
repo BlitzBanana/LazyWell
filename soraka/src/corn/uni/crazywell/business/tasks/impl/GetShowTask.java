@@ -5,6 +5,7 @@ import corn.uni.crazywell.common.dto.DTO;
 import corn.uni.crazywell.common.dto.converter.DTOConverterLocal;
 import corn.uni.crazywell.common.dto.impl.ShowDTO;
 import corn.uni.crazywell.common.exception.ConversionException;
+import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.common.exception.TaskFailedException;
 import corn.uni.crazywell.data.dao.impl.ShowDAO;
 import corn.uni.crazywell.data.entities.ShowEntity;
@@ -26,10 +27,10 @@ public class GetShowTask implements ReturnableTask {
 
     @Override
     public List<? extends DTO> run() throws TaskFailedException {
-        final List<ShowEntity> showsList = showDAO.findAll();
-        final List<ShowDTO> outputList = new ArrayList<>();
-        ShowDTO showDTO;
         try {
+            final List<ShowEntity> showsList = showDAO.findAll();
+            final List<ShowDTO> outputList = new ArrayList<>();
+            ShowDTO showDTO;
             for (ShowEntity show : showsList){
                 showDTO = new ShowDTO();
                 showConverter.convert(show, showDTO);
@@ -37,7 +38,11 @@ public class GetShowTask implements ReturnableTask {
             }
             return outputList;
         } catch (ConversionException e) {
-            throw new TaskFailedException("The getShowTask result in a fail");
+            e.printStackTrace();
+            throw new TaskFailedException("CUSTOM - The getShowTask result in a fail");
+        } catch (DAOException e) {
+            e.printStackTrace();
+            throw new TaskFailedException("CUSTOM - Fail to get shows from DB");
         }
     }
 }

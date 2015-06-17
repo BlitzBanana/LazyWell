@@ -1,6 +1,7 @@
 package corn.uni.crazywell.business.dispatcher;
 
 import corn.uni.crazywell.business.tasks.ReturnableTask;
+import corn.uni.crazywell.business.tasks.UnreturnableTask;
 import corn.uni.crazywell.business.tasks.impl.GetShowTask;
 import corn.uni.crazywell.common.Bubble;
 import corn.uni.crazywell.common.dto.DTO;
@@ -30,33 +31,39 @@ public class MessageDispatcher implements MessageListener {
     @Override
     public void onMessage(Message message) {
         try {
+            //avec retour
             if(message.getJMSReplyTo() != null) {
+                //reception
                 Bubble bubble = message.getBody(Bubble.class);
-
-                //Réaliser le traitement ici
+                //Dispatching
                 ReturnableTask task = dispatch(bubble.getHeader());
+                //Traitement & retour
                 List<? extends DTO> result  = task.run();
-
-
-                Destination replyTo = message.getJMSReplyTo();
-                Bubble respBubble = new Bubble();
-                respBubble.addBodyElement(result);
-                ObjectMessage response = context.createObjectMessage(respBubble);
-                context.createProducer().send(replyTo, response);
+                //reponse
+                sendResponse(message.getJMSReplyTo());
             }
             else {
+                //sans retour
                 Bubble bubble = message.getBody(Bubble.class);
-
-                System.out.println(bubble.getBody());
+                UnreturnableTask task = dispatchNoReturn(bubble.getHeader());
+                task.run();
             }
         } catch (JMSException e) {
             e.printStackTrace();
         } catch (TaskNotFoundException e) {
-            //TODO A GERER!!
             e.printStackTrace();
         } catch (TaskFailedException e) {
             e.printStackTrace();
         }
+    }
+
+    private void sendResponse(Destination replyTo, Object... responses){
+        Bubble respBubble = new Bubble();
+        for(Object obj : responses){
+            respBubble.addBodyElement(obj);
+        }
+        ObjectMessage response = context.createObjectMessage(respBubble);
+        context.createProducer().send(replyTo, response);
     }
 
     private ReturnableTask dispatch(Bubble.Process processToRelease) throws TaskNotFoundException {
@@ -68,6 +75,10 @@ public class MessageDispatcher implements MessageListener {
             case process3:
                 return null;
         }
+        throw new TaskNotFoundException("Aucune tache n'a été trouvée pour la Bubble fournie");
+    }
+
+    private UnreturnableTask dispatchNoReturn(Bubble.Process processToRelease) throws TaskNotFoundException{
         throw new TaskNotFoundException("Aucune tache n'a été trouvée pour la Bubble fournie");
     }
 }
