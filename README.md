@@ -2,6 +2,8 @@
 Exia.Cesi A3 RIL
 Projet Jave EE / Android
 
+[![Build Status](https://magnum.travis-ci.com/BlitzBanana/LazyWell.svg?token=qdQynEeNdWpLExkaY8Ra)](https://magnum.travis-ci.com/BlitzBanana/LazyWell)
+
 # Fonctionnalités:
 
 * Afficher le planning des spectacles futurs (temps réel)
