@@ -10,16 +10,21 @@ import corn.uni.crazywell.common.exception.TaskFailedException;
 import corn.uni.crazywell.data.dao.GenericDAO;
 import corn.uni.crazywell.data.entities.RestaurantEntity;
 
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by blacksheep on 16/06/15.
  */
+@Named("restaurantTask")
+@Stateless
 public class GetRestaurantsTask implements ReturnableTask {
-    @Inject private GenericDAO<RestaurantEntity> restaurantDAO;
-    @Inject private DTOConverterLocal<RestaurantEntity, RestaurantDTO> restaurantConverter;
+    private GenericDAO<RestaurantEntity> restaurantDAO;
+    private DTOConverterLocal<RestaurantEntity, RestaurantDTO> restaurantConverter;
 
     @Override
     public List<? extends DTO> run() throws TaskFailedException {

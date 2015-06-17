@@ -1,5 +1,6 @@
 package corn.uni.crazywell.business.tasks.impl;
 
+import corn.uni.crazywell.business.dispatcher.StupidInterface;
 import corn.uni.crazywell.business.tasks.ReturnableTask;
 import corn.uni.crazywell.common.dto.DTO;
 import corn.uni.crazywell.common.dto.converter.DTOConverterLocal;
@@ -7,9 +8,11 @@ import corn.uni.crazywell.common.dto.impl.ShowDTO;
 import corn.uni.crazywell.common.exception.ConversionException;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.common.exception.TaskFailedException;
-import corn.uni.crazywell.data.dao.impl.ShowDAO;
+import corn.uni.crazywell.data.dao.AbstractGenericDAO;
+import corn.uni.crazywell.data.dao.GenericDAO;
 import corn.uni.crazywell.data.entities.ShowEntity;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -19,21 +22,33 @@ import java.util.List;
 /**
  * Created by blacksheep on 16/06/15.
  */
-@Named
 @Stateless
 public class GetShowTask implements ReturnableTask {
-    @Inject private ShowDAO showDAO;
-    @Inject private DTOConverterLocal<ShowEntity, ShowDTO> showConverter;
+
+    @EJB
+    private StupidInterface dummyPojo;
+    private GenericDAO<ShowEntity> showDao;
+    @Inject private DTOConverterLocal<ShowEntity, ShowDTO> showDTOConverter;
+
+    public GetShowTask(){
+        //Do nothing
+    }
+
+    @Inject
+    public GetShowTask(GenericDAO<ShowEntity> showDao){
+        if(showDao!=null)
+        this.showDao = showDao;
+    }
 
     @Override
     public List<? extends DTO> run() throws TaskFailedException {
         try {
-            final List<ShowEntity> showsList = showDAO.findAll();
+            final List<ShowEntity> showsList = showDao.findAll();
             final List<ShowDTO> outputList = new ArrayList<>();
             ShowDTO showDTO;
             for (ShowEntity show : showsList){
                 showDTO = new ShowDTO();
-                showConverter.convert(show, showDTO);
+                showDTOConverter.convert(show, showDTO);
                 outputList.add(showDTO);
             }
             return outputList;
@@ -44,5 +59,13 @@ public class GetShowTask implements ReturnableTask {
             e.printStackTrace();
             throw new TaskFailedException("CUSTOM - Fail to get shows from DB");
         }
+    }
+
+    public void setShowDao(AbstractGenericDAO<ShowEntity> showDao) {
+        this.showDao = showDao;
+    }
+
+    public void setShowDTOConverter(DTOConverterLocal<ShowEntity, ShowDTO> showDTOConverter) {
+        this.showDTOConverter = showDTOConverter;
     }
 }
