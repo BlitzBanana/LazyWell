@@ -1,13 +1,11 @@
 language: android
 android:
   components:
-    - build-tools-18.1.1
-    - android-18
+  	- tools
+    - build-tools-19.1.0
+    - android-19
+    - platform-tools
     - extra
-
-jdk:
-  - oraclejdk7
-  - openjdk7
 
 before_install:
  - chmod +x client_android/gradlew
