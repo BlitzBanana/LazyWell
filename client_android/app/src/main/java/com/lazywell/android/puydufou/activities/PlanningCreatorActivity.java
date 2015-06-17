@@ -21,6 +21,7 @@ import com.lazywell.android.puydufou.entities.persistent.ScheduleEntity;
 import com.lazywell.android.puydufou.entities.persistent.ScheduleSessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
+import com.lazywell.android.puydufou.tools.EventUtils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -72,11 +73,16 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
 
     @Override
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
-        return loadEvents();
+        return loadEvents(newYear, newMonth);
+    }
+
+    private String getEventTitle(Calendar time) {
+        return String.format("Event of %02d:%02d %s/%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
     }
 
     @Override
     public void onEventClick(WeekViewEvent weekViewEvent, RectF rectF) {
+        Toast.makeText(this, "Clicked " + weekViewEvent.getId(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -84,12 +90,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
 
     }
 
-    public void refreshWeekView(){
-        loadEvents();
-        weekView.notifyDatasetChanged();
-    }
-
-    public List<WeekViewEvent> loadEvents(){
+    public List<WeekViewEvent> loadEvents(int newYear, int newMonth){
         List<WeekViewEvent> weekViewEvents = new ArrayList<>();
 
         schedule = ScheduleEntity.findById(ScheduleEntity.class, 1l);
@@ -103,55 +104,33 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
         for (SessionEntity sessionEntity : schedule.getSessionEntities()){
             Log.i("DB session", sessionEntity.getTime().toString());
             Log.i("DB session", sessionEntity.getShow().getName());
-            weekViewEvents.add(sessionToEvent(sessionEntity));
+            weekViewEvents.add(EventUtils.schedulableToEvent(this, sessionEntity, newYear, newMonth));
+        }
+        Log.d("EVENTS", "Number of events: " + weekViewEvents.size());
+
+        for(WeekViewEvent event1: weekViewEvents){
+            Log.d("EVENTS", "--------------------------------------------");
+            Log.d("EVENTS", "Name: " + event1.getName());
+            Log.d("EVENTS", "Start: " + event1.getStartTime().getTime().toString());
+            Log.d("EVENTS", "End: " + event1.getEndTime().getTime().toString());
+            Log.d("EVENTS", "--------------------------------------------");
         }
 
         return weekViewEvents;
     }
 
-    public WeekViewEvent sessionToEvent(SessionEntity sessionEntity){
-        Calendar startTime = Calendar.getInstance();
-        startTime.setTime(sessionEntity.getTime());
-
-        Calendar endTime = (Calendar) startTime.clone();
-        endTime.add(Calendar.HOUR, sessionEntity.getShow().getDuration().getHours());
-
-        WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShow().getName(), startTime, endTime);
-        event.setColor(
-                getResources().getColor(
-                        getPriorityColor(
-                                sessionEntity.getShow().getPriority()
-                        )));
-
-        Log.d("EVENT", "(session)Start Time: " + sessionEntity.getTime().toString());
-        Log.d("EVENT", "(event)Start Time: " + event.getStartTime().getTime().toString());
-        Log.d("EVENT", "(event)End Time: " + event.getEndTime().getTime().toString());
-        return event;
-    }
-
-    public int getPriorityColor(int priority){
-        switch (priority){
-            case 0:
-                return R.color.red;
-            case 1:
-                return R.color.green;
-            default:
-                return R.color.blue;
-        }
-    }
-
     public void showShowsPopup(){
         List<ShowEntity> showEntities = ShowEntity.listAll(ShowEntity.class);
 
-        final DialogShowAdapter adpater = new DialogShowAdapter(this, showEntities);
+        final DialogShowAdapter adapter = new DialogShowAdapter(this, showEntities);
         new MaterialDialog.Builder(this)
             .title(R.string.add_event_title)
-            .adapter(adpater,
+            .adapter(adapter,
                     new MaterialDialog.ListCallback() {
                         @Override
                         public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
                             Toast.makeText(PlanningCreatorActivity.this, "Clicked item " + which, Toast.LENGTH_SHORT).show();
-                            showSessionsPopup(adpater.getItemId(which));
+                            showSessionsPopup(adapter.getItemId(which));
                         }
                     })
             .show();
@@ -175,7 +154,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
                                 SessionEntity session = SessionEntity.findById(SessionEntity.class, sessionId);
                                 ScheduleSessionEntity scheduleSession = new ScheduleSessionEntity(schedule, session);
                                 scheduleSession.save();
-                                refreshWeekView();
+                                weekView.notifyDatasetChanged();
                                 dialog.dismiss();
                             }
                         })
@@ -190,7 +169,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ScheduleSessionEntity.deleteBySchedule(schedule);
-                        refreshWeekView();
+                        weekView.notifyDatasetChanged();
                         dialog.dismiss();
                     }
                 })

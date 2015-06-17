@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by victor on 16/06/2015.
  */
-public class ShowEntity extends SugarRecord<ShowEntity> implements ISchedulable {
+public class ShowEntity extends SugarRecord<ShowEntity> {
 
     private String name;
     private String description;

@@ -26,37 +26,45 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.button_plan).setOnClickListener(this);
         findViewById(R.id.button_entertainment).setOnClickListener(this);
 
-        /*CoordinatesEntity coordinates = new CoordinatesEntity(10, 10);
-        coordinates.save();
+        /*for(int i=0; i<10; i++) {
+            CoordinatesEntity coordinates = new CoordinatesEntity(12, 12);
+            coordinates.save();
 
-        Date duration = new Date();
-        duration.setHours(2);
-        duration.setMinutes(0);
+            Date duration = new Date();
+            duration.setHours(2);
+            duration.setMinutes(0);
 
-        ShowEntity show = new ShowEntity();
-        show.setName("Spectacle 1");
-        show.setActorNumber(2);
-        show.setCoordinates(coordinates);
-        show.setCreationDate(new Date());
-        show.setDescription("Description du spectacle 1");
-        show.setImage(null);
-        show.setPriority(1);
-        show.setScore(4.5);
-        show.setDuration(duration);
-        show.save();
+            ShowEntity show = new ShowEntity();
+            show.setName("Spectacle " + i);
+            show.setActorNumber(2);
+            show.setCoordinates(coordinates);
+            show.setCreationDate(new Date());
+            show.setDescription("Description du spectacle " + i);
+            show.setImage(null);
+            show.setPriority(1);
+            show.setScore(4.5);
+            show.setDuration(duration);
+            show.save();
 
-        SessionEntity session = new SessionEntity(new Date(), show);
-        session.save();
+            Date session2Date = new Date();
+            session2Date.setHours(i);
+            session2Date.setMinutes(0);
+            SessionEntity session2 = new SessionEntity(session2Date, show);
+            session2.save();
 
-        ScheduleEntity schedule = ScheduleEntity.findById(ScheduleEntity.class, 1l);
+            Date session3Date = new Date();
+            session3Date.setHours(i+10);
+            session3Date.setMinutes(0);
+            SessionEntity session3 = new SessionEntity(session3Date, show);
+            session3.save();
 
-        if(schedule == null) {
-            schedule = new ScheduleEntity("local");
-            schedule.save();
-        }
+            ScheduleEntity schedule = ScheduleEntity.findById(ScheduleEntity.class, 1l);
 
-        ScheduleSessionEntity scheduleSession = new ScheduleSessionEntity(schedule, session);
-        scheduleSession.save();*/
+            if (schedule == null) {
+                schedule = new ScheduleEntity("local");
+                schedule.save();
+            }
+        }*/
     }
 
     @Override

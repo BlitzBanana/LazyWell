@@ -1,5 +1,6 @@
 package com.lazywell.android.puydufou.activities;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,7 +8,7 @@ import android.view.MenuItem;
 
 import com.lazywell.android.puydufou.R;
 
-public class ShowDetailsActivity extends ActionBarActivity {
+public class ShowDetailsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

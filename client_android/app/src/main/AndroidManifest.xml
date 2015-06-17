@@ -27,6 +27,10 @@
             android:label="@string/title_activity_show_planning" >
         </activity>
         <activity
+            android:name=".activities.ShowDetailsActivity"
+            android:label="@string/title_activity_show_details" >
+        </activity>
+        <activity
             android:name=".activities.PlanningCreatorActivity"
             android:label="@string/title_activity_planning_creator" >
         </activity>

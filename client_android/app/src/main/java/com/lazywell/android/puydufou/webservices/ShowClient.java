@@ -19,6 +19,8 @@ public class ShowClient {
         for (ShowEntity showEntity : showEntities)
             showEntity.save();
 
+        showEntities = ShowEntity.listAll(ShowEntity.class);
+
         return showEntities;
     }
 }
