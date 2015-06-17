@@ -21,6 +21,7 @@ import com.lazywell.android.puydufou.entities.persistent.ScheduleEntity;
 import com.lazywell.android.puydufou.entities.persistent.ScheduleSessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
+import com.lazywell.android.puydufou.tools.EventUtils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -103,41 +104,10 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
         for (SessionEntity sessionEntity : schedule.getSessionEntities()){
             Log.i("DB session", sessionEntity.getTime().toString());
             Log.i("DB session", sessionEntity.getShow().getName());
-            weekViewEvents.add(sessionToEvent(sessionEntity));
+            weekViewEvents.add(EventUtils.sessionToEvent(this, sessionEntity));
         }
 
         return weekViewEvents;
-    }
-
-    public WeekViewEvent sessionToEvent(SessionEntity sessionEntity){
-        Calendar startTime = Calendar.getInstance();
-        startTime.setTime(sessionEntity.getTime());
-
-        Calendar endTime = (Calendar) startTime.clone();
-        endTime.add(Calendar.HOUR, sessionEntity.getShow().getDuration().getHours());
-
-        WeekViewEvent event = new WeekViewEvent(1, sessionEntity.getShow().getName(), startTime, endTime);
-        event.setColor(
-                getResources().getColor(
-                        getPriorityColor(
-                                sessionEntity.getShow().getPriority()
-                        )));
-
-        Log.d("EVENT", "(session)Start Time: " + sessionEntity.getTime().toString());
-        Log.d("EVENT", "(event)Start Time: " + event.getStartTime().getTime().toString());
-        Log.d("EVENT", "(event)End Time: " + event.getEndTime().getTime().toString());
-        return event;
-    }
-
-    public int getPriorityColor(int priority){
-        switch (priority){
-            case 0:
-                return R.color.red;
-            case 1:
-                return R.color.green;
-            default:
-                return R.color.blue;
-        }
     }
 
     public void showShowsPopup(){
