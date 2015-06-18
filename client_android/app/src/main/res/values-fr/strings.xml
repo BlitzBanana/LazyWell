@@ -24,4 +24,8 @@
     <string name="dialog_rate_title">Noter un spectacle</string>
     <string name="button_recommended_plan">Planning recommendé</string>
     <string name="title_activity_recommended_planning">Planning recommendé</string>
+    <string name="settings_category_recommended">Planning recommendé</string>
+    <string name="title_activity_settings">Paramètres</string>
+    <string name="settings_lunch_duration">Durée de la pause repas (minutes)</string>
+    <string name="settings_lunch_time">Heure de la pause repas</string>
 </resources>

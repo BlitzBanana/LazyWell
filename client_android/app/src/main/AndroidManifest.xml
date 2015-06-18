@@ -54,6 +54,10 @@
             android:name=".activities.RecommendedPlanningActivity"
             android:label="@string/title_activity_recommended_planning" >
         </activity>
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>
