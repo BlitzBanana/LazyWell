@@ -2,6 +2,7 @@ package corn.uni.crazywell.business.tasks.impl;
 
 import corn.uni.crazywell.business.dispatcher.StupidInterface;
 import corn.uni.crazywell.business.tasks.ReturnableTaskLocal;
+import corn.uni.crazywell.common.Bubble;
 import corn.uni.crazywell.common.dto.DTO;
 import corn.uni.crazywell.common.dto.converter.DTOConverterLocal;
 import corn.uni.crazywell.common.dto.impl.ShowDTO;
@@ -44,7 +45,7 @@ public class GetShowTaskLocal implements ReturnableTaskLocal {
     }
 
     @Override
-    public List<? extends DTO> run() throws TaskFailedException {
+    public List<? extends DTO> run(Bubble bubble) throws TaskFailedException {
         try {
             List<ShowEntity> showsList = showDao.findAll();
             final List<ShowDTO> outputList = new ArrayList<>();
