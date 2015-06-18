@@ -36,4 +36,6 @@
     <string name="progress_dialog">Loading events</string>
     <string name="please_wait">Please wait</string>
     <string name="title_activity_entertainment">EntertainmentActivity</string>
+    <string name="action_photo">Take photo</string>
+    <string name="social_view_title">Share Picture</string>
 </resources>

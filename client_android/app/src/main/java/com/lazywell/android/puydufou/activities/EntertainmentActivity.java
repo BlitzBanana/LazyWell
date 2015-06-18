@@ -1,48 +1,47 @@
 package com.lazywell.android.puydufou.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.facebook.FacebookSdk;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.widget.ShareButton;
 import com.lazywell.android.puydufou.R;
+import com.lazywell.android.puydufou.tools.BitmapUtils;
 
-public class EntertainmentActivity extends Activity
+public class EntertainmentActivity extends AppCompatActivity
 {
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     ImageView picture;
     Button takepicture;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_entertainment);
 
-        picture=(ImageView) findViewById(R.id.imageViewPicture);
-
-        takepicture = (Button) findViewById(R.id.buttonPhoto);
-        takepicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, 0);
-            }
-        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
 
-        Bitmap bit= (Bitmap) data.getExtras().get("data");
-        picture.setImageBitmap(bit);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            if(imageBitmap != null)
+                showSocialSharePopup(imageBitmap);
+        }
     }
 
     @Override
@@ -60,10 +59,28 @@ public class EntertainmentActivity extends Activity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_photo) {
+            Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showSocialSharePopup(Bitmap picture)
+    {
+        MaterialDialog popup = new MaterialDialog.Builder(this)
+                .title(R.string.social_view_title)
+                .customView(R.layout.social_view, true)
+                .show();
+        SharePhoto photo = new SharePhoto.Builder()
+                .setBitmap(picture)
+                .build();
+        SharePhotoContent content = new SharePhotoContent.Builder()
+                .addPhoto(photo)
+                .build();
+        ShareButton shareButton = (ShareButton)popup.findViewById(R.id.FBbutton);
+        shareButton.setShareContent(content);
     }
 }
