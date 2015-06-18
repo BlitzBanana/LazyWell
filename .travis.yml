@@ -1,0 +1,10 @@
+language: android
+android:
+  components:
+    - android-22
+    - build-tools-22.0.1
+
+before_install:
+ - chmod +x client_android/gradlew
+
+before_script: cd client_android

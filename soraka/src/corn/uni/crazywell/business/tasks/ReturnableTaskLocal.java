@@ -1,5 +1,6 @@
 package corn.uni.crazywell.business.tasks;
 
+import corn.uni.crazywell.common.Bubble;
 import corn.uni.crazywell.common.dto.DTO;
 import corn.uni.crazywell.common.exception.TaskFailedException;
 
@@ -13,5 +14,5 @@ import java.util.List;
  */
 @Local
 public interface ReturnableTaskLocal extends Serializable{
-    List<? extends DTO> run() throws TaskFailedException;
+    List<? extends DTO> run(Bubble bubble) throws TaskFailedException;
 }

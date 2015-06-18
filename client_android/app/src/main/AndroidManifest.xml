@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lazywell.android.puydufou">
+    package="com.lazywell.android.puydufou" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.write_external_storage"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.write_external_storage" />
 
     <application
+        android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        tools:replace='android:icon'
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:name="com.orm.SugarApp">
+        tools:replace="android:icon" >
         <activity
             android:name=".activities.HomeActivity"
             android:label="@string/app_name" >
@@ -35,10 +37,27 @@
             android:label="@string/title_activity_planning_creator" >
         </activity>
 
-        <meta-data android:name="DATABASE" android:value="test2.db" />
-        <meta-data android:name="VERSION" android:value="2" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.lazywell.android.puydufou.entities.persistent" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="test2.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.lazywell.android.puydufou.entities.persistent" />
+
+        <activity
+            android:name=".activities.RecommendedPlanningActivity"
+            android:label="@string/title_activity_recommended_planning" >
+        </activity>
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>

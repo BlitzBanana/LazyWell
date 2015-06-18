@@ -28,6 +28,8 @@ public class MessageDispatcher implements MessageListener {
     private JMSContext context;
     @Inject
     private @Named("getShowTaskLocal") ReturnableTaskLocal getShowTask;
+    @Inject
+    private @Named("evaluationTaskLocal") UnreturnableTask evaluationTask;
 
 
     @Override
@@ -40,7 +42,7 @@ public class MessageDispatcher implements MessageListener {
                 //Dispatching
                 ReturnableTaskLocal task = dispatch(bubble.getHeader());
                 //Traitement & retour
-                List<? extends DTO> result  = task.run();
+                List<? extends DTO> result  = task.run(bubble);
                 //reponse
                 sendResponse(message.getJMSReplyTo(), result);
             }
@@ -48,7 +50,7 @@ public class MessageDispatcher implements MessageListener {
                 //sans retour
                 Bubble bubble = message.getBody(Bubble.class);
                 UnreturnableTask task = dispatchNoReturn(bubble.getHeader());
-                task.run();
+                task.run(bubble);
             }
         } catch (JMSException e) {
             e.printStackTrace();
@@ -72,11 +74,16 @@ public class MessageDispatcher implements MessageListener {
         switch (processToRelease){
             case GET_SHOWS:
                 return getShowTask;
+
         }
         throw new TaskNotFoundException("Aucune tache n'a été trouvée pour la Bubble fournie");
     }
 
     private UnreturnableTask dispatchNoReturn(Bubble.Process processToRelease) throws TaskNotFoundException{
+        switch (processToRelease){
+            case SET_EVAL:
+                return evaluationTask;
+        }
         throw new TaskNotFoundException("Aucune tache n'a été trouvée pour la Bubble fournie");
     }
 }

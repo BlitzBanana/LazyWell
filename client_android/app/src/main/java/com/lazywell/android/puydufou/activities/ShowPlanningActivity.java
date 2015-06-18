@@ -28,7 +28,8 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class ShowPlanningActivity extends AppCompatActivity implements WeekView.MonthChangeListener, WeekView.EventClickListener, WeekView.EventLongPressListener {
+public class ShowPlanningActivity extends AppCompatActivity implements WeekView.MonthChangeListener,
+        WeekView.EventClickListener, WeekView.EventLongPressListener {
 
     private static final int TYPE_DAY_VIEW = 1;
     private static final int TYPE_THREE_DAY_VIEW = 2;
@@ -134,7 +135,6 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
         Long showId = session.getShow().getId();
         intent.putExtra("showId", showId);
         startActivity(intent);
-
     }
 
     @Override

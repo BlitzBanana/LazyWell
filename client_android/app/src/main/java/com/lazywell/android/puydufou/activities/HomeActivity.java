@@ -25,8 +25,9 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.button_discover).setOnClickListener(this);
         findViewById(R.id.button_plan).setOnClickListener(this);
         findViewById(R.id.button_entertainment).setOnClickListener(this);
+        findViewById(R.id.button_recommended_plan).setOnClickListener(this);
 
-        for(int i=0; i<10; i++) {
+        /*for(int i=0; i<5; i++) {
             CoordinatesEntity coordinates = new CoordinatesEntity(12, 12);
             coordinates.save();
 
@@ -42,21 +43,27 @@ public class HomeActivity extends Activity implements View.OnClickListener{
             show.setDescription("Description du spectacle " + i);
             show.setImage(null);
             show.setPriority(1);
-            show.setScore(4.5);
+            show.setScore(i);
             show.setDuration(duration);
             show.save();
 
-            Date session2Date = new Date();
-            session2Date.setHours(i);
-            session2Date.setMinutes(0);
-            SessionEntity session2 = new SessionEntity(session2Date, show);
-            session2.save();
+            Date sessionDate = new Date();
+            sessionDate.setHours(i);
+            sessionDate.setMinutes(0);
+            SessionEntity session = new SessionEntity(sessionDate, show);
+            session.save();
 
-            Date session3Date = new Date();
-            session3Date.setHours(i+10);
-            session3Date.setMinutes(0);
-            SessionEntity session3 = new SessionEntity(session3Date, show);
-            session3.save();
+            sessionDate = new Date();
+            sessionDate.setHours(i + 3);
+            sessionDate.setMinutes(0);
+            session = new SessionEntity(sessionDate, show);
+            session.save();
+
+            sessionDate = new Date();
+            sessionDate.setHours(i+6);
+            sessionDate.setMinutes(0);
+            session = new SessionEntity(sessionDate, show);
+            session.save();
 
             ScheduleEntity schedule = ScheduleEntity.findById(ScheduleEntity.class, 1l);
 
@@ -64,7 +71,7 @@ public class HomeActivity extends Activity implements View.OnClickListener{
                 schedule = new ScheduleEntity("local");
                 schedule.save();
             }
-        }
+        }*/
     }
 
     @Override
@@ -77,6 +84,10 @@ public class HomeActivity extends Activity implements View.OnClickListener{
             case R.id.button_plan:
                 Toast.makeText(this, "Plan !", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, PlanningCreatorActivity.class));
+                break;
+            case R.id.button_recommended_plan:
+                Toast.makeText(this, "Recommended plan !", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, RecommendedPlanningActivity.class));
                 break;
             case R.id.button_entertainment:
                 Toast.makeText(this, "Entertainment !", Toast.LENGTH_SHORT).show();
