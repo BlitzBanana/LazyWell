@@ -4,7 +4,7 @@ import corn.uni.crazywell.business.tasks.UnreturnableTask;
 import corn.uni.crazywell.common.Bubble;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
-import corn.uni.crazywell.data.dao.ScoreDao;
+import corn.uni.crazywell.data.dao.ScoreDAO;
 import corn.uni.crazywell.data.entities.RestaurantScoreEntity;
 import corn.uni.crazywell.data.entities.ShopScoreEntity;
 import corn.uni.crazywell.data.entities.ShowScoreEntity;
@@ -26,17 +26,17 @@ public class EvaluationTaskLocal implements UnreturnableTask {
     AbstractGenericDAO<ShowScoreEntity> scoreShowDao;
     @Inject
     private @Named("scoreShowDao")
-    ScoreDao scoreShowDaoLocal;
+    ScoreDAO scoreShowDaoLocal;
     @Inject
     AbstractGenericDAO<ShopScoreEntity> scoreShopDao;
     @Inject
     private @Named("scoreShopDao")
-    ScoreDao scoreShopDaoLocal;
+    ScoreDAO scoreShopDaoLocal;
     @Inject
     AbstractGenericDAO<RestaurantScoreEntity> scoreRestaurantDao;
     @Inject
     private @Named("scoreRestaurantDao")
-    ScoreDao scoreRestaurantDaoLocal;
+    ScoreDAO scoreRestaurantDaoLocal;
 
     @Override
     public void run(Bubble bubble) {

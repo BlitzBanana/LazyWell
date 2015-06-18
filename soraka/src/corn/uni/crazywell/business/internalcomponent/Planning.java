@@ -1,6 +1,6 @@
 package corn.uni.crazywell.business.internalcomponent;
 
-import com.company.Plannifiable;
+import corn.uni.crazywell.common.dto.impl.SessionDTO;
 
 import java.util.List;
 
@@ -8,13 +8,13 @@ import java.util.List;
  * Created by blacksheep on 14/06/15.
  */
 public class Planning {
-    List<Plannifiable> activities;
+    List<SessionDTO> activities;
 
-    public List<Plannifiable> getActivities() {
+    public List<SessionDTO> getActivities() {
         return activities;
     }
 
-    public void setActivities(List<Plannifiable> activities) {
+    public void setActivities(List<SessionDTO> activities) {
         this.activities = activities;
     }
 }

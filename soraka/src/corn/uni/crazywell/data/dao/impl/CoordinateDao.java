@@ -4,7 +4,6 @@ import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.entities.CoordinatesEntity;
 
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Alternative;
 import javax.inject.Named;
 
 /**
@@ -12,8 +11,8 @@ import javax.inject.Named;
  */
 @Named
 @Stateless
-public class CoordinateDao extends AbstractGenericDAO<CoordinatesEntity> {
-    public CoordinateDao(){
+public class CoordinateDAO extends AbstractGenericDAO<CoordinatesEntity> {
+    public CoordinateDAO(){
         super(CoordinatesEntity.class);
     }
 }

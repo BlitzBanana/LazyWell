@@ -1,9 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2442893-1393-4af2-b522-501fae867743" name="Default" comment="" />
+    <list id="56d41d2e-2f4e-42f3-9f6d-6386a8ce54a8" name="Default" comment="Update Bubble">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/common/Bubble$Process.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/common/Bubble$Process.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/common/Bubble.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/common/Bubble.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/business/dispatcher/MessageDispatcher.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/business/dispatcher/MessageDispatcher.class" />
+    </list>
+    <list default="true" id="d27ed19a-5aae-43d0-bcf8-e27a81a07d87" name="encours" comment="ignore">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/business/internalcomponent/BreakTime.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soraka/.idea/libraries/JBoss_Weld_2_0_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/business/internalcomponent/LocationPoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/business/internalcomponent/LunchTime.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/business/internalcomponent/Plannifiable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soraka/.idea/libraries/cglib_cglib_full_2_0_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soraka/.idea/libraries/jboss_seam_jboss_seam_1_2_0_GA.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../soraka/.idea/libraries/org_hibernate_hibernate_entitymanager_4_3_5_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/server_webservices_ejb.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/server_webservices_ejb.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/server_webservices_ejb_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/server_webservices.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/.idea/libraries/org_hibernate_hibernate_entitymanager_4_3_10_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/META-INF/application.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/META-INF/beans.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/META-INF/persistence.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/business/dispatcher/MessageDispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/business/services/AbstractGenericService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/business/services/CrudService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/business/services/impl/ShowService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/common/Bubble$Process.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/common/Bubble.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/dao/AbstractGenericDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/dao/GenericDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/dao/impl/ShowDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/AnecdoteAnswerEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/AnecdoteQuestionEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/CoordinatesEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/MenuItemEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/MenuItemScoreEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/RestaurantEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/RestaurantScoreEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/ScheduleEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/ScheduleShowEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/ShopEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/ShopScoreEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/ShowEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/ShowScoreEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/TimeTravelEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/ejb.jar/corn/uni/crazywell/data/entities/TimeTravelEntityPK.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/hibernate-commons-annotations-4.0.5.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/hibernate-core-4.3.10.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/hibernate-entitymanager-4.3.10.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/jandex-1.1.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/javassist-3.18.1-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/javax.persistence.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/jboss-logging-3.1.3.GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/jboss-logging-annotations-1.2.0.Beta1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/jboss-transaction-api_1.2_spec-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ear_exploded/lib/xml-apis-1.0.b2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/business/services/AbstractGenericService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/business/services/CrudService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/business/services/impl/ShowService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/dao/impl/ShowDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/business/services/AbstractGenericService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/business/services/CrudService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/business/services/impl/ShowService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/dao/impl/ShowDAO.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../soraka/src/com/company/exceptions/NoNextBreakException.java" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/common/exception/NoNextBreakException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/business/internalprocess/impl/ScheduleCalculator.java" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/business/internalprocess/impl/ScheduleCalculationProcess.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/data/dao/ShowDao.java" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/data/dao/ShowDaoLocal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/dao/AbstractGenericDAO.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/dao/AbstractGenericDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/dao/AbstractGenericDAO.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/dao/AbstractGenericDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/common/Bubble$Process.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/common/Bubble$Process.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/common/Bubble.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/common/Bubble.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/dao/GenericDAO.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/dao/GenericDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/dao/GenericDAO.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/dao/GenericDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/MenuItemScoreEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/MenuItemScoreEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/MenuItemScoreEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/MenuItemScoreEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/business/dispatcher/MessageDispatcher.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/business/dispatcher/MessageDispatcher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/RestaurantEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/RestaurantEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/RestaurantEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/RestaurantEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/RestaurantScoreEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/RestaurantScoreEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/RestaurantScoreEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/RestaurantScoreEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/ShopScoreEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/ShopScoreEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/ShopScoreEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/ShopScoreEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/ShowEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/ShowEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/ShowEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/ShowEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/ShowScoreEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/corn/uni/crazywell/data/entities/ShowScoreEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/ShowScoreEntity.class" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/corn/uni/crazywell/data/entities/ShowScoreEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/business/internalcomponent/Planning.java" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/business/internalcomponent/Planning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/common/dto/converter/impl/ShowDTOConverter.java" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/common/dto/converter/impl/ShowDTOConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/data/dao/impl/ShowDao.java" afterPath="$PROJECT_DIR$/../soraka/src/corn/uni/crazywell/data/dao/impl/ShowDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/META-INF/beans.xml" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/META-INF/beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/META-INF/beans.xml" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/META-INF/beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/../soraka/out/artifacts/soraka_ejb_exploded/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/out/production/soraka/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/../soraka/out/production/soraka/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_webservices.iml" afterPath="$PROJECT_DIR$/server_webservices.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/.idea/artifacts/soraka_ear_exploded.xml" afterPath="$PROJECT_DIR$/../soraka/.idea/artifacts/soraka_ear_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soraka/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../soraka/.idea/workspace.xml" />
+    </list>
     <ignored path="server_webservices.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,25 +126,189 @@
   <component name="FavoritesManager">
     <favorites_list name="server_webservices" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ShowService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShowService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EvalService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/EvalService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopScoreDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShopScoreDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowScoreDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShowScoreDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="82" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShopDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/UpdateService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bubble.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/Bubble.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="20" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#228#229#0" expanded="false" />
+                <element signature="e#268#269#0" expanded="false" />
+                <element signature="e#334#335#0" expanded="false" />
+                <element signature="e#361#362#0" expanded="false" />
+                <element signature="e#407#408#0" expanded="false" />
+                <element signature="e#439#440#0" expanded="false" />
+                <element signature="e#530#531#0" expanded="false" />
+                <element signature="e#558#559#0" expanded="false" />
+                <element signature="e#600#601#0" expanded="false" />
+                <element signature="e#634#635#0" expanded="false" />
+                <element signature="e#668#669#0" expanded="false" />
+                <element signature="e#697#698#0" expanded="false" />
+                <element signature="e#742#743#0" expanded="false" />
+                <element signature="e#778#779#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestaurantService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/RestaurantService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/DTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShopService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6961326">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/webservices/RestaurantService.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/impl/ShowDTO.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationServiceLocal.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShopService.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ScheduleService.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationService.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShowService.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/SessionDTO.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/MenuItemScoreDTO.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShowDTO.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/common/Bubble.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShopDTO.java" />
+        <option value="$PROJECT_DIR$/src/corn/uni/crazywell/webservices/EvalService.java" />
+      </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="NamedScopeManager">
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1919" />
+    <option name="x" value="-1" />
     <option name="y" value="30" />
     <option name="width" value="1922" />
     <option name="height" value="1051" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -60,9 +331,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -81,22 +349,174 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crazywell" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crazywell" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crazywell" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crazywell" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_webservices" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crazywell" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.31645572" />
     <property name="dynamic.classpath" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../soraka" />
   </component>
-  <component name="RunManager" selected="GlassFish Server.Trynda">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="corn.uni.crazywell.common" />
+      <recent name="corn.uni.crazywell.common.dto.impl" />
+      <recent name="corn.uni.crazywell.common.dto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/corn/uni/crazywell/common/dto" />
+      <recent name="$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl" />
+      <recent name="$PROJECT_DIR$/src/corn/uni/crazywell" />
+    </key>
+  </component>
+  <component name="RunManager" selected="GlassFish Server.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -252,7 +672,7 @@
       <deployment />
       <server-settings>
         <data>
-          <option name="transportHostId" />
+          <option name="transportHostId" value="" />
           <host-id />
         </data>
       </server-settings>
@@ -357,6 +777,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
@@ -365,125 +791,656 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Trynda" type="GlassfishConfiguration" factoryName="Remote" APPLICATION_SERVER_NAME="GlassFish 4.1.0" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
-      <option name="PORT" value="40080" />
-      <option name="LOCAL" value="false" />
-      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+    <configuration default="false" name="Unnamed" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.0" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:50080/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="test archive">
+        <artifact name="server_webservices:ejb">
           <settings />
         </artifact>
       </deployment>
       <server-settings>
-        <data>
-          <option name="adminPort" value="40048" />
-          <option name="adminServerHost" value="" />
-          <option name="clusterName" value="" />
-          <option name="password" value="UnicornStudio" />
-          <option name="secured" value="true" />
-          <option name="stagingRemotePath" value="" />
-          <option name="transportHostId" />
-          <option name="transportStagingTarget">
-            <TransportTarget>
-              <option name="id" value="75bf3736-cf34-470b-a79c-310679f5d4b5" />
-              <id>75bf3736-cf34-470b-a79c-310679f5d4b5</id>
-            </TransportTarget>
-          </option>
-          <password>UnicornStudio</password>
-          <admin-port>40048</admin-port>
-          <secured>true</secured>
-          <admin-server-host />
-          <cluster-name />
-          <transport-target>
-            <TransportTarget>
-              <option name="id" value="75bf3736-cf34-470b-a79c-310679f5d4b5" />
-              <id>75bf3736-cf34-470b-a79c-310679f5d4b5</id>
-            </TransportTarget>
-          </transport-target>
-          <staging-path />
-          <host-id />
-        </data>
+        <option name="DOMAIN" value="annie" />
+        <option name="PRESERVE" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="PASSWORD" value="UnicornStudio" />
       </server-settings>
       <predefined_log_file id="GlassFish" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="55506" />
-        <option name="LOCAL" value="false" />
+        <option name="DEBUG_PORT" value="50009" />
       </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="test archive" />
+          <artifact name="server_webservices:ejb" />
         </option>
       </method>
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="GlassFish Server.Trynda" />
+      <item index="0" class="java.lang.String" itemvalue="GlassFish Server.Unnamed" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b2442893-1393-4af2-b522-501fae867743" name="Default" comment="" />
-      <created>1434444832009</created>
+      <changelist id="56d41d2e-2f4e-42f3-9f6d-6386a8ce54a8" name="Default" comment="" />
+      <changelist id="d27ed19a-5aae-43d0-bcf8-e27a81a07d87" name="ignore" comment="" />
+      <created>1434525882285</created>
       <option name="number" value="Default" />
-      <updated>1434444832009</updated>
-      <workItem from="1434444833234" duration="414000" />
+      <updated>1434525882285</updated>
+      <workItem from="1434525884959" duration="7958000" />
+      <workItem from="1434542304593" duration="445000" />
+      <workItem from="1434542823186" duration="4691000" />
+      <workItem from="1434550216393" duration="15139000" />
+      <workItem from="1434612453097" duration="263000" />
+      <workItem from="1434612895979" duration="7798000" />
+      <workItem from="1434631394141" duration="1694000" />
     </task>
+    <task id="LOCAL-00001" summary="Webservice update NATHAN">
+      <created>1434568909122</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1434568909122</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Webservice update NATHAN">
+      <created>1434568970028</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1434568970028</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Backend is working">
+      <created>1434569032549</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1434569032549</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update Bubble">
+      <created>1434614581744</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1434614581744</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update Bubble">
+      <created>1434617465531</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1434617465531</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update ShowDTO">
+      <created>1434619059112</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1434619059112</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="414000" />
+    <option name="totallyTimeSpent" value="37988000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="30" width="1922" height="1051" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="30" width="1922" height="1051" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4537445" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2907489" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="EJB" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.50574714" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27955273" sideWeight="0.49425286" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37224668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Webservice update NATHAN" />
+    <MESSAGE value="Backend is working" />
+    <MESSAGE value="Update Bubble" />
+    <MESSAGE value="Update ShowDTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ShowDTO" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="16" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShopScoreDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShowScoreDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShopDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/UpdateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/Bubble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#228#229#0" expanded="false" />
+            <element signature="e#268#269#0" expanded="false" />
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#361#362#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#439#440#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#600#601#0" expanded="false" />
+            <element signature="e#634#635#0" expanded="false" />
+            <element signature="e#668#669#0" expanded="false" />
+            <element signature="e#697#698#0" expanded="false" />
+            <element signature="e#742#743#0" expanded="false" />
+            <element signature="e#778#779#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/RestaurantService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/DTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShowService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/ejb/AbstractEJBRequestScopeActivationInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/ejb/SessionBeanInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/context/AbstractBoundContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationServiceLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/EvalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShowService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/ejb/AbstractEJBRequestScopeActivationInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/ejb/SessionBeanInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/context/AbstractBoundContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationServiceLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/EvalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShowService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/RestaurantService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ScheduleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShowService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ScheduleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShowService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ScheduleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jaxb-impl.jar!/com/sun/xml/bind/v2/runtime/JAXBContextImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.24">
+          <caret line="516" column="0" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/context/AbstractManagedContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.92">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/context/beanstore/AttributeBeanStore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.92">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ScheduleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="41" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationServiceLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/context/AbstractBoundContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/ejb/AbstractEJBRequestScopeActivationInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/org/jboss/weld/ejb/SessionBeanInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/services/CommunicationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/DTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/UpdateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShowService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/RestaurantService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/Bubble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#228#229#0" expanded="false" />
+            <element signature="e#268#269#0" expanded="false" />
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#361#362#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#439#440#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#600#601#0" expanded="false" />
+            <element signature="e#634#635#0" expanded="false" />
+            <element signature="e#668#669#0" expanded="false" />
+            <element signature="e#697#698#0" expanded="false" />
+            <element signature="e#742#743#0" expanded="false" />
+            <element signature="e#778#779#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShopDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShopScoreDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/EvalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/common/dto/impl/ShowScoreDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="82" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/corn/uni/crazywell/webservices/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6961326">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>test</last-edited>
+          <last-edited>server_webservices:ejb</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.31645572" />
+                <option value="0.2" />
                 <option value="0.5" />
               </list>
             </option>
@@ -492,7 +1449,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -531,7 +1488,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.31645572" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -551,6 +1508,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

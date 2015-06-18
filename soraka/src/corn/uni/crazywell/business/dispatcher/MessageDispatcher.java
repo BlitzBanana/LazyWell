@@ -29,6 +29,10 @@ public class MessageDispatcher implements MessageListener {
     @Inject
     private @Named("getShowTaskLocal") ReturnableTaskLocal getShowTask;
     @Inject
+    private @Named("getShopsTaskLocal") ReturnableTaskLocal getShopsTask;
+    @Inject
+    private @Named("getRestaurantsTaskLocal") ReturnableTaskLocal getRestaurantsTask;
+    @Inject
     private @Named("evaluationTaskLocal") UnreturnableTask evaluationTask;
 
 
@@ -74,6 +78,10 @@ public class MessageDispatcher implements MessageListener {
         switch (processToRelease){
             case GET_SHOWS:
                 return getShowTask;
+            case GET_SHOPS:
+                return getShopsTask;
+            case GET_RESTAURANTS:
+                return getRestaurantsTask;
 
         }
         throw new TaskNotFoundException("Aucune tache n'a été trouvée pour la Bubble fournie");

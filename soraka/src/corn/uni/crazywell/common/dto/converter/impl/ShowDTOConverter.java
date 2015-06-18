@@ -8,17 +8,12 @@ import corn.uni.crazywell.common.dto.impl.ShowScoreDTO;
 import corn.uni.crazywell.common.exception.ConversionException;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
-import corn.uni.crazywell.data.dao.GenericDAO;
-import corn.uni.crazywell.data.dao.impl.ShowDao;
+import corn.uni.crazywell.data.dao.ListDAO;
 import corn.uni.crazywell.data.entities.CoordinatesEntity;
 import corn.uni.crazywell.data.entities.SessionEntity;
 import corn.uni.crazywell.data.entities.ShowEntity;
 import corn.uni.crazywell.data.entities.ShowScoreEntity;
 
-import javax.annotation.Resource;
-import javax.ejb.EJB;
-import javax.ejb.EJBContext;
-import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -32,20 +27,13 @@ import java.util.List;
 @Stateless
 public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> {
 
-    @Resource
-    SessionContext context;
     @Inject private AbstractGenericDAO<CoordinatesEntity> coordinateDao;
     @Inject private AbstractGenericDAO<SessionEntity> sessionDao;
     @Inject private DTOConverterLocal<CoordinatesEntity, CoordinateDTO> coordinatesDTOConverter;
     @Inject private DTOConverterLocal<SessionEntity, SessionDTO> sessionDTOConverter;
     @Inject private DTOConverterLocal<ShowScoreEntity, ShowScoreDTO> scoreShowDTOConverter;
-    @Inject private corn.uni.crazywell.data.dao.ShowDao showDao;
+    @Inject private ListDAO showDao;
 
-    public ShowDTOConverter(final ShowDao showDao){
-    }
-
-    public ShowDTOConverter() {
-    }
 
     @Override
     public void convert(final ShowEntity source, final ShowDTO target) throws ConversionException {
@@ -61,7 +49,7 @@ public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> 
         //Binded conversion
         convertCoordinateInternal(source, target);
         convertSessionInternal(source, target);
-        convertShopScoreInternal(source, target);
+        convertShowScoreInternal(source, target);
     }
 
     private void convertCoordinateInternal(final ShowEntity source, final ShowDTO target) throws ConversionException {
@@ -93,7 +81,7 @@ public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> 
         }
     }
 
-    private void convertShopScoreInternal(final ShowEntity source, final ShowDTO target) throws ConversionException{
+    private void convertShowScoreInternal(final ShowEntity source, final ShowDTO target) throws ConversionException{
         try {
             //final double score = ((ShowDao)showDao).getAverrageOfAllScores(source.getId());
             final double score = showDao.getAverrageOfAllScores(source.getId());

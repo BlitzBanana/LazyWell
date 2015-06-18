@@ -8,6 +8,6 @@ import javax.ejb.Local;
  * Created by blacksheep on 18/06/15.
  */
 @Local
-public interface ShowDao {
+public interface ListDAO {
     double getAverrageOfAllScores(int id) throws DAOException;
 }

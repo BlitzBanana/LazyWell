@@ -9,6 +9,6 @@ import javax.ejb.Local;
  * Created by Thanith on 18/06/2015.
  */
 @Local
-public interface ScoreDao {
+public interface ScoreDAO {
     boolean isVoted(Bubble bubble) throws DAOException;
 }
