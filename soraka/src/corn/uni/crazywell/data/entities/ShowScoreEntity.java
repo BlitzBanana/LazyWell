@@ -14,6 +14,7 @@ public class ShowScoreEntity {
     private int showId;
     private String uuid;
 
+
     @Id
     @Column(name = "id")
     public int getId() {
