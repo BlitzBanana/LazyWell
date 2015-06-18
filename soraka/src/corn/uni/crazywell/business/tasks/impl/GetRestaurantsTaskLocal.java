@@ -8,10 +8,12 @@ import corn.uni.crazywell.common.dto.impl.RestaurantDTO;
 import corn.uni.crazywell.common.exception.ConversionException;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.common.exception.TaskFailedException;
+import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.dao.GenericDAO;
 import corn.uni.crazywell.data.entities.RestaurantEntity;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,29 +21,50 @@ import java.util.List;
 /**
  * Created by blacksheep on 16/06/15.
  */
+@Named
 @Stateless
 public class GetRestaurantsTaskLocal implements ReturnableTaskLocal {
-    private GenericDAO<RestaurantEntity> restaurantDAO;
-    private DTOConverterLocal<RestaurantEntity, RestaurantDTO> restaurantConverter;
+
+    private GenericDAO<RestaurantEntity> restaurantDao;
+    @Inject private DTOConverterLocal<RestaurantEntity, RestaurantDTO> restaurantDTOConverter;
+
+    public GetRestaurantsTaskLocal(){
+        //Do nothing
+    }
+
+    @Inject
+    public GetRestaurantsTaskLocal(GenericDAO<RestaurantEntity> restaurantDao){
+        if(restaurantDao!=null)
+            this.restaurantDao = restaurantDao;
+    }
 
     @Override
     public List<? extends DTO> run(Bubble bubble) throws TaskFailedException {
         try {
-            final List<RestaurantEntity> restaurants = restaurantDAO.findAll();
+            List<RestaurantEntity> restaurantsList = restaurantDao.findAll();
             final List<RestaurantDTO> outputList = new ArrayList<>();
             RestaurantDTO restaurantDTO;
-            for(RestaurantEntity restaurant : restaurants){
+
+            for (RestaurantEntity restaurant : restaurantsList){
                 restaurantDTO = new RestaurantDTO();
-                restaurantConverter.convert(restaurant, restaurantDTO);
+                restaurantDTOConverter.convert(restaurant, restaurantDTO);
                 outputList.add(restaurantDTO);
             }
             return outputList;
-        } catch (DAOException e) {
-            e.printStackTrace();
-            throw new TaskFailedException("CUSTOM - DAO failed to get the restaurant list");
         } catch (ConversionException e) {
             e.printStackTrace();
-            throw new TaskFailedException("CUSTOM - for some reason of restaurants conversion failed.");
+            throw new TaskFailedException("CUSTOM - The getRestaurantTask result in a fail");
+        } catch (DAOException e) {
+            e.printStackTrace();
+            throw new TaskFailedException("CUSTOM - Fail to get restaurants from DB");
         }
+    }
+
+    public void setRestaurantDao(AbstractGenericDAO<RestaurantEntity> restaurantDao) {
+        this.restaurantDao = restaurantDao;
+    }
+
+    public void setRestaurantDTOConverter(DTOConverterLocal<RestaurantEntity, RestaurantDTO> restaurantDTOConverter) {
+        this.restaurantDTOConverter = restaurantDTOConverter;
     }
 }
