@@ -52,4 +52,10 @@ public class Bubble implements Serializable {
         CHECK_UPDATE,
         SET_EVAL
     }
+
+    public enum Eval {
+        SHOW_EVAL,
+        SHOP_EVAL,
+        RESTAURANT_EVAL
+    }
 }
