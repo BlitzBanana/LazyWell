@@ -28,6 +28,7 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.button_plan).setOnClickListener(this);
         findViewById(R.id.button_entertainment).setOnClickListener(this);
         findViewById(R.id.button_recommended_plan).setOnClickListener(this);
+        findViewById(R.id.button_resto).setOnClickListener(this);
 
         /*for(int i=0; i<5; i++) {
             CoordinatesEntity coordinates = new CoordinatesEntity(12, 12);
@@ -84,21 +85,20 @@ public class HomeActivity extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_discover:
-                Toast.makeText(this, "Discover !", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, ShowPlanningActivity.class));
                 break;
             case R.id.button_plan:
-                Toast.makeText(this, "Plan !", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, PlanningCreatorActivity.class));
                 break;
             case R.id.button_recommended_plan:
-                Toast.makeText(this, "Recommended plan !", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, RecommendedPlanningActivity.class));
                 break;
             case R.id.button_entertainment:
-                Toast.makeText(this, "Entertainment !", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, EntertainmentActivity.class));
                 break;
+            case R.id.button_resto:{
+                startActivity(new Intent(this, RestaurantShopActivity.class));
+            }
         }
     }
 }

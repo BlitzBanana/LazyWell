@@ -41,7 +41,16 @@
         android:text="@string/button_recommended_plan"
         android:id="@+id/button_recommended_plan"
         android:layout_gravity="center_vertical"
+        android:layout_above="@+id/button_resto"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="@string/button_resto"
+        android:id="@+id/button_resto"
+        android:layout_gravity="center_vertical"
         android:layout_above="@+id/button_entertainment"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

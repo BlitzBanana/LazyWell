@@ -33,4 +33,9 @@
     <string name="settings_pause_number">Nombre de pause</string>
     <string name="settings_pause_variation">Variation de la durée d\'une pause</string>
     <string name="settings_pause_duration">Durée des pauses</string>
+    <string name="action_photo">Prendre une photo</string>
+    <string name="button_resto">Restarants &amp; Boutiques</string>
+    <string name="social_view_title">Partager une photo</string>
+    <string name="title_activity_entertainment">Divertissement</string>
+    <string name="title_activity_restaurant_shop">Restaurants et Boutiques</string>
 </resources>

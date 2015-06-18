@@ -18,4 +18,3 @@ public enum Rate
             mValue = value;
         }
 }
-
