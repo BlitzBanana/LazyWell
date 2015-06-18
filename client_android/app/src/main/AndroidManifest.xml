@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.write_external_storage" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:name="com.orm.SugarApp"
         android:allowBackup="true"
@@ -57,6 +61,10 @@
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".activities.EntertainmentActivity"
+            android:label="@string/title_activity_entertainment" >
         </activity>
     </application>
 

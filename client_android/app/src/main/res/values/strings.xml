@@ -28,4 +28,5 @@
     <string name="settings_category_recommended">Recommended planning</string>
     <string name="settings_lunch_time">Lunch time</string>
     <string name="settings_lunch_duration">Lunch duration (minutes)</string>
+    <string name="title_activity_entertainment">EntertainmentActivity</string>
 </resources>
