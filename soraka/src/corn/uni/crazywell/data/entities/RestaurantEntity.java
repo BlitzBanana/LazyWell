@@ -10,6 +10,9 @@ import javax.persistence.*;
 public class RestaurantEntity {
     private int id;
     private int coordinateId;
+    private String name;
+    private String description;
+    private String menu;
 
     @Id
     @Column(name = "id")
@@ -49,5 +52,35 @@ public class RestaurantEntity {
         int result = id;
         result = 31 * result + coordinateId;
         return result;
+    }
+
+    @Basic
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Basic
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Basic
+    @Column(name = "menu")
+    public String getMenu() {
+        return menu;
+    }
+
+    public void setMenu(String menu) {
+        this.menu = menu;
     }
 }
