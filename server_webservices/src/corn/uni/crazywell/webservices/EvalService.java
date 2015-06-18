@@ -23,7 +23,7 @@ public class EvalService {
     public void setEval(Bubble bubble) {
 
         try {
-            bubble.setHeader(Bubble.Process.GET_EVAL);
+            bubble.setHeader(Bubble.Process.SET_EVAL);
             communicationService.sendMessage(bubble);
         } catch (Exception e) {
             e.printStackTrace();
