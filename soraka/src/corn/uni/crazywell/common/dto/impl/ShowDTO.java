@@ -19,7 +19,7 @@ public class ShowDTO implements DTO {
     private int actorNumber;
     private CoordinateDTO coordinate;
     private List<SessionDTO> sessions;
-    private List<ShopScoreDTO> scores;
+    private ShowScoreDTO scores;
 
     public int getId() {
         return id;
@@ -93,11 +93,11 @@ public class ShowDTO implements DTO {
         this.sessions = sessions;
     }
 
-    public List<ShopScoreDTO> getScores() {
+    public ShowScoreDTO getScores() {
         return scores;
     }
 
-    public void setScores(List<ShopScoreDTO> scores) {
+    public void setScores(ShowScoreDTO scores) {
         this.scores = scores;
     }
 }

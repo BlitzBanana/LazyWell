@@ -37,11 +37,12 @@ public class EvaluationTaskLocal implements UnreturnableTask {
 
                 case SHOW_EVAL:
                     ShowScoreEntity showScore = new ShowScoreEntity();
-                    showScore.setValue((int)bubble.getBody().get(3));
+                    showScore.setValue((int) bubble.getBody().get(3));
                     showScore.setDate(Integer.parseInt(dateFormat.format(date)));
-                    showScore.setUuid((String)bubble.getBody().get(1));
-                    showScore.setShowId((int)bubble.getBody().get(2));
+                    showScore.setUuid((String) bubble.getBody().get(1));
+                    showScore.setShowId((int) bubble.getBody().get(2));
                     scoreShowDao.persist(showScore);
+                    break;
                 case SHOP_EVAL:
                     ShopScoreEntity shopScore = new ShopScoreEntity();
                     shopScore.setValue((int)bubble.getBody().get(3));
@@ -49,6 +50,7 @@ public class EvaluationTaskLocal implements UnreturnableTask {
                     shopScore.setUuid((String)bubble.getBody().get(1));
                     shopScore.setShopId((int) bubble.getBody().get(2));
                     scoreShopDao.persist(shopScore);
+                    break;
                 case RESTAURANT_EVAL:
                     RestaurantScoreEntity restaurantScore = new RestaurantScoreEntity();
                     restaurantScore.setValue((int)bubble.getBody().get(3));
@@ -56,6 +58,7 @@ public class EvaluationTaskLocal implements UnreturnableTask {
                     restaurantScore.setUuid((String)bubble.getBody().get(1));
                     restaurantScore.setRestaurantId((int) bubble.getBody().get(2));
                     scoreRestaurantDao.persist(restaurantScore);
+                    break;
             }
         } catch (DAOException e) {
             e.printStackTrace();
