@@ -14,6 +14,5 @@ import java.util.List;
  */
 @Local
 public interface ShowDaoLocal extends GenericDAO<ShowEntity> {
-    double getAverrageOfAllScores(final int id) throws DAOException;
     List<ShowDTO> getAvailableActivities(final int minuteBeforeNextBreak, final int walkingTime, final DTOConverterLocal<ShowEntity, ShowDTO> showDTOConverter) throws DAOException;
 }

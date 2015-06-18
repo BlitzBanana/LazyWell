@@ -6,6 +6,7 @@ import corn.uni.crazywell.common.dto.impl.ShowDTO;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.dao.GenericDAO;
+import corn.uni.crazywell.data.dao.ListDAO;
 import corn.uni.crazywell.data.dao.ShowDaoLocal;
 import corn.uni.crazywell.data.entities.ShowEntity;
 
@@ -21,7 +22,7 @@ import java.util.List;
  */
 @Named("showDao")
 @Stateless
-public class ShowDAO extends AbstractGenericDAO<ShowEntity> implements GenericDAO<ShowEntity>, ShowDaoLocal {
+public class ShowDAO extends AbstractGenericDAO<ShowEntity> implements GenericDAO<ShowEntity>, ShowDaoLocal, ListDAO {
     public ShowDAO(){
         super(ShowEntity.class);
     }
