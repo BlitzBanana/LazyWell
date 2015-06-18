@@ -17,20 +17,17 @@ import java.util.List;
  */
 public class AsyncCall extends AsyncTask<Void, Integer, SoapObject>
 {
-    MaterialDialog dialog;
     Context context;
     String namespace;
     String method;
-    String action;
     String wsdlUrl;
     List<PropertyInfo> propertiesInfo;
 
     public AsyncCall(Context context, String namespace, String method,
-                     String action, String wsdlUrl, List<PropertyInfo> propertiesInfo){
+                     String wsdlUrl, List<PropertyInfo> propertiesInfo){
         this.context = context;
         this.namespace = namespace;
         this.method = method;
-        this.action = action;
         this.wsdlUrl = wsdlUrl;
         this.propertiesInfo = propertiesInfo;
     }
@@ -39,11 +36,6 @@ public class AsyncCall extends AsyncTask<Void, Integer, SoapObject>
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        dialog = new MaterialDialog.Builder(context)
-                .title(context.getResources().getString(R.string.progress_dialog))
-                .content(R.string.please_wait)
-                .progress(true, 0)
-                .show();
     }
 
     @Override
@@ -53,7 +45,7 @@ public class AsyncCall extends AsyncTask<Void, Integer, SoapObject>
 
     @Override
     protected SoapObject doInBackground(Void... arg0) {
-        return WebServicesUtils.getServiceResponse(namespace, method, action, wsdlUrl, propertiesInfo);
+        return WebServicesUtils.getServiceResponse(namespace, method, method, wsdlUrl, propertiesInfo);
     }
 
     @Override

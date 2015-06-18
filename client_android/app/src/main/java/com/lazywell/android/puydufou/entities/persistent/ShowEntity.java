@@ -1,9 +1,7 @@
 package com.lazywell.android.puydufou.entities.persistent;
 
-import com.lazywell.android.puydufou.entities.ISchedulable;
 import com.orm.SugarRecord;
 
-import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +10,7 @@ import java.util.List;
  */
 public class ShowEntity extends SugarRecord<ShowEntity> {
 
+    private long remoteId;
     private String name;
     private String description;
     private int priority;
@@ -25,6 +24,7 @@ public class ShowEntity extends SugarRecord<ShowEntity> {
     public ShowEntity(){}
 
     public ShowEntity(
+            long remoteId,
             String name,
             String description,
             int priority,
@@ -34,6 +34,7 @@ public class ShowEntity extends SugarRecord<ShowEntity> {
             double score,
             CoordinatesEntity coordinates,
             Date duration){
+        this.remoteId = remoteId;
         this.name = name;
         this.description = description;
         this.priority = priority;
@@ -43,6 +44,14 @@ public class ShowEntity extends SugarRecord<ShowEntity> {
         this.score = score;
         this.coordinates = coordinates;
         this.duration = duration;
+    }
+
+    public long getRemoteId() {
+        return remoteId;
+    }
+
+    public void setRemoteId(long remoteId) {
+        this.remoteId = remoteId;
     }
 
     public String getName() {
@@ -119,5 +128,10 @@ public class ShowEntity extends SugarRecord<ShowEntity> {
 
     public List<SessionEntity> getSessionEntities() {
         return SessionEntity.find(SessionEntity.class, "show = ?", this.getId().toString());
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " " + this.score + " " + this.description;
     }
 }

@@ -47,8 +47,7 @@ public class WebServicesUtils {
             e.printStackTrace();
         }
         try {
-            SoapObject resultRequestSOAP = (SoapObject) envelope.bodyIn;
-            Object tmpResponse = resultRequestSOAP.getProperty(0);
+            Object tmpResponse = (SoapObject) envelope.bodyIn;
             if (tmpResponse instanceof SoapObject){
                 response = (SoapObject) tmpResponse;
                 Log.d("SOAP", response.toString());

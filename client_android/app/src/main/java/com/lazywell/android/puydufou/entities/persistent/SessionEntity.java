@@ -12,15 +12,25 @@ import java.util.Date;
  */
 public class SessionEntity  extends SugarRecord<SessionEntity> implements ISchedulable {
 
+    private long remoteId;
     private Date time;
     private ShowEntity show;
 
     public SessionEntity(){
     }
 
-    public SessionEntity(Date time, ShowEntity show){
+    public SessionEntity(long remoteId, Date time, ShowEntity show){
+        this.remoteId = remoteId;
         this.time = dateToToday(time);
         this.show = show;
+    }
+
+    public long getRemoteId() {
+        return remoteId;
+    }
+
+    public void setRemoteId(long remoteId) {
+        this.remoteId = remoteId;
     }
 
     public Date getTime() {

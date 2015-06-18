@@ -7,6 +7,7 @@ import android.util.Log;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lazywell.android.puydufou.R;
 import com.lazywell.android.puydufou.business.Rate;
+import com.lazywell.android.puydufou.entities.persistent.CoordinatesEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 import com.lazywell.android.puydufou.tools.WebServicesUtils;
@@ -35,10 +36,10 @@ public class ShowClient {
 
     public List<ShowEntity> getShows(){
         List<ShowEntity> shows;
+
         AsyncCall asyncCall = new AsyncCall(
                 context,
                 WebServicesDirectory.NAMESPACE,
-                WebServicesDirectory.Shows.METHOD,
                 WebServicesDirectory.Shows.Actions.GET_SHOWS,
                 WebServicesDirectory.Shows.WSDL_URL,
                 null);
@@ -58,10 +59,14 @@ public class ShowClient {
             return new ArrayList<>();
         }
 
-        for (ShowEntity showEntity : shows)
-            showEntity.save();
+        for(ShowEntity show : shows)
+            Log.d("CLIENT WS", show.getName());
 
-        shows = ShowEntity.listAll(ShowEntity.class);
+        //shows = ShowEntity.listAll(ShowEntity.class);
+
+        Log.d("CHECK DB", "Show: " + ShowEntity.listAll(ShowEntity.class).size());
+        Log.d("CHECK DB", "Session: " + SessionEntity.listAll(SessionEntity.class).size());
+        Log.d("CHECK DB", "Coordinate: " + CoordinatesEntity.listAll(CoordinatesEntity.class).size());
 
         return shows;
     }
@@ -85,7 +90,6 @@ public class ShowClient {
         AsyncCall asyncCall = new AsyncCall(
                 context,
                 WebServicesDirectory.NAMESPACE,
-                WebServicesDirectory.Shows.METHOD,
                 WebServicesDirectory.Shows.Actions.GET_BEST_SCHEDULE,
                 WebServicesDirectory.Shows.WSDL_URL,
                 null);

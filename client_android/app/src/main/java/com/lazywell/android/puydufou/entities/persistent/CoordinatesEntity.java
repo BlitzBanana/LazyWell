@@ -7,16 +7,25 @@ import com.orm.SugarRecord;
  */
 public class CoordinatesEntity extends SugarRecord<CoordinatesEntity> {
 
-    /* Properties */
+    private long remoteId;
     private double latitude;
     private double longitude;
 
     public CoordinatesEntity(){
     }
 
-    public CoordinatesEntity(double latitude, double longitude){
+    public CoordinatesEntity(long remoteId, double latitude, double longitude){
+        this.remoteId = remoteId;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public long getRemoteId() {
+        return remoteId;
+    }
+
+    public void setRemoteId(long remoteId) {
+        this.remoteId = remoteId;
     }
 
     public double getLatitude() {

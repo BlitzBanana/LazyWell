@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.alamkanak.weekview.DateTimeInterpreter;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
@@ -149,6 +150,11 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
 
 
     public List<WeekViewEvent> loadEvents(int newYear, int newMonth){
+        MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .title(getResources().getString(R.string.progress_dialog))
+                .content(R.string.please_wait)
+                .progress(true, 0)
+                .show();
         List<WeekViewEvent> events = new ArrayList<>();
         ShowClient showClient = new ShowClient(this);
         List<ShowEntity> showEntities = showClient.getShows();
@@ -158,7 +164,7 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
                 events.add(EventUtils.schedulableToEvent(this, sessionEntity, newYear, newMonth));
             }
         }
-
+        dialog.dismiss();
         return events;
     }
 }

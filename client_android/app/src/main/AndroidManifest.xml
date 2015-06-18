@@ -43,7 +43,7 @@
 
         <meta-data
             android:name="DATABASE"
-            android:value="test2.db" />
+            android:value="test4.db" />
         <meta-data
             android:name="VERSION"
             android:value="2" />

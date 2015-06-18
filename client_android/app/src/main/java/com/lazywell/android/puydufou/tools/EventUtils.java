@@ -8,6 +8,7 @@ import com.lazywell.android.puydufou.R;
 import com.lazywell.android.puydufou.entities.ISchedulable;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by victor on 17/06/2015.
@@ -44,5 +45,29 @@ public class EventUtils {
             default:
                 return R.color.blue;
         }
+    }
+
+    public static Date getDateFromDateString(String date){
+        String[] split = date.split(":");
+        int years = Integer.parseInt(split[0]);
+        int months = Integer.parseInt(split[1]);
+        int days = Integer.parseInt(split[2]);
+
+        Calendar calendar = (Calendar) Calendar.getInstance().clone();
+        calendar.set(Calendar.YEAR, years);
+        calendar.set(Calendar.MONTH, months);
+        calendar.set(Calendar.DATE, days);
+        return calendar.getTime();
+    }
+
+    public static Date getDateFromTimeString(String date){
+        String[] split = date.split(":");
+        int hours = Integer.parseInt(split[0]);
+        int minutes = Integer.parseInt(split[1]);
+
+        Calendar calendar = (Calendar) Calendar.getInstance().clone();
+        calendar.set(Calendar.HOUR, hours);
+        calendar.set(Calendar.MINUTE, minutes);
+        return calendar.getTime();
     }
 }

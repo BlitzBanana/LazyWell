@@ -1,7 +1,10 @@
 package com.lazywell.android.puydufou.activities;
 
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,8 +17,9 @@ import com.gc.materialdesign.views.Slider;
 import com.lazywell.android.puydufou.R;
 import com.lazywell.android.puydufou.tools.IntegerUtils;
 
-public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
+public class SettingsActivity extends PreferenceActivity implements View.OnClickListener {
 
+    SharedPreferences sharedPref;
     TextView startDateView;
     TextView endDateView;
     TextView lunchDateView;
@@ -83,16 +87,27 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 }
         );
 
+        sharedPref = this.getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String startTime = sharedPref.getString(getString(R.string.saved_start_time), getString(R.string.default_start_time));
+        String endTime = sharedPref.getString(getString(R.string.saved_end_time), getString(R.string.default_end_time));
+        String lunchTime = sharedPref.getString(getString(R.string.saved_lunch_time), getString(R.string.default_lunch_time));
+        int lunchDuration = sharedPref.getInt(getString(R.string.saved_lunch_duration), 40);
+        int breakCount = sharedPref.getInt(getString(R.string.saved_break_count), 2);
+        int breakDuration = sharedPref.getInt(getString(R.string.saved_break_duration), 25);
+        int breakVariation = sharedPref.getInt(getString(R.string.saved_break_variation), 10);
+
         // Setup time textViews default values
-        startDateView.setText("09:30");
-        endDateView.setText("18:00");
-        lunchDateView.setText("12:30");
+        startDateView.setText(startTime);
+        endDateView.setText(endTime);
+        lunchDateView.setText(lunchTime);
 
         // Setup sliders default values
-        lunchDurationSlider.setValue(25);
-        breakCountSlider.setValue(4);
-        breakDurationSlider.setValue(25);
-        breakVariationSlider.setValue(10);
+        lunchDurationSlider.setValue(lunchDuration);
+        breakCountSlider.setValue(breakCount);
+        breakDurationSlider.setValue(breakDuration);
+        breakVariationSlider.setValue(breakVariation);
     }
 
     @Override
@@ -226,5 +241,46 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
     private int getMinutesFromString(String time){
         return Integer.parseInt(time.split(":")[1]);
+    }
+
+    @Override
+    protected void onPause() {
+        saveSettings();
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        saveSettings();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        saveSettings();
+        super.onDestroy();
+    }
+
+
+
+    private void saveSettings(){
+        String startTime    = startDateView.getText().toString();
+        String lunchTime    = lunchDateView.getText().toString();
+        String endTime      = endDateView.getText().toString();
+        int lunchDuration   = lunchDurationSlider.getValue();
+        int breakCount      = breakCountSlider.getValue();
+        int breakDuration   = breakDurationSlider.getValue();
+        int breakVariation  = breakVariationSlider.getValue();
+
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(getString(R.string.saved_start_time), startTime);
+        editor.putString(getString(R.string.saved_end_time), endTime);
+        editor.putString(getString(R.string.saved_lunch_time), lunchTime);
+        editor.putInt(getString(R.string.saved_lunch_duration), lunchDuration);
+        editor.putInt(getString(R.string.saved_break_count), breakCount);
+        editor.putInt(getString(R.string.saved_break_duration), breakDuration);
+        editor.putInt(getString(R.string.saved_break_variation), breakVariation);
+        editor.apply();
     }
 }
