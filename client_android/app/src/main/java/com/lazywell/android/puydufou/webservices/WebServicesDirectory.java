@@ -18,4 +18,22 @@ public class WebServicesDirectory {
             public static final String GET_ANECDOTES = "getAnecdotes";
         }
     }
+
+    public class Restaurants{
+
+        public static final String WSDL_URL = DOMAIN + "/RestaurantService/restaurant?WSDL";
+
+        public class Actions{
+            public static final String GET_RESTAURANTS = "getRestaurants";
+        }
+    }
+
+    public class Shops{
+
+        public static final String WSDL_URL = DOMAIN + "/ShopService/shop?WSDL";
+
+        public class Actions{
+            public static final String GET_SHOPS = "getShops";
+        }
+    }
 }

@@ -45,7 +45,7 @@ public class ShopAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View rootView = LayoutInflater.from(context)
-                .inflate(R.layout.dialog_resto_item, parent, false);
+                .inflate(R.layout.dialog_shop_item, parent, false);
 
         Shop shop = (Shop) getItem(position);
 
