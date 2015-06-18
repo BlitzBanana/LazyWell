@@ -4,6 +4,7 @@ import corn.uni.crazywell.business.tasks.UnreturnableTask;
 import corn.uni.crazywell.common.Bubble;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
+import corn.uni.crazywell.data.dao.ScoreDao;
 import corn.uni.crazywell.data.entities.RestaurantScoreEntity;
 import corn.uni.crazywell.data.entities.ShopScoreEntity;
 import corn.uni.crazywell.data.entities.ShowScoreEntity;
@@ -24,9 +25,18 @@ public class EvaluationTaskLocal implements UnreturnableTask {
     @Inject
     AbstractGenericDAO<ShowScoreEntity> scoreShowDao;
     @Inject
+    private @Named("scoreShowDao")
+    ScoreDao scoreShowDaoLocal;
+    @Inject
     AbstractGenericDAO<ShopScoreEntity> scoreShopDao;
     @Inject
+    private @Named("scoreShopDao")
+    ScoreDao scoreShopDaoLocal;
+    @Inject
     AbstractGenericDAO<RestaurantScoreEntity> scoreRestaurantDao;
+    @Inject
+    private @Named("scoreRestaurantDao")
+    ScoreDao scoreRestaurantDaoLocal;
 
     @Override
     public void run(Bubble bubble) {
@@ -41,7 +51,8 @@ public class EvaluationTaskLocal implements UnreturnableTask {
                     showScore.setDate(Integer.parseInt(dateFormat.format(date)));
                     showScore.setUuid((String) bubble.getBody().get(1));
                     showScore.setShowId((int) bubble.getBody().get(2));
-                    scoreShowDao.persist(showScore);
+                    if(scoreShowDaoLocal.isVoted(bubble))
+                        scoreShowDao.persist(showScore);
                     break;
                 case SHOP_EVAL:
                     ShopScoreEntity shopScore = new ShopScoreEntity();
@@ -49,7 +60,8 @@ public class EvaluationTaskLocal implements UnreturnableTask {
                     shopScore.setDate(Integer.parseInt(dateFormat.format(date)));
                     shopScore.setUuid((String)bubble.getBody().get(1));
                     shopScore.setShopId((int) bubble.getBody().get(2));
-                    scoreShopDao.persist(shopScore);
+                    if(scoreShopDaoLocal.isVoted(bubble))
+                        scoreShopDao.persist(shopScore);
                     break;
                 case RESTAURANT_EVAL:
                     RestaurantScoreEntity restaurantScore = new RestaurantScoreEntity();
@@ -57,7 +69,8 @@ public class EvaluationTaskLocal implements UnreturnableTask {
                     restaurantScore.setDate(Integer.parseInt(dateFormat.format(date)));
                     restaurantScore.setUuid((String)bubble.getBody().get(1));
                     restaurantScore.setRestaurantId((int) bubble.getBody().get(2));
-                    scoreRestaurantDao.persist(restaurantScore);
+                    if(scoreRestaurantDaoLocal.isVoted(bubble))
+                        scoreRestaurantDao.persist(restaurantScore);
                     break;
             }
         } catch (DAOException e) {
