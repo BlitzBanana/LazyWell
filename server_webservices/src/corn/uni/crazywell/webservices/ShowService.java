@@ -42,9 +42,8 @@ public class ShowService {
 
         } catch (Exception e) {
             e.printStackTrace();
+            throw e;
         }
-
-        return null;
     }
 
     @WebMethod(operationName = "getBestSchedule")

@@ -5,5 +5,5 @@ import corn.uni.crazywell.common.dto.DTO;
 /**
  * Created by blacksheep on 16/06/15.
  */
-public class RestaurantScoreDTO implements DTO{
+public class RestaurantScoreDTO implements DTO {
 }

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 /**
  * Created by blacksheep on 16/06/15.
  */
-public class CoordinateDTO implements DTO{
+public class CoordinateDTO implements DTO {
     private int id;
     private BigDecimal latitude;
     private BigDecimal longitude;

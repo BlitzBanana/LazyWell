@@ -42,9 +42,8 @@ public class CommunicationService implements CommunicationServiceLocal{
 
         try (JMSConsumer consumer = context.createConsumer(responseQueue)) {
 
-            Bubble response = consumer.receiveBody(Bubble.class, 5000);
+            Bubble response = consumer.receiveBody(Bubble.class, 10000);
 
-            //System.out.println(response.getBody());
 
             if (response == null) {
                 throw new IllegalStateException("CUSTOM - Message processing timed out");

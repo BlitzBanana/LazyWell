@@ -2,10 +2,8 @@ package corn.uni.crazywell.common.dto.impl;
 
 import corn.uni.crazywell.common.dto.DTO;
 
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -20,6 +18,7 @@ public class ShowDTO implements DTO {
     private byte[] image;
     private int actorNumber;
     private CoordinateDTO coordinate;
+    private List<SessionDTO> sessions;
 
     public int getId() {
         return id;
@@ -84,4 +83,13 @@ public class ShowDTO implements DTO {
     public void setCoordinate(CoordinateDTO coordinate) {
         this.coordinate = coordinate;
     }
+
+    public List<SessionDTO> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(List<SessionDTO> sessions) {
+        this.sessions = sessions;
+    }
 }
+
