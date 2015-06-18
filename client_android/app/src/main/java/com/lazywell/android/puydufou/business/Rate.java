@@ -5,7 +5,6 @@ package com.lazywell.android.puydufou.business;
  */
 public enum Rate
 {
-
         NOT_SATISFED(1),
         PASSABLE(2),
         INTERSTING(3),
