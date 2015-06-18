@@ -1,7 +1,6 @@
 package corn.uni.crazywell.data.dao.impl;
 
 import corn.uni.crazywell.common.dto.converter.DTOConverterLocal;
-import corn.uni.crazywell.common.dto.converter.impl.ShowDTOConverter;
 import corn.uni.crazywell.common.dto.impl.ShowDTO;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
@@ -11,7 +10,6 @@ import corn.uni.crazywell.data.dao.ShowDaoLocal;
 import corn.uni.crazywell.data.entities.ShowEntity;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.Query;
 import java.util.ArrayList;
