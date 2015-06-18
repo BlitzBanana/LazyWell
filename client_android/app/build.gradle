@@ -28,4 +28,6 @@ dependencies {
     compile 'com.afollestad:material-dialogs:0.7.6.0'
     compile 'com.nineoldandroids:library:2.4.+'
     compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
+    compile 'com.facebook.android:facebook-android-sdk:4.1.0'
+
 }
