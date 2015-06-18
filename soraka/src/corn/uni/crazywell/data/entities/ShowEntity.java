@@ -1,18 +1,15 @@
 package corn.uni.crazywell.data.entities;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Date;
 import java.util.Arrays;
 
 /**
- * Created by blacksheep on 16/06/15.
+ * Created by blacksheep on 17/06/15.
  */
 @Entity
 @Table(name = "show", schema = "", catalog = "lazywell")
-public class ShowEntity implements Serializable {
-    private static final long serialVersionUID = 42L;
-
+public class ShowEntity {
     private int id;
     private String name;
     private String description;
@@ -23,10 +20,8 @@ public class ShowEntity implements Serializable {
     private int coordinateId;
     private long duration;
 
-
-
     @Id
-    @Column(name = "id")
+    @Column(name = "id", nullable = false, insertable = true, updatable = true)
     public int getId() {
         return id;
     }
@@ -36,7 +31,7 @@ public class ShowEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, insertable = true, updatable = true, length = 50)
     public String getName() {
         return name;
     }
@@ -46,7 +41,7 @@ public class ShowEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "description")
+    @Column(name = "description", nullable = true, insertable = true, updatable = true, length = 1000)
     public String getDescription() {
         return description;
     }
@@ -56,7 +51,7 @@ public class ShowEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "priority")
+    @Column(name = "priority", nullable = false, insertable = true, updatable = true)
     public int getPriority() {
         return priority;
     }
@@ -66,7 +61,17 @@ public class ShowEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "creation_date")
+    @Column(name = "duration", nullable = false, insertable = true, updatable = true)
+    public long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
+    }
+
+    @Basic
+    @Column(name = "creation_date", nullable = false, insertable = true, updatable = true)
     public Date getCreationDate() {
         return creationDate;
     }
@@ -76,7 +81,7 @@ public class ShowEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "image")
+    @Column(name = "image", nullable = true, insertable = true, updatable = true)
     public byte[] getImage() {
         return image;
     }
@@ -86,7 +91,7 @@ public class ShowEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "actor_number")
+    @Column(name = "actor_number", nullable = false, insertable = true, updatable = true)
     public int getActorNumber() {
         return actorNumber;
     }
@@ -110,16 +115,17 @@ public class ShowEntity implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ShowEntity that = (ShowEntity) o;
+        ShowEntity entity = (ShowEntity) o;
 
-        if (id != that.id) return false;
-        if (priority != that.priority) return false;
-        if (actorNumber != that.actorNumber) return false;
-        if (coordinateId != that.coordinateId) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (creationDate != null ? !creationDate.equals(that.creationDate) : that.creationDate != null) return false;
-        if (!Arrays.equals(image, that.image)) return false;
+        if (id != entity.id) return false;
+        if (priority != entity.priority) return false;
+        if (duration != entity.duration) return false;
+        if (coordinateId != entity.coordinateId) return false;
+        if (name != null ? !name.equals(entity.name) : entity.name != null) return false;
+        if (description != null ? !description.equals(entity.description) : entity.description != null) return false;
+        if (creationDate != null ? !creationDate.equals(entity.creationDate) : entity.creationDate != null)
+            return false;
+        if (!Arrays.equals(image, entity.image)) return false;
 
         return true;
     }
@@ -130,20 +136,11 @@ public class ShowEntity implements Serializable {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + priority;
+        result = 31 * result + (int) (duration ^ (duration >>> 32));
         result = 31 * result + (creationDate != null ? creationDate.hashCode() : 0);
         result = 31 * result + (image != null ? Arrays.hashCode(image) : 0);
         result = 31 * result + actorNumber;
         result = 31 * result + coordinateId;
         return result;
-    }
-
-    @Basic
-    @Column(name = "duration")
-    public long getDuration() {
-        return duration;
-    }
-
-    public void setDuration(long duration) {
-        this.duration = duration;
     }
 }

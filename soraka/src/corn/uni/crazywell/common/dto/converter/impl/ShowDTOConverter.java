@@ -2,17 +2,20 @@ package corn.uni.crazywell.common.dto.converter.impl;
 
 import corn.uni.crazywell.common.dto.converter.DTOConverterLocal;
 import corn.uni.crazywell.common.dto.impl.CoordinateDTO;
+import corn.uni.crazywell.common.dto.impl.SessionDTO;
 import corn.uni.crazywell.common.dto.impl.ShowDTO;
 import corn.uni.crazywell.common.exception.ConversionException;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
-import corn.uni.crazywell.data.dao.impl.CoordinateDao;
 import corn.uni.crazywell.data.entities.CoordinatesEntity;
+import corn.uni.crazywell.data.entities.SessionEntity;
 import corn.uni.crazywell.data.entities.ShowEntity;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by blacksheep on 16/06/15.
@@ -22,7 +25,9 @@ import javax.inject.Named;
 public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> {
 
     @Inject private AbstractGenericDAO<CoordinatesEntity> coordinateDao;
-    @Inject private DTOConverterLocal<CoordinatesEntity, CoordinateDTO> coordinateConverter;
+    @Inject private AbstractGenericDAO<SessionEntity> sessionDao;
+    @Inject private DTOConverterLocal<CoordinatesEntity, CoordinateDTO> coordinatesDTOConverter;
+    @Inject private DTOConverterLocal<SessionEntity, SessionDTO> sessionDTOConverter;
 
     @Override
     public void convert(final ShowEntity source, final ShowDTO target) throws ConversionException {
@@ -36,16 +41,35 @@ public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> 
         target.setPriority(source.getPriority());
         //Binded conversion
         convertCoordinateInternal(source, target);
+        convertSessionInternal(source, target);
     }
 
     private void convertCoordinateInternal(final ShowEntity source, final ShowDTO target) throws ConversionException {
         try {
             final CoordinatesEntity coordinatesEntity = coordinateDao.find(source.getCoordinateId());
             final CoordinateDTO coordinateDTO = new CoordinateDTO();
-            coordinateConverter.convert(coordinatesEntity, coordinateDTO);
+            coordinatesDTOConverter.convert(coordinatesEntity, coordinateDTO);
             target.setCoordinate(coordinateDTO);
         } catch (DAOException e) {
+            e.printStackTrace();
             throw new ConversionException("CUSTOM - Cannot convert coordinate from the show because coordinates doesn't exist!");
+        }
+    }
+
+    private void convertSessionInternal(final ShowEntity source, final ShowDTO target) throws ConversionException {
+        try {
+            final List<SessionEntity> sessionEntities = sessionDao.findAll();
+            final List<SessionDTO> finalList = new ArrayList<>();
+            SessionDTO sessionDTO;
+            for(SessionEntity sessionEntity : sessionEntities){
+                sessionDTO = new SessionDTO();
+                sessionDTOConverter.convert(sessionEntity, sessionDTO);
+                finalList.add(sessionDTO);
+            }
+            target.setSessions(finalList);
+        } catch (DAOException e) {
+            e.printStackTrace();
+            throw new ConversionException("CUSTOM - Cannot convert session from the show because coordinates doesn't exist!");
         }
     }
 }

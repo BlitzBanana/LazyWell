@@ -10,14 +10,12 @@ import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.common.exception.TaskFailedException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.dao.GenericDAO;
-import corn.uni.crazywell.data.dao.impl.ShowDao;
 import corn.uni.crazywell.data.entities.ShowEntity;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
