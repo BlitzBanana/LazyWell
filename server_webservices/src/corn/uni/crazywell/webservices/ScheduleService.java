@@ -1,10 +1,7 @@
 package corn.uni.crazywell.webservices;
 
-import com.sun.deploy.security.MozillaJSSDSASignature;
 import corn.uni.crazywell.common.Bubble;
-import corn.uni.crazywell.common.dto.DTO;
 import corn.uni.crazywell.common.dto.impl.ShowDTO;
-import corn.uni.crazywell.common.object.Show;
 import corn.uni.crazywell.services.CommunicationServiceLocal;
 
 import javax.ejb.EJB;

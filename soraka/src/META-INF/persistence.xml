@@ -23,7 +23,7 @@
         <class>corn.uni.crazywell.data.entities.TimeTravelEntity</class>
         <class>corn.uni.crazywell.data.entities.SessionEntity</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://10.162.50.8:3306/lazywell"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.43.68:3306/lazywell"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="dev"/>
             <property name="hibernate.connection.password" value="UnicornStudio"/>
