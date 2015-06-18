@@ -1,14 +1,16 @@
 package corn.uni.crazywell.common.dto.converter.impl;
 
 import corn.uni.crazywell.common.dto.converter.DTOConverterLocal;
-import corn.uni.crazywell.common.dto.impl.*;
+import corn.uni.crazywell.common.dto.impl.CoordinateDTO;
+import corn.uni.crazywell.common.dto.impl.RestaurantDTO;
+import corn.uni.crazywell.common.dto.impl.RestaurantScoreDTO;
 import corn.uni.crazywell.common.exception.ConversionException;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.dao.ListDAO;
-import corn.uni.crazywell.data.dao.ListDao;
-import corn.uni.crazywell.data.entities.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import corn.uni.crazywell.data.entities.CoordinatesEntity;
+import corn.uni.crazywell.data.entities.RestaurantEntity;
+import corn.uni.crazywell.data.entities.RestaurantScoreEntity;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
