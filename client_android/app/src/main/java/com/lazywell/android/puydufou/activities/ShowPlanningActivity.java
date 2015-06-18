@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,16 +13,14 @@ import com.alamkanak.weekview.DateTimeInterpreter;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 import com.lazywell.android.puydufou.R;
-import com.lazywell.android.puydufou.entities.persistent.ScheduleEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 import com.lazywell.android.puydufou.tools.EventUtils;
-import com.lazywell.android.puydufou.webservices.ShowClient;
+import com.lazywell.android.puydufou.webservices.clients.ShowClient;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -153,7 +150,7 @@ public class ShowPlanningActivity extends AppCompatActivity implements WeekView.
 
     public List<WeekViewEvent> loadEvents(int newYear, int newMonth){
         List<WeekViewEvent> events = new ArrayList<>();
-        ShowClient showClient = new ShowClient();
+        ShowClient showClient = new ShowClient(this);
         List<ShowEntity> showEntities = showClient.getShows();
 
         for (ShowEntity showEntity : showEntities){

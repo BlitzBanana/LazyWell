@@ -26,6 +26,11 @@
     <string name="title_activity_recommended_planning">Planning recommendé</string>
     <string name="settings_category_recommended">Planning recommendé</string>
     <string name="title_activity_settings">Paramètres</string>
-    <string name="settings_lunch_duration">Durée de la pause repas (minutes)</string>
+    <string name="settings_lunch_duration">Durée de la pause repas</string>
     <string name="settings_lunch_time">Heure de la pause repas</string>
+    <string name="settings_start">Heure d\'arrivée</string>
+    <string name="settings_end">Heure de départ</string>
+    <string name="settings_pause_number">Nombre de pause</string>
+    <string name="settings_pause_variation">Variation de la durée d\'une pause</string>
+    <string name="settings_pause_duration">Durée des pauses</string>
 </resources>

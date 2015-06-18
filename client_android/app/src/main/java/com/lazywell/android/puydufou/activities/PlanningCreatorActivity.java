@@ -61,10 +61,7 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.planning_creator_recommended) {
-            Toast.makeText(this, "Loading recommended planning...", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (id == R.id.planning_creator_reset){
+        if (id == R.id.planning_creator_reset){
             showResetPopup();
             return true;
         } else if (id == R.id.planning_creator_delete) {
@@ -129,14 +126,12 @@ public class PlanningCreatorActivity extends AppCompatActivity implements View.O
 
     public void showDeleteMenu(){
         findViewById(R.id.planning_creator_delete).setVisibility(View.VISIBLE);
-        findViewById(R.id.planning_creator_recommended).setVisibility(View.INVISIBLE);
         findViewById(R.id.planning_creator_reset).setVisibility(View.INVISIBLE);
         Log.d("MENU", "showDeleteMenu");
     }
 
     public void showStandardMenu(){
         findViewById(R.id.planning_creator_delete).setVisibility(View.INVISIBLE);
-        findViewById(R.id.planning_creator_recommended).setVisibility(View.VISIBLE);
         findViewById(R.id.planning_creator_reset).setVisibility(View.VISIBLE);
         Log.d("MENU", "showStandardMenu");
     }

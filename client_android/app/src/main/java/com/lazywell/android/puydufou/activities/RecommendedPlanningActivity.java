@@ -10,10 +10,9 @@ import android.view.MenuItem;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 import com.lazywell.android.puydufou.R;
-import com.lazywell.android.puydufou.entities.persistent.ScheduleEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.tools.EventUtils;
-import com.lazywell.android.puydufou.webservices.ShowClient;
+import com.lazywell.android.puydufou.webservices.clients.ShowClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,7 +73,7 @@ public class RecommendedPlanningActivity extends AppCompatActivity implements  W
     @Override
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
         List<WeekViewEvent> events = new ArrayList<>();
-        List<SessionEntity> sessions = new ShowClient().getBestPlanning();
+        List<SessionEntity> sessions = new ShowClient(this).getBestPlanning();
 
         for (SessionEntity session : sessions)
             events.add(EventUtils.schedulableToEvent(this, session, newYear, newMonth));

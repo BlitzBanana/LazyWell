@@ -27,6 +27,13 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="settings_category_recommended">Recommended planning</string>
     <string name="settings_lunch_time">Lunch time</string>
-    <string name="settings_lunch_duration">Lunch duration (minutes)</string>
+    <string name="settings_lunch_duration">Lunch duration</string>
+    <string name="settings_start">Arrive date</string>
+    <string name="settings_end">End date</string>
+    <string name="settings_pause_number">Break number</string>
+    <string name="settings_pause_variation">Break duration variation</string>
+    <string name="settings_pause_duration">Pause duration</string>
+    <string name="progress_dialog">Loading events</string>
+    <string name="please_wait">Please wait</string>
     <string name="title_activity_entertainment">EntertainmentActivity</string>
 </resources>
