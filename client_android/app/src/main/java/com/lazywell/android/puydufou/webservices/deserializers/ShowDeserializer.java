@@ -42,7 +42,7 @@ public class ShowDeserializer extends DeserializerBase<ShowEntity> {
             long coordinatesId = Long.parseLong(((SoapObject) item.getProperty("coordinate")).getProperty("id").toString());
             double latitude = Double.parseDouble(((SoapObject) item.getProperty("coordinate")).getProperty("latitude").toString());
             double longitude = Double.parseDouble(((SoapObject) item.getProperty("coordinate")).getProperty("longitude").toString());
-            String creationDateString = item.getProperty("creationDate").toString();
+            String creationDateString = item.getProperty("creationDateString").toString();
             String description = item.getProperty("description").toString();
             String name = item.getProperty("name").toString();
             int priority = Integer.parseInt(item.getProperty("priority").toString());
@@ -88,7 +88,7 @@ public class ShowDeserializer extends DeserializerBase<ShowEntity> {
                 long sessionId = Long.parseLong(item.getProperty("id").toString());
                 SessionEntity session = new SessionEntity(
                         sessionId,
-                        EventUtils.getDateFromTimeString(sessionItem.getProperty("time").toString()),
+                        EventUtils.getDateFromTimeString(sessionItem.getProperty("timeString").toString()),
                         show
                 );
                 session.save();

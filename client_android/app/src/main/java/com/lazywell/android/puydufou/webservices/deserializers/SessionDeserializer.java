@@ -34,7 +34,7 @@ public class SessionDeserializer extends DeserializerBase<SessionEntity> {
             ShowEntity show = ShowEntity.find(ShowEntity.class, "remoteId", String.valueOf(showId)).get(0);
             SessionEntity session = new SessionEntity(
                     id,
-                    EventUtils.getDateFromTimeString(sessionItem.getProperty("time").toString()),
+                    EventUtils.getDateFromTimeString(sessionItem.getProperty("timeString").toString()),
                     show
             );
             session.save();
