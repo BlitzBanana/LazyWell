@@ -21,8 +21,8 @@ import java.util.List;
  */
 @Named("showDao")
 @Stateless
-public class ShowDao extends AbstractGenericDAO<ShowEntity> implements GenericDAO<ShowEntity>, ShowDaoLocal {
-    public ShowDao(){
+public class ShowDAO extends AbstractGenericDAO<ShowEntity> implements GenericDAO<ShowEntity>, ShowDaoLocal {
+    public ShowDAO(){
         super(ShowEntity.class);
     }
 

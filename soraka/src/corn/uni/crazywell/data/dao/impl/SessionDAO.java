@@ -11,8 +11,8 @@ import javax.inject.Named;
  */
 @Named
 @Stateless
-public class SessionDao extends AbstractGenericDAO<SessionEntity>{
-    public SessionDao(){
+public class SessionDAO extends AbstractGenericDAO<SessionEntity>{
+    public SessionDAO(){
         super(SessionEntity.class);
     }
 }

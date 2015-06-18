@@ -4,7 +4,6 @@ import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.entities.RestaurantEntity;
 
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Alternative;
 import javax.inject.Named;
 
 /**
@@ -12,8 +11,8 @@ import javax.inject.Named;
  */
 @Named
 @Stateless
-public class RestaurantDao extends AbstractGenericDAO<RestaurantEntity> {
-    public RestaurantDao(){
+public class RestaurantDAO extends AbstractGenericDAO<RestaurantEntity> {
+    public RestaurantDAO(){
         super(RestaurantEntity.class);
     }
 }

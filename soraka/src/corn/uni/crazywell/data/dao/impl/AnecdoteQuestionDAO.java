@@ -11,8 +11,8 @@ import javax.inject.Named;
  */
 @Named
 @Stateless
-public class AnecdoteQuestionDao extends AbstractGenericDAO<AnecdoteQuestionEntity> {
-    public AnecdoteQuestionDao() {
+public class AnecdoteQuestionDAO extends AbstractGenericDAO<AnecdoteQuestionEntity> {
+    public AnecdoteQuestionDAO() {
         super(AnecdoteQuestionEntity.class);
     }
 }

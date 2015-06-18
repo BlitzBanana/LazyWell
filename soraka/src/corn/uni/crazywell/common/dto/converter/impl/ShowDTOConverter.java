@@ -9,7 +9,6 @@ import corn.uni.crazywell.common.exception.ConversionException;
 import corn.uni.crazywell.common.exception.DAOException;
 import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.dao.ShowDaoLocal;
-import corn.uni.crazywell.data.dao.impl.ShowDao;
 import corn.uni.crazywell.data.entities.CoordinatesEntity;
 import corn.uni.crazywell.data.entities.SessionEntity;
 import corn.uni.crazywell.data.entities.ShowEntity;
@@ -93,7 +92,7 @@ public class ShowDTOConverter implements DTOConverterLocal<ShowEntity, ShowDTO> 
 
     private void convertShopScoreInternal(final ShowEntity source, final ShowDTO target) throws ConversionException{
         try {
-            //final double score = ((ShowDao)showDaoLocal).getAverrageOfAllScores(source.getId());
+            //final double score = ((ShowDAO)showDaoLocal).getAverrageOfAllScores(source.getId());
             final double score = showDaoLocal.getAverrageOfAllScores(source.getId());
             final ShowScoreDTO showScoreDTO = new ShowScoreDTO(0, score, 0, 0, null);
             target.setScores(showScoreDTO);

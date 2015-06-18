@@ -4,7 +4,6 @@ import corn.uni.crazywell.data.dao.AbstractGenericDAO;
 import corn.uni.crazywell.data.entities.MenuItemScoreEntity;
 
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Alternative;
 import javax.inject.Named;
 
 /**
@@ -12,8 +11,8 @@ import javax.inject.Named;
  */
 @Named
 @Stateless
-public class ScoreMenuItemDao extends AbstractGenericDAO<MenuItemScoreEntity> {
-    public ScoreMenuItemDao(){
+public class ScoreMenuItemDAO extends AbstractGenericDAO<MenuItemScoreEntity> {
+    public ScoreMenuItemDAO(){
         super(MenuItemScoreEntity.class);
     }
 }
