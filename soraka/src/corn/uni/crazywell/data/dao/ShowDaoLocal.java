@@ -13,6 +13,6 @@ import java.util.List;
  * Created by blacksheep on 18/06/15.
  */
 @Local
-public interface ShowDaoLocal extends GenericDAO<ShowEntity> {
+public interface ShowDaoLocal extends ListDAO {
     List<ShowDTO> getAvailableActivities(final int minuteBeforeNextBreak, final int walkingTime, final DTOConverterLocal<ShowEntity, ShowDTO> showDTOConverter) throws DAOException;
 }
