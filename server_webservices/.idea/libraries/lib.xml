@@ -1,0 +1,60 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/weld-core-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/FastInoset.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mimepull.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxb-xjc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-servlet-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-core-jsf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/policy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-servlet-core-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/stax2-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-api-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-core-jsf-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxws-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-servlet-core-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxb-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxws-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/management-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/woodstox-core-asl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/gmbal-api-only.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxb-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/streambuffer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-se-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/saaj-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.jms-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cdi-api-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ha-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-spi-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/stax-ex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-core-impl-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-servlet-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-spi-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-core-impl-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-se-core-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cdi-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxws-tools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-core-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-servlet-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-se.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-core-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/saaj-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cdi-api-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-spi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-se-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-core-jsf-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.ejb-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-se-core-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsr181-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/weld-api-sources.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

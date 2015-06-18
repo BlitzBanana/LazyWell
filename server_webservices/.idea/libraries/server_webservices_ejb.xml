@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="server_webservices_ejb">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/server_webservices_ejb/server_webservices_ejb.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

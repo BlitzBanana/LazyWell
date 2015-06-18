@@ -1,96 +1,124 @@
 package corn.uni.crazywell.business.internalprocess.impl;
 
-import com.company.BreakTime;
-import com.company.LunchTime;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import corn.uni.crazywell.business.internalcomponent.BreakTime;
+import corn.uni.crazywell.business.internalcomponent.LocationPoint;
+import corn.uni.crazywell.business.internalcomponent.LunchTime;
 import corn.uni.crazywell.business.internalcomponent.Planning;
-import com.company.Show;
-import com.company.exceptions.NoNextBreakException;
+import corn.uni.crazywell.business.internalprocess.InternalProcess;
+import corn.uni.crazywell.common.dto.converter.DTOConverterLocal;
+import corn.uni.crazywell.common.dto.impl.SessionDTO;
+import corn.uni.crazywell.common.dto.impl.ShowDTO;
 import corn.uni.crazywell.common.exception.AlgorithmException;
-import corn.uni.crazywell.data.dao.GenericDAO;
+import corn.uni.crazywell.common.exception.DAOException;
+import corn.uni.crazywell.common.exception.NoNextBreakException;
+import corn.uni.crazywell.data.dao.ShowDaoLocal;
 import corn.uni.crazywell.data.entities.ShowEntity;
 
 import javax.inject.Inject;
-import javax.xml.stream.Location;
 import java.util.*;
 
 /**
  * Created by blacksheep on 18/06/15.
  */
-public class ScheduleCalculator {
+public class ScheduleCalculationProcess implements InternalProcess{
+    /* Required Fields */
     private Calendar startDate;
     private Calendar lunchDate;
     private Calendar endDate;
+    private LocationPoint coords;
     private int breakNumber;
     private int breakMinuteDuration;
     private int breakMinuteVariation;
     private int lunchDuration;
 
+    /* Calculated vars */
     private Planning generatedPlanning;
     private List<BreakTime> calculatedBreaks;
     private Calendar currentTime;
-    @Inject private GenericDAO<ShowEntity> showDao;
+
+    /* Injections */
+    @Inject private ShowDaoLocal showDaoLocal;
+    @Inject private DTOConverterLocal<ShowEntity, ShowDTO> showDTOConverter;
+
+    /* Constants */
+    private static final int MAX_MINUTE_WALKING_TIME = 15;
+
 
 
 
     /*CONSTRUCTION*/
-    public ScheduleCalculator(){
+    public ScheduleCalculationProcess(){
 
     }
-    public ScheduleCalculator(Calendar startDate, Calendar lunchDate, Calendar endDate, int breakNumber, int breakMinuteDuration,  int breakMinuteVariation) {
+    public ScheduleCalculationProcess(Calendar startDate, Calendar lunchDate, Calendar endDate, int breakNumber, int breakMinuteDuration, int breakMinuteVariation, int lat, int lon) {
         this.startDate = startDate;
         this.lunchDate = lunchDate;
         this.endDate = endDate;
         this.breakNumber = breakNumber;
         this.breakMinuteDuration = breakMinuteDuration;
         this.breakMinuteVariation = breakMinuteVariation;
+        this.coords = new LocationPoint(lat, lon);
     }
 
 
 
     /* WEBSERVICES PART */
     /* à coder sur le webservice*/
-    //TODO : retourner les activités qui sont faisables durant minutesBeforeNextBreak. Le temps de trajet est pris en comtpe par le serveur.
-    private List<Show> getAvailableActivities(final int minutesBeforeNextBreak, final Location currentLocation){
-        return new ArrayList<>();
+    private List<SessionDTO> getAvailableActivities(final int minutesBeforeNextBreak, final LocationPoint currentLocation) throws AlgorithmException {
+        try{
+            final List<ShowDTO> showList = showDaoLocal.getAvailableActivities(minutesBeforeNextBreak, MAX_MINUTE_WALKING_TIME, showDTOConverter);
+            final List<SessionDTO> sessionsList = new ArrayList<>();
+            final Calendar tempCalendar = currentTime;
+            tempCalendar.add(Calendar.MINUTE, MAX_MINUTE_WALKING_TIME);
+            Date expectedStartTime = tempCalendar.getTime();
+            for(final ShowDTO show : showList){
+                for(final SessionDTO session : show.getSessions()){
+                    if(session.getTime().after(expectedStartTime)){
+                        sessionsList.add(session);
+                        break;
+                    }
+                }
+            }
+            return sessionsList;
+        } catch (DAOException e) {
+            e.printStackTrace();
+            throw new AlgorithmException("Failed to get session From DAO!", e);
+        }
     }
-    //TODO : parmi la liste d'activité en paramètre, retourner uniquement celle(s) de la priorité la plus importante
-    private List<Show> filterActivitiesByPriority(final List<Show> input){
-        return input;
+    private List<SessionDTO> filterActivitiesByPriority(final List<SessionDTO> sessionDTOs){
+        final Map<SessionDTO, ShowEntity> showMap = new HashMap<>();
+        int currentBestPriority = 0;
+        //Obtention des priorités
+        for(SessionDTO session : sessionDTOs){
+            if (showMap.get(session) != null && showMap.get(session).getPriority() > currentBestPriority){
+                currentBestPriority = showMap.get(session).getPriority();
+            } else {
+                try {
+                    final ShowEntity showEntity = showDaoLocal.find(session);
+                    if(showEntity.getPriority() > currentBestPriority){
+                        showMap.put(session, showEntity);
+                        currentBestPriority = showEntity.getPriority();
+                    }
+                } catch (DAOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        //Trie
+        final int definitiveExpectedPriority = currentBestPriority;
+        Maps.filterEntries(showMap, new Predicate<Map.Entry<SessionDTO, ShowEntity>>() {
+            @Override
+            public boolean apply(Map.Entry<SessionDTO, ShowEntity> input) {
+                return input.getValue().getPriority() == definitiveExpectedPriority;
+            }
+        });
+        return Lists.newArrayList(showMap.keySet());
     }
 
-
-
-
-    /* SERVICE PART*/
-    /* Fait ailleurs dans l'application*/
-    private Location getCurrentLocation(){
-        return new Location() {
-            @Override
-            public int getLineNumber() {
-                return 0;
-            }
-
-            @Override
-            public int getColumnNumber() {
-                return 0;
-            }
-
-            @Override
-            public int getCharacterOffset() {
-                return 0;
-            }
-
-            @Override
-            public String getPublicId() {
-                return null;
-            }
-
-            @Override
-            public String getSystemId() {
-                return null;
-            }
-        };
-    }
 
 
 
@@ -106,7 +134,6 @@ public class ScheduleCalculator {
             throw new NoNextBreakException();
         }
         catch (NoNextBreakException ex) {
-            generatedPlanning.getActivities().add(new LunchTime(lunchDuration, lunchDate.getTime()));
             try {
                 planAfternoon(afternoonBreakIntervalMinute);
                 throw new NoNextBreakException();
@@ -135,44 +162,42 @@ public class ScheduleCalculator {
         return substractedminutes + substractedHours * 60;
     }
 
-    private Show selectActivity(final List<Show> activities){
+    private SessionDTO selectActivity(final List<SessionDTO> activities){
         Random rand = new Random();
         int nombreAleatoire = rand.nextInt(activities.size() - 0 + 1) + 0;
         return activities.get(nombreAleatoire);
     }
 
-    private void planMorning(final int breakIntervalMinute) throws NoNextBreakException {
+    private void planMorning(final int breakIntervalMinute) throws NoNextBreakException, AlgorithmException {
         calculateBreaks(breakIntervalMinute, lunchDate.getTime());
-        List<Show> availableActivities = null;
+        List<SessionDTO> availableActivities;
         do {
             availableActivities = getAvailableActivities(getMinutesBeforeNextBreak(currentTime.getTime()), getCurrentLocation());
             availableActivities = filterActivitiesByPriority(availableActivities);
             if (availableActivities.size() > 0) {
-                final Show show = selectActivity(availableActivities);
+                final SessionDTO show = selectActivity(availableActivities);
                 generatedPlanning.getActivities().add(show);
-                currentTime.setTime(show.getEndDate());
+                currentTime.setTime(show.getTime());
 
             } else {
                 final BreakTime breakTime = getNextBreak(currentTime.getTime());
-                generatedPlanning.getActivities().add(breakTime);
                 currentTime.add(Calendar.MINUTE, breakTime.getMinuteDuration());
             }
         } while(availableActivities != null);
     }
 
-    private void planAfternoon(final int breakIntervalMinute) throws NoNextBreakException {
+    private void planAfternoon(final int breakIntervalMinute) throws NoNextBreakException, AlgorithmException {
         calculateBreaks(breakIntervalMinute, lunchDate.getTime());
-        List<Show> availableActivities;
+        List<SessionDTO> availableActivities;
         do {
             availableActivities = getAvailableActivities(getMinutesBeforeNextBreak(currentTime.getTime()), getCurrentLocation());
             availableActivities = filterActivitiesByPriority(availableActivities);
             if (availableActivities.size() > 0) {
-                final Show show = selectActivity(availableActivities);
+                final SessionDTO show = selectActivity(availableActivities);
                 generatedPlanning.getActivities().add(show);
-                currentTime.setTime(show.getEndDate());
+                currentTime.setTime(show.getTime());
             } else {
                 final BreakTime breakTime = getNextBreak(currentTime.getTime());
-                generatedPlanning.getActivities().add(breakTime);
                 currentTime.add(Calendar.MINUTE, breakTime.getMinuteDuration());
             }
         } while(availableActivities != null);
@@ -268,5 +293,9 @@ public class ScheduleCalculator {
 
     public void setGeneratedPlanning(Planning generatedPlanning) {
         this.generatedPlanning = generatedPlanning;
+    }
+
+    public LocationPoint getCurrentLocation(){
+        return coords;
     }
 }

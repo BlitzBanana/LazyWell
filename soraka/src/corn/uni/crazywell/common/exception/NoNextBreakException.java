@@ -1,4 +1,4 @@
-package com.company.exceptions;
+package corn.uni.crazywell.common.exception;
 
 /**
  * Created by blacksheep on 14/06/15.
