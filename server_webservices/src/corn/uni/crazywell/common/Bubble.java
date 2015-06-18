@@ -1,7 +1,5 @@
 package corn.uni.crazywell.common;
 
-import corn.uni.crazywell.common.dto.DTO;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +50,12 @@ public class Bubble implements Serializable {
         GET_RESTAURANTS,
         GET_SHOPS,
         CHECK_UPDATE,
-        GET_EVAL
+        SET_EVAL
+    }
+
+    public enum Eval {
+        SHOW_EVAL,
+        SHOP_EVAL,
+        RESTAURANT_EVAL
     }
 }

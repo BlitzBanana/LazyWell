@@ -50,6 +50,12 @@ public class Bubble implements Serializable {
         GET_RESTAURANTS,
         GET_SHOPS,
         CHECK_UPDATE,
-        GET_EVAL
+        SET_EVAL
+    }
+
+    public enum Eval {
+        SHOW_EVAL,
+        SHOP_EVAL,
+        RESTAURANT_EVAL
     }
 }

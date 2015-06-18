@@ -35,4 +35,5 @@
     <string name="settings_pause_duration">Pause duration</string>
     <string name="progress_dialog">Loading events</string>
     <string name="please_wait">Please wait</string>
+    <string name="title_activity_entertainment">EntertainmentActivity</string>
 </resources>

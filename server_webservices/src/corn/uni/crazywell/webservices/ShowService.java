@@ -1,7 +1,6 @@
 package corn.uni.crazywell.webservices;
 
 import corn.uni.crazywell.common.Bubble;
-import corn.uni.crazywell.common.dto.DTO;
 import corn.uni.crazywell.common.dto.impl.AnecdoteQuestionDTO;
 import corn.uni.crazywell.common.dto.impl.ShowDTO;
 import corn.uni.crazywell.services.CommunicationServiceLocal;
@@ -42,9 +41,8 @@ public class ShowService {
 
         } catch (Exception e) {
             e.printStackTrace();
+            throw e;
         }
-
-        return null;
     }
 
     @WebMethod(operationName = "getBestSchedule")

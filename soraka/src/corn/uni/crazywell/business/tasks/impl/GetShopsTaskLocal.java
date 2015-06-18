@@ -1,6 +1,7 @@
 package corn.uni.crazywell.business.tasks.impl;
 
 import corn.uni.crazywell.business.tasks.ReturnableTaskLocal;
+import corn.uni.crazywell.common.Bubble;
 import corn.uni.crazywell.common.dto.DTO;
 import corn.uni.crazywell.common.dto.converter.DTOConverterLocal;
 import corn.uni.crazywell.common.dto.impl.ShopDTO;
@@ -26,7 +27,7 @@ public class GetShopsTaskLocal implements ReturnableTaskLocal {
     private DTOConverterLocal<ShopEntity, ShopDTO> shopConverter;
 
     @Override
-    public List<? extends DTO> run() throws TaskFailedException {
+    public List<? extends DTO> run(Bubble bubble) throws TaskFailedException {
         try {
             final List<ShopEntity> shops = shopDAO.findAll();
             final List<ShopDTO> outputList = new ArrayList<>();

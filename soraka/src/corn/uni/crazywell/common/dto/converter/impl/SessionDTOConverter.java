@@ -17,6 +17,8 @@ import javax.inject.Named;
 public class SessionDTOConverter implements DTOConverterLocal<SessionEntity, SessionDTO> {
     @Override
     public void convert(final SessionEntity source, final SessionDTO target) throws ConversionException {
-        throw new NotImplementedException();
+        target.setId(source.getId());
+        target.setTime(source.getTime());
+        target.setShowId(source.getShowId());
     }
 }

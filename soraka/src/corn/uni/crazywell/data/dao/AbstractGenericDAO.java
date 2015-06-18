@@ -11,11 +11,11 @@ import java.util.List;
  * Created by blacksheep on 29/05/15.
  */
 public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
-    private Class<T> clazz;
+    protected Class<T> clazz;
 
 
     @PersistenceContext
-    private EntityManager entityManager;
+    protected EntityManager entityManager;
 
     public AbstractGenericDAO(final Class<T> clazz){
         this.clazz = clazz;
@@ -67,7 +67,6 @@ public abstract class AbstractGenericDAO<T> implements GenericDAO<T> {
             e.printStackTrace();
             throw new DAOException("CUSTOM failed to get all result. See internal error.");
         }
-
     }
 
     /*Getters and setters*/
