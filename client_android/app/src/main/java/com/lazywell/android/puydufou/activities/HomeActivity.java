@@ -3,6 +3,7 @@ package com.lazywell.android.puydufou.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 
 import java.util.Date;
+import java.util.List;
 
 public class HomeActivity extends Activity implements View.OnClickListener{
 
@@ -72,6 +74,10 @@ public class HomeActivity extends Activity implements View.OnClickListener{
                 schedule.save();
             }
         }*/
+
+        List<SessionEntity> sessionEntities = SessionEntity.listAll(SessionEntity.class);
+        for(SessionEntity session : sessionEntities)
+            Log.d("DEBUG SESSION", session.getShow().getName() + "   " + session.getTime().toString());
     }
 
     @Override

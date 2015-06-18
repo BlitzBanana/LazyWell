@@ -62,7 +62,7 @@ public class ShowClient {
         for(ShowEntity show : shows)
             Log.d("CLIENT WS", show.getName());
 
-        //shows = ShowEntity.listAll(ShowEntity.class);
+        shows = ShowEntity.listAll(ShowEntity.class);
 
         Log.d("CHECK DB", "Show: " + ShowEntity.listAll(ShowEntity.class).size());
         Log.d("CHECK DB", "Session: " + SessionEntity.listAll(SessionEntity.class).size());

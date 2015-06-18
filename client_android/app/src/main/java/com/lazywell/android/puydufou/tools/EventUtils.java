@@ -9,6 +9,7 @@ import com.lazywell.android.puydufou.entities.ISchedulable;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by victor on 17/06/2015.
@@ -53,7 +54,7 @@ public class EventUtils {
         int months = Integer.parseInt(split[1]);
         int days = Integer.parseInt(split[2]);
 
-        Calendar calendar = (Calendar) Calendar.getInstance().clone();
+        Calendar calendar = (Calendar) Calendar.getInstance(Locale.FRANCE).clone();
         calendar.set(Calendar.YEAR, years);
         calendar.set(Calendar.MONTH, months);
         calendar.set(Calendar.DATE, days);
@@ -65,8 +66,8 @@ public class EventUtils {
         int hours = Integer.parseInt(split[0]);
         int minutes = Integer.parseInt(split[1]);
 
-        Calendar calendar = (Calendar) Calendar.getInstance().clone();
-        calendar.set(Calendar.HOUR, hours);
+        Calendar calendar = (Calendar) Calendar.getInstance(Locale.FRANCE).clone();
+        calendar.set(Calendar.HOUR_OF_DAY, hours);
         calendar.set(Calendar.MINUTE, minutes);
         return calendar.getTime();
     }

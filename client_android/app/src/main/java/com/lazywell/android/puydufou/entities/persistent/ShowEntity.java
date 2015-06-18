@@ -1,5 +1,7 @@
 package com.lazywell.android.puydufou.entities.persistent;
 
+import android.util.Log;
+
 import com.orm.SugarRecord;
 
 import java.util.Date;
@@ -128,6 +130,15 @@ public class ShowEntity extends SugarRecord<ShowEntity> {
 
     public List<SessionEntity> getSessionEntities() {
         return SessionEntity.find(SessionEntity.class, "show = ?", this.getId().toString());
+    }
+
+    public static ShowEntity getByRemoteId(long remoteId){
+        List<ShowEntity> results = ShowEntity.find(ShowEntity.class, "remote_id = ?", String.valueOf(remoteId));
+        Log.d("RemoteId", "Show size :"+results.size());
+        if(results.size() > 0)
+            return results.get(0);
+        else
+            return null;
     }
 
     @Override

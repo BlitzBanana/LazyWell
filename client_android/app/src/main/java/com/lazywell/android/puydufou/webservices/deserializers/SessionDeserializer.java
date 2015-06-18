@@ -32,11 +32,15 @@ public class SessionDeserializer extends DeserializerBase<SessionEntity> {
             long id = Long.parseLong(sessionItem.getProperty("id").toString());
             long showId = Long.parseLong(sessionItem.getProperty("showId").toString());
             ShowEntity show = ShowEntity.find(ShowEntity.class, "remoteId", String.valueOf(showId)).get(0);
-            SessionEntity session = new SessionEntity(
-                    id,
-                    EventUtils.getDateFromTimeString(sessionItem.getProperty("timeString").toString()),
-                    show
-            );
+
+            SessionEntity session = SessionEntity.getByRemoteId(id);
+
+            if(session == null)
+                session = new SessionEntity();
+
+            session.setRemoteId(id);
+            session.setTime(EventUtils.getDateFromTimeString(sessionItem.getProperty("timeString").toString()));
+            session.setShow(show);
             session.save();
             sessions.add(session);
         }

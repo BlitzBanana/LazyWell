@@ -37,7 +37,8 @@ public class ScheduleSessionEntity extends SugarRecord<ScheduleSessionEntity> {
     public static List<ScheduleSessionEntity> getScheduleSession(ScheduleEntity schedule, SessionEntity session){
         List<ScheduleSessionEntity> scheduleSessions = new ArrayList<>();
 
-        scheduleSessions.addAll(Select.from(ScheduleSessionEntity.class)
+        scheduleSessions.addAll(
+                Select.from(ScheduleSessionEntity.class)
                 .where(
                         Condition.prop("session").eq(session.getId().toString()),
                         Condition.prop("schedule").eq(schedule.getId().toString())

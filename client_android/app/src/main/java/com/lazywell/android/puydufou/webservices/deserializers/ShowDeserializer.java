@@ -57,40 +57,53 @@ public class ShowDeserializer extends DeserializerBase<ShowEntity> {
             CoordinatesEntity coordinatesEntity = new CoordinatesEntity(coordinatesId, latitude, longitude);
             coordinatesEntity.save();
 
-            ShowEntity show = new ShowEntity(
-                    id,
-                    name,
-                    description,
-                    priority,
-                    EventUtils.getDateFromDateString(creationDateString),
-                    new byte[0],
-                    actorNumber,
-                    score,
-                    coordinatesEntity,
-                    duration.getTime());
+            ShowEntity show = ShowEntity.getByRemoteId(id);
 
-            Log.d("SHOW OBJECT", show.toString());
+            if(show == null)
+                show = new ShowEntity();
+
+            show.setRemoteId(id);
+            show.setName(name);
+            show.setDescription(description);
+            show.setPriority(priority);
+            show.setCreationDate(EventUtils.getDateFromDateString(creationDateString));
+            show.setImage(new byte[0]);
+            show.setActorNumber(actorNumber);
+            show.setScore(score);
+            show.setCoordinates(coordinatesEntity);
+            show.setDuration(duration.getTime());
             show.save();
 
-            for (int p=0; p < item.getPropertyCount(); p++){
+            Log.d("SHOW OBJECT", show.toString());
 
+            for (int p=0; p < item.getPropertyCount(); p++){
                 if(!(item.getProperty(p) instanceof SoapObject))
                     continue;
 
                 SoapObject sessionItem = (SoapObject) item.getProperty(p);
                 Log.d("SESSION CREATION", "PropertyName: " + sessionItem.getName() + "  Count:" + sessionItem.getPropertyCount());
 
-                if(!(sessionItem.getName().equals("anyType") && sessionItem.getPropertyCount() == 3 && sessionItem.hasProperty("showId")))
+                if(!(sessionItem.getName().equals("anyType")
+                            && sessionItem.getPropertyCount() == 4
+                            && sessionItem.hasProperty("timeString")))
                     continue;
 
                 Log.d("SESSION CREATION", sessionItem.toString());
 
-                long sessionId = Long.parseLong(item.getProperty("id").toString());
-                SessionEntity session = new SessionEntity(
-                        sessionId,
-                        EventUtils.getDateFromTimeString(sessionItem.getProperty("timeString").toString()),
-                        show
-                );
+                long sessionId = Long.parseLong(sessionItem.getProperty("id").toString());
+
+                SessionEntity session = SessionEntity.getByRemoteId(sessionId);
+
+                Log.d("SESSION CREATION", "show:" + show.getName());
+                Log.d("SESSION CREATION", "id:" + sessionId);
+                Log.d("SESSION CREATION", "new session:" + (session == null));
+
+                if(session == null)
+                    session = new SessionEntity();
+
+                session.setRemoteId(sessionId);
+                session.setTime(EventUtils.getDateFromTimeString(sessionItem.getProperty("timeString").toString()));
+                session.setShow(show);
                 session.save();
             }
             shows.add(show);

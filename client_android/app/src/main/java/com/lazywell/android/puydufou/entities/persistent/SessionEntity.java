@@ -1,11 +1,15 @@
 package com.lazywell.android.puydufou.entities.persistent;
 
+import android.util.Log;
+
 import com.lazywell.android.puydufou.entities.ISchedulable;
 import com.lazywell.android.puydufou.tools.EventUtils;
 import com.orm.SugarRecord;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by victor on 16/06/2015.
@@ -50,11 +54,11 @@ public class SessionEntity  extends SugarRecord<SessionEntity> implements ISched
     }
 
     public static Date dateToToday(Date date){
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(Locale.FRANCE);
         Calendar showCalendar = (Calendar) calendar.clone();
         showCalendar.setTime(date);
 
-        calendar.set(Calendar.HOUR, showCalendar.get(Calendar.HOUR));
+        calendar.set(Calendar.HOUR_OF_DAY, showCalendar.get(Calendar.HOUR_OF_DAY));
         calendar.set(Calendar.MINUTE, showCalendar.get(Calendar.MINUTE));
         calendar.set(Calendar.SECOND, 0);
         return calendar.getTime();
@@ -62,15 +66,15 @@ public class SessionEntity  extends SugarRecord<SessionEntity> implements ISched
 
     @Override
     public Calendar getStartDate() {
-        Calendar calendar = (Calendar) Calendar.getInstance().clone();
+        Calendar calendar = (Calendar) Calendar.getInstance(Locale.FRANCE).clone();
         calendar.setTime(this.time);
         return calendar;
     }
 
     @Override
     public Calendar getEndDate() {
-        Calendar calendar = (Calendar) Calendar.getInstance().clone();
-        Calendar duration = (Calendar) Calendar.getInstance().clone();
+        Calendar calendar = (Calendar) Calendar.getInstance(Locale.FRANCE).clone();
+        Calendar duration = (Calendar) Calendar.getInstance(Locale.FRANCE).clone();
         calendar.setTime(this.time);
         duration.setTime(getShow().getDuration());
         calendar.add(Calendar.HOUR, duration.get(Calendar.HOUR));
@@ -86,5 +90,14 @@ public class SessionEntity  extends SugarRecord<SessionEntity> implements ISched
     @Override
     public String getTitle() {
         return show.getName();
+    }
+
+    public static SessionEntity getByRemoteId(long remoteId){
+        List<SessionEntity> results = SessionEntity.find(SessionEntity.class, "remote_id = ?", String.valueOf(remoteId));
+        Log.d("RemoteId", "Session size :" + results.size());
+        if(!results.isEmpty())
+            return results.get(0);
+        else
+            return null;
     }
 }
