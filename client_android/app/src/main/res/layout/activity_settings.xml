@@ -194,5 +194,8 @@
         android:id="@+id/settings_value_break_variation"
         android:layout_below="@+id/settings_title_break_variation"
         android:layout_alignParentStart="true" />
-
+    <ListView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/android:list" />
 </RelativeLayout>
