@@ -36,4 +36,13 @@ public class WebServicesDirectory {
             public static final String GET_SHOPS = "getShops";
         }
     }
+
+    public class Score{
+
+        public static final String WSDL_URL = DOMAIN + "/EvalService/eval?WSDL";
+
+        public class Actions{
+            public static final String SET_SCORE = "setEval";
+        }
+    }
 }

@@ -8,10 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.lazywell.android.puydufou.R;
-import com.lazywell.android.puydufou.business.Rate;
-import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
-
-import java.util.Date;
+import com.lazywell.android.puydufou.business.Score;
 
 /**
  * Created by dherent on 17/06/2015.
@@ -19,30 +16,30 @@ import java.util.Date;
 public class DialogRateAdapter extends BaseAdapter
 {
     Context context;
-    Rate[] rates;
+    Score[] scores;
 
-    public DialogRateAdapter( Context context, Rate[] rates)
+    public DialogRateAdapter( Context context, Score[] scores)
     {
         this.context = context;
-        this.rates = rates;
+        this.scores = scores;
     }
 
-    public void UpdateRate(Rate[] rates)
+    public void UpdateRate(Score[] scores)
     {
-        this.rates = rates;
+        this.scores = scores;
         notifyDataSetChanged();
     }
 
     @Override
     public int getCount()
     {
-                return rates.length;
+                return scores.length;
     }
 
     @Override
     public Object getItem(int position)
     {
-        return rates[position];
+        return scores[position];
     }
 
     @Override
@@ -57,10 +54,10 @@ public class DialogRateAdapter extends BaseAdapter
         View rootView = LayoutInflater.from(context)
                 .inflate(R.layout.dialog_rate_item, parent, false);
 
-        Rate rate = (Rate) getItem(position);
+        Score score = (Score) getItem(position);
 
         TextView showName = (TextView) rootView.findViewById(R.id.rate_view);
-        showName.setText(rate.toString());
+        showName.setText(score.getText());
 
         return rootView;
     }

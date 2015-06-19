@@ -1,12 +1,8 @@
 package com.lazywell.android.puydufou.webservices.clients;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import android.util.Log;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.lazywell.android.puydufou.R;
-import com.lazywell.android.puydufou.business.Rate;
 import com.lazywell.android.puydufou.entities.persistent.CoordinatesEntity;
 import com.lazywell.android.puydufou.entities.persistent.SessionEntity;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
@@ -69,11 +65,6 @@ public class ShowClient {
         Log.d("CHECK DB", "Coordinate: " + CoordinatesEntity.listAll(CoordinatesEntity.class).size());
 
         return shows;
-    }
-
-    public void rateShow (Rate rate)
-    {
-
     }
 
     public List<SessionEntity> getBestPlanning(){

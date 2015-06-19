@@ -1,9 +1,7 @@
 package com.lazywell.android.puydufou.activities;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -17,22 +15,25 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lazywell.android.puydufou.R;
 import com.lazywell.android.puydufou.adapters.DialogRateAdapter;
-import com.lazywell.android.puydufou.business.Rate;
+import com.lazywell.android.puydufou.business.Score;
 import com.lazywell.android.puydufou.entities.persistent.ShowEntity;
 import com.lazywell.android.puydufou.tools.BitmapUtils;
+import com.lazywell.android.puydufou.webservices.Bubble;
+import com.lazywell.android.puydufou.webservices.clients.ScoreClient;
 
 public class ShowDetailsActivity extends AppCompatActivity
 {
 
     Button score;
+    ShowEntity show;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_details);
-        Long showId = getIntent().getLongExtra("showId", 1);
-        ShowEntity show = ShowEntity.findById(ShowEntity.class, showId);
+        long showId = getIntent().getLongExtra("showId", 1);
+        show = ShowEntity.findById(ShowEntity.class, showId);
         score = (Button) findViewById(R.id.buttonScore);
         score.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,16 +87,23 @@ public class ShowDetailsActivity extends AppCompatActivity
     }
 
     public void showRatePopup(){
-        Rate[] rates = Rate.values();
+        Score[] scores = Score.values();
 
-        final DialogRateAdapter adapter = new DialogRateAdapter(this, rates);
+        final DialogRateAdapter adapter = new DialogRateAdapter(this, scores);
         new MaterialDialog.Builder(this)
                 .title(R.string.dialog_rate_title)
                 .adapter(adapter,
                         new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
-                                Toast.makeText(ShowDetailsActivity.this, "Clicked item " + adapter.getItem(which), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ShowDetailsActivity.this, "Clicked item " + adapter.getItem(which), Toast.LENGTH_SHORT).show();
+                                ScoreClient client = new ScoreClient(ShowDetailsActivity.this);
+                                client.rateShow(
+                                        (Score)adapter.getItem(which),
+                                        Bubble.Eval.SHOW_EVAL,
+                                        show.getRemoteId()
+                                );
+                                dialog.dismiss();
                             }
                         })
                 .show();
